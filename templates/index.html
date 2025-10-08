@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Atena Jafari Parsa</title>
+
+  <!-- Google fonts used: Playfair Display for heading, Inter for body -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <main class="page">
+    <header class="hero-head">
+        <div class="grid-container">
+            <div class="plane">
+                <div class="grid"></div>
+                <div class="glow"></div>
+            </div>
+            <div class="plane">
+                <div class="grid"></div>
+                <div class="glow"></div>
+            </div>
+        </div>
+      <h1>Atena Jafari Parsa <br> Artificial Intelligence Engineer</h1>
+    </header>
+
+    <section class="hero-content">
+      <div class="left-card">
+        <div class="photo-frame">
+          <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Atena profile">
+        </div>
+        <div style="text-align: center;"> <!-- optional to center all icons -->
+            <div style="display: inline-block; margin-right: 10px; margin-top: 10px;">
+              <a href="https://www.linkedin.com/in/atena-jafari-parsa/" target="_blank">
+                <img src="{{ url_for('static', filename='images/linkedin.png') }}" alt="LinkedIn" width="40">
+              </a>
+            </div>
+            <div style="display: inline-block; margin-left: 10px; margin-top: 10px; margin-right: 10px;">
+              <a href="https://github.com/AtenaJP22" target="_blank">
+                <img src="{{ url_for('static', filename='images/github.png') }}" alt="Github" width="40">
+              </a>
+            </div>
+            <div style="display: inline-block; margin-left: 10px; margin-top: 10px; margin-right: 10px;">
+                <a href="mailto:atena.jafariparsa@gmail.com?subject=Hello%20Atena" target="_blank">
+                  <img src="{{ url_for('static', filename='images/email.webp') }}" alt="Email" width="40">
+                </a>
+            </div>
+            <div style="display: inline-block; margin-left: 10px; margin-top: 10px; margin-right: 10px;">
+                <a href="https://medium.com/@atena-jafari-parsa" target="_blank">
+                  <img src="{{ url_for('static', filename='images/medium.png') }}" alt="Medium" width="40">
+                </a>
+            </div> 
+            <div style="display: inline-block; margin-left: 10px; margin-top: 10px; margin-right: 10px;">
+                <a href="https://x.com/atenajparsa?s=21&t=h7ILr8QEaMZlnGGFylTxAA" target="_blank">
+                  <img src="{{ url_for('static', filename='images/X_logo.jpg') }}" alt="X" width="40">
+                </a>
+            </div> 
+          </div>         
+      </div>
+
+      <div class="right-content">
+        <div class="intro">
+          <p>Hi!👋 I'm Atena, an AI engineer 🤖, a <a href="{{ url_for('projects') }}?query=Advertising Effects on Sales with R">data scientist</a> 👩🏻‍💻, a fullstack software developer 👾. I have hands-on experience in AI-Based projects such as <a href="{{ url_for('projects') }}?query=Cellenta">Cellenta iOS</a>, <a href="{{ url_for('projects') }}?query=Aware Citizen">Aware Citizen</a>, <a href="{{ url_for('projects') }}?query=Pima">Pima Diabetes Prediction on MLflow</a> and so on. You can browse all my projects <a href="{{ url_for('projects') }}">here</a>. 
+          </p>
+          <p>I'm a dedicated Artificial Intelligence Engineering graduate (BSc) with a strong academic record (Final Two-Year GPA: 3.60/4.00) and a focus on applying Large Language Models and MLOps to solve real-world problems. Proven experience in full-stack development of AI systems, from conceptualization and model training to deployment and <a href="{{ url_for('projects') }}?query=Pima">lifecycle management</a>.</p>
+
+          <p>I'm also an astrophile 🌌, a <a href="https://www.instagram.com/piano_with_atena?igsh=MXFzMzE2dGprbjRtZw%3D%3D&utm_source=qr">pianist</a> 🎹 and a <a href="https://on.soundcloud.com/LQZRD4beL0LjlbwYky">composer</a> ♫ </p>
+
+          <p>Let's connect, collaborate, and share ideas! 💡</p>
+          
+        </div>
+
+        <div class="tags">LLMs & Gen AI | Machine Learning | Neural Networks | Data Science</div>
+
+        <div class="cta-row">
+        <a class="btn primary" href="{{ url_for('projects') }}">Explore My Work</a>
+          <a class="btn secondary" href="#contact">Get in Touch</a>
+          <a class="btn-cv" href="{{ url_for('static', filename='files/Atena-Jafari-Parsa.pdf') }}" download>
+            <span class="btn-text">Download CV</span>
+            <span class="btn-icon">📄</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="research" class="info-section">
+      <h2>Research Interests</h2>
+    
+      <ul class="research-list">
+        <li>Deep Learning</li>
+        <li>Machine Learning</li>
+        <li>Optimization Theory</li>
+        <li>Generative AI & Large Language Models</li>
+        <li>Computer Vision</li>
+        <li>Robotics</li>
+      </ul>
+    </section>
+
+    <section id="publications" class="info-section">
+      <h2>Publications</h2>
+      <div>
+        <p><strong>Aware Citizen: A Large Language 
+          Model-Based Political Economy Analyst</strong></p>
+          <a class="btn primary" href="https://github.com/AtenaJP22/Aware-Citizen" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+            <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
+            View Project
+          </a>
+          <a class="btn primary" href="{{ url_for('static', filename='files/Aware_Citizen_Research_Paper_.pdf') }}" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+              <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="Research Paper" style="width:28px; height:28px;">
+              Research Paper
+          </a>
+          <a class="btn primary" href="{{ url_for('static', filename='files/Aware_Citizen.pdf') }}" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+              <img src="{{ url_for('static', filename='images/powerpoint.png') }}" alt="Project Presentation" style="width:30px; height:30px;">
+              Project Presentation
+          </a>
+      </div>
+      <div>
+        <p><strong>Do AI Image Generators Infringe Copyright? Exploring the Legal and Ethical Concerns of Using Copyrighted Artworks in Machine Learning</strong></p>
+          <a class="btn primary" href="https://medium.com/@atena-jafari-parsa/do-ai-image-generators-infringe-copyright-2be22bd3402b" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+            <img src="{{ url_for('static', filename='images/medium.png') }}" alt="Medium" style="width:25px; height:25px;">
+            View Publication
+          </a>
+          <a class="btn primary" href="{{ url_for('static', filename='files/Copyright Inquiry of AI Image Generators.pdf') }}" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+              <img src="{{ url_for('static', filename='images/powerpoint.png') }}" alt="Project Presentation" style="width:30px; height:30px;">
+              Presentation
+          </a>
+      </div>
+    </section>
+
+          <!-- Specializations preview (put on main page) -->
+    <section id="specializations-preview" class="info-section">
+      <h2>Certifications & Specializations</h2>
+      <div class="cert-preview-grid">
+        <!-- Example card (repeat 2-3 highlighted certs) -->
+        <a href="https://www.coursera.org/account/accomplishments/specialization/VUMQFDP1V0TF?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=s12n" 
+          target="_blank" 
+          class="cert-link">
+          <div class="cert-card small">
+            <img src="{{ url_for('static', filename='images/MLOps.png') }}" 
+                alt="MLOps Certificate">
+            <div class="cert-body">
+              <h3>MLOps</h3>
+              <p class="meta">Duke University • May 2025</p>
+            </div>
+          </div>
+        </a>
+
+
+        <a href="https://www.coursera.org/account/accomplishments/verify/RPQX107Y59N9?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course" 
+          target="_blank" 
+          class="cert-link">
+          <div class="cert-card small">
+            <img src="{{ url_for('static', filename='images/AIML.png') }}" 
+                alt="Foundations of AI & ML">
+            <div class="cert-body">
+              <h3>Foundations of AI & ML</h3>
+              <p class="meta">Microsoft • Jan 2025</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.coursera.org/account/accomplishments/specialization/EK49PHLYF27L?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=s12n" 
+          target="_blank" 
+          class="cert-link">
+          <div class="cert-card small">
+            <img src="{{ url_for('static', filename='images/DL.png') }}" 
+                alt="Deep Learning">
+            <div class="cert-body">
+              <h3>Deep Learning</h3>
+              <p class="meta">Deeplearning.AI • June 2024</p>
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+      <div style="text-align:center; margin-top: 22px;">
+        <a class="btn primary" href="{{ url_for('certifications') }}">Explore all certifications</a>
+      </div>
+    </section>
+
+      <!-- ===== Education ===== -->
+      <section id="education" class="info-section">
+        <h2>Education</h2>
+        <div class="info-cards">
+          <div class="info-card">
+            <h3>Highschool Diploma - Empirical Sciences</h3>
+            <p>Farzanegan (Tizhoushan) Highschool by Sampad, 2015 – 2021</p>
+            <p><b>GPA:</b> </b>3.9/4.0</p>
+          </div>
+        <div class="info-cards">
+          <div class="info-card">
+            <h3>Bachelor of Science in Artificial Intelligence Engineering</h3>
+            <p><a href="https://bau.edu.tr">Bahcesehir University</a>, 2021 – 2025</p>
+            <p><b>Final Two-Year GPA: </b>3.60/4.00</p>
+            <p>Istanbul, Turkiye</p>
+          </div>
+      </section>
+
+      <!-- ===== Work Experience ===== -->
+      <section id="experience" class="info-section">
+        <h2>Work Experience</h2>
+        <div class="info-cards">
+          <div class="info-card">
+            <h3>Software Intern</h3>
+            <p><a href="https://i2i-systems.com">i2i Systems</a>, June 2024 – July 2025</p>
+            <p>Full-Stack Projects + <a href="{{ url_for('projects') }}?query=Cellenta">Cellenta</a>, AI-Based Cloud-Native OCS + presentation on <a href="{{ url_for('projects') }}?query=Hazelcast">Hazelcast</a></p>
+      </section>
+
+      <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact Me </h2>
+      <p>I'd love to hear from you! Send me a message or reach out via social media.</p>
+
+      <!-- Contact Form -->
+      <form action="mailto:atena.jafariparsa@gmail.com?subject=Hello%20Atena!" method="POST" enctype="text/plain" class="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+
+        <button type="submit" class="btn primary">Send Message</button>
+      </form>
+
+      <!-- Social Links -->
+      <div class="social-links">
+        <h3>Contact Info</h3>
+        <div class="social-item">
+          <img src="{{ url_for('static', filename='images/email.webp') }}" alt="Email" width="25">
+          <p>Email: <a href="mailto:atena.jafariparsa@gmail.com?subject=Hello%20Atena">atena.jafariparsa@gmail.com</a></p>
+        </div>
+        <div class="social-item">
+          <img src="{{ url_for('static', filename='images/linkedin.png') }}" alt="LinkedIn" width="25">
+          <p>LinkedIn: <a href="https://www.linkedin.com/in/atena-jafari-parsa/">Atena-Jafari-Parsa</a></p>
+        </div>
+        <div class="social-item">
+          <img src="{{ url_for('static', filename='images/X_logo.jpg') }}" alt="X" width="25">
+          <p>X (Twitter): <a href="https://x.com/atenajparsa?s=21&t=h7ILr8QEaMZlnGGFylTxAA">AtenaJParsa</a></p>
+        </div>
+        <div class="social-item">
+          <img src="{{ url_for('static', filename='images/medium.png') }}" alt="Medium" width="25">
+          <p>Medium: <a href="https://medium.com/@atena-jafari-parsa">Atena-Jafari-Parsa</a></p>
+        </div>
+        <div class="social-item">
+          <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" width="25">
+          <p>GitHub: <a href="https://github.com/AtenaJP22">AtenaJP22</a></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    // Always scroll to top when the page loads
+    window.addEventListener('load', () => {
+      if (window.location.hash) {
+        window.history.replaceState(null, null, ' ');
+        window.scrollTo(0, 0);
+      }
+    });
+  </script>
+
+</body>
+</html>

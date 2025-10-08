@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Certifications | Atena Jafari Parsa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <main class="page">
+    <header class="hero-head">
+      <h1>Certifications & Specializations</h1>
+      <p style="max-width:700px; margin:12px auto 0; font-size:18px; color:#ccc;">
+        Browse professional and soft-skill certificates. Use the filters to show Technical or Soft Skills certificates.
+      </p>
+    </header>
+
+    <section class="info-section" style="margin-top: 18px;">
+      <div class="filter-bar" aria-label="Certificate filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="technical">Professional</button>
+        <button class="filter-btn" data-filter="soft">Soft Skills</button>
+        <input id="searchCert" type="search" placeholder="Search certificates..." aria-label="Search certificates" style="margin-left:auto; max-width:260px;">
+      </div>
+
+      <div class="cert-grid" id="certGrid" style="margin-top: 24px;">
+        <!-- Example certificate cards (repeat as needed) -->
+
+        <a href="https://www.coursera.org/account/accomplishments/specialization/VUMQFDP1V0TF?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=s12n" 
+        target="_blank" 
+        class="cert-link">
+        <div class="cert-card small" data-type="technical">
+          <img src="{{ url_for('static', filename='images/MLOps.png') }}" 
+              alt="MLOps Certificate">
+          <div class="cert-body">
+            <h3>MLOps | Machine Learning Operations</h3>
+            <p class="meta">Duke University • May 2025</p>
+            <list class="info-list"> <strong>Courses Completed: </strong><li>Python Essentials for MLOps</li>
+                <li>DevOps, DataOps, MLOps</li>
+                <li>MLOps Platforms: Amazon</li>
+                <li>SageMaker and Azure ML</li>
+                <li>MLOps Tools: MLflow and Hugging Face</li></list>
+          </div>
+        </div>
+      </a>
+
+
+      <a href="https://www.coursera.org/account/accomplishments/verify/RPQX107Y59N9?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course" 
+        target="_blank" 
+        class="cert-link">
+        <div class="cert-card small" data-type="technical">
+          <img src="{{ url_for('static', filename='images/AIML.png') }}" 
+              alt="Foundations of AI & ML">
+          <div class="cert-body">
+            <h3>Foundations of AI & Machine Learning</h3>
+            <p class="meta">Microsoft • Jan 2025</p>
+            <list class="info-list"> <strong>Skills Gained: </strong><li>AI/ML</li>
+                <li>PyTorch</li>
+                <li>Data Management</li>
+                <li>Data Pipelines</li>
+                <li>Data Security</li>
+                <li>Application Frameworks</li>
+                <li>Data Processing</li>
+                <li>Data Cleansing</li>
+                <li>Scalability</li>
+                <li>Infrastructure Architecture</li>
+            </list>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://www.coursera.org/account/accomplishments/specialization/EK49PHLYF27L?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=s12n" 
+        target="_blank" 
+        class="cert-link">
+        <div class="cert-card small" data-type="technical">
+          <img src="{{ url_for('static', filename='images/DL.png') }}" 
+              alt="Deep Learning">
+          <div class="cert-body">
+            <h3>Deep Learning Specialization</h3>
+            <p class="meta">Deeplearning.AI • June 2024</p>
+            <list class="info-list"> <strong>Courses Completed:</strong><li>Neural Networks and Deep
+                Learning</li>
+                <li>Improving Deep Neural
+                Networks: Hyperparameter
+                Tuning, Regularization and
+                Optimization</li>
+                <li>Structuring Machine
+                Learning Projects</li>
+                <li>Convolutional Neural
+                Networks</li>
+                <li>Sequence Models</li></list>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://www.kaggle.com/learn/certification/atenajafariparsa/intermediate-machine-learning" 
+        target="_blank" 
+        class="cert-link">
+        <div class="cert-card small" data-type="technical">
+          <img src="{{ url_for('static', filename='images/cloud.png') }}" 
+              alt="Introduction to Microsoft Azure Cloud Services">
+          <div class="cert-body">
+            <h3>Introduction to Microsoft Azure Cloud Services</h3>
+            <p class="meta">Microsoft • Jan 2024</p>
+            <list class="info-list"> <strong>Skills Gained: </strong><li>AI/ML</li>
+                <li>Public Cloud</li>
+                <li>Cloud Services</li>
+                <li>Virtualization</li>
+                <li>Microsoft Azure</li>
+                <li>Cloud Storage</li>
+                <li>Virtual Machines</li>
+                <li>Cloud Infrastructure</li>
+                <li>Database Management Systems </li>
+                <li>Virtual Private Networks (VPN)</li>
+                <li>Cloud Computing</li>
+            </list>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://www.coursera.org/account/accomplishments/verify/YTJKBZCGLC28?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course" 
+        target="_blank" 
+        class="cert-link">
+        <div class="cert-card small" data-type="technical">
+          <img src="{{ url_for('static', filename='images/ml.png') }}" 
+              alt="Machine Learning with Python">
+          <div class="cert-body">
+            <h3>Machine Learning with Python</h3>
+            <p class="meta">IBM • Dec 2023</p>
+            <list class="info-list"> <strong>Skills Gained:</strong>
+                <li>Dimensionality Reduction</li>
+                <li>Scikit Learn</li>
+                <li>Predictive Modeling</li>
+                <li>Supervised Learning</li>
+                <li>Regression Analysis</li>
+                <li>Feature Engineering</li>
+                <li>Classification And Regression Tree (CART)</li>
+                <li>Statistical Analysis</li>
+            </list>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://www.coursera.org/account/accomplishments/verify/4KZCVKV3SEHB?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course" 
+        target="_blank" 
+        class="cert-link">
+        <div class="cert-card small" data-type="technical">
+          <img src="{{ url_for('static', filename='images/amii.png') }}" 
+              alt="Introduction to Applied Machine Learning">
+          <div class="cert-body">
+            <h3>Introduction to Applied Machine Learning</h3>
+            <p class="meta">Amii (Alberta Machine Intelligence Institute) • Dec 2023</p>
+            <list class="info-list"> <strong>Skills Gained:</strong>
+                <li>Applied Machine Learning</li>
+                <li>Machine Learning Algorithms</li>
+                <li>Data Ethics</li>
+                <li>Performance Metric</li>
+                <li>Product Lifecycle Management</li>
+                <li>Data Quality</li>
+                <li>Business Analysis</li>
+            </list>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://www.kaggle.com/learn/certification/atenajafariparsa/intermediate-machine-learning" 
+        target="_blank" 
+        class="cert-link">
+        <div class="cert-card small" data-type="technical">
+          <img src="{{ url_for('static', filename='images/intermediate.png') }}" 
+              alt="Intermediate Machine Learning">
+          <div class="cert-body">
+            <h3>Intermediate Machine Learning</h3>
+            <p class="meta">Kaggle • May 2023</p>
+          </div>
+        </div>
+      </a>
+
+
+      <a href="https://www.kaggle.com/learn/certification/atenajafariparsa/intermediate-machine-learning" 
+        target="_blank" 
+        class="cert-link">
+        <div class="cert-card small" data-type="soft">
+          <img src="{{ url_for('static', filename='images/ethics.png') }}" 
+              alt="Intro to AI Ethics">
+          <div class="cert-body">
+            <h3>Intro to AI Ethics</h3>
+            <p class="meta">Kaggle • Jan 2023</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://coursera.org/share/bcff47539d0719e1053a19ad74de79f2" 
+        target="_blank" 
+        class="cert-link">
+        <div class="cert-card small" data-type="soft">
+          <img src="{{ url_for('static', filename='images/pm.png') }}" 
+              alt="Foundations of Project Management">
+          <div class="cert-body">
+            <h3>Foundations of Project Management</h3>
+            <p class="meta">Google • Jul 2025</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://coursera.org/share/402ffb3ea7c108bda654385fd5596281" 
+        target="_blank" 
+        class="cert-link">
+        <div class="cert-card small" data-type="technical">
+          <img src="{{ url_for('static', filename='images/ibm.png') }}" 
+              alt="Introduction to Containers w/ Docker, Kubernetes & OpenShift">
+          <div class="cert-body">
+            <h3>Introduction to Containers w/ Docker, Kubernetes & OpenShift</h3>
+            <p class="meta">IBM • 2025</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://coursera.org/share/43c6e8daa7d4f5686f3138efca8e2fb0" 
+        target="_blank" 
+        class="cert-link">
+        <div class="cert-card small" data-type="technical">
+          <img src="{{ url_for('static', filename='images/ucd.png') }}" 
+              alt="Introduction to Web Development">
+          <div class="cert-body">
+            <h3>Introduction to Web Development</h3>
+            <p class="meta">University of California, Davis • 2025</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://www.linkedin.com/learning/certificates/16c480c43cf15807c9aa100e7c899efd56e299a58fe8b4e9dbdb081589429467?trk=share_certificate&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3Bx2Mhq4AGTe2%2FzdX%2B7xD6Mg%3D%3D" 
+        target="_blank" 
+        class="cert-link">
+        <div class="cert-card small" data-type="technical">
+          <img src="{{ url_for('static', filename='images/docker.png') }}" 
+              alt="Learning Docker">
+          <div class="cert-body">
+            <h3>Learning Docker</h3>
+            <p class="meta">LinkedIn • 2025</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://coursera.org/share/d413747b2894ba08870580231e685795" 
+        target="_blank" 
+        class="cert-link">
+        <div class="cert-card small" data-type="soft">
+          <img src="{{ url_for('static', filename='images/it.png') }}" 
+              alt="IT Entrepreneurship 24-25 Fall">
+          <div class="cert-body">
+            <h3>IT Entrepreneurship</h3>
+            <p class="meta">Coursera • Nov 2024</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://coursera.org/share/bc5b324dac3e596828e7ca4aefc3aea7" 
+        target="_blank" 
+        class="cert-link">
+        <div class="cert-card small" data-type="soft">
+          <img src="{{ url_for('static', filename='images/ei.png') }}" 
+              alt="Emotional and Social Intelligence">
+          <div class="cert-body">
+            <h3>Emotional and Social Intelligence</h3>
+            <p class="meta">University of California, Davis • Dec 2024</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://coursera.org/share/ebc1000cbe98ea436b48f24b4944aa88" 
+        target="_blank" 
+        class="cert-link">
+        <div class="cert-card small" data-type="soft">
+          <img src="{{ url_for('static', filename='images/money.png') }}" 
+              alt="Financial Planning for Young Adults">
+          <div class="cert-body">
+            <h3>Financial Planning for Young Adults</h3>
+            <p class="meta">University of Illinois Urbana-Champaign • Dec 2024</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://coursera.org/share/318a4b4448159afebe5061a73bb8527d" 
+        target="_blank" 
+        class="cert-link">
+        <div class="cert-card small" data-type="soft">
+          <img src="{{ url_for('static', filename='images/UCI.png') }}" 
+              alt="Effective Problem-Solving and Decision-Making">
+          <div class="cert-body">
+            <h3>Effective Problem-Solving and Decision-Making</h3>
+            <p class="meta">University of Illinois Urbana-Champaign • Nov 2024</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://coursera.org/share/7456f34bc9faec2523dccc93a7b1647a" 
+        target="_blank" 
+        class="cert-link">
+        <div class="cert-card small" data-type="soft">
+          <img src="{{ url_for('static', filename='images/stress.png') }}" 
+              alt="Managing Emotions in Times of Uncertainty & Stress">
+          <div class="cert-body">
+            <h3>Managing Emotions in Times of Uncertainty & Stress</h3>
+            <p class="meta">Yale University • Nov 2024</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://coursera.org/share/c655a31690dd52b73b8f4f3dc67a13af" 
+        target="_blank" 
+        class="cert-link">
+        <div class="cert-card small" data-type="soft">
+          <img src="{{ url_for('static', filename='images/penn.png') }}" 
+              alt="The Power of Team Culture">
+          <div class="cert-body">
+            <h3>The Power of Team Culture</h3>
+            <p class="meta">University of Pennsylvania • 2024</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://coursera.org/share/ee9c381e6936c2065b50cbfa3d049120" 
+        target="_blank" 
+        class="cert-link">
+        <div class="cert-card small" data-type="soft">
+          <img src="{{ url_for('static', filename='images/ucii.png') }}" 
+              alt="Communication in the 21st Century Workplace">
+          <div class="cert-body">
+            <h3>Communication in the 21st Century Workplace</h3>
+            <p class="meta">University of California, Irvine • Oct 2024</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://coursera.org/share/4c7a597771c312d5037e3365834fbe8b" 
+        target="_blank" 
+        class="cert-link">
+        <div class="cert-card small" data-type="soft">
+          <img src="{{ url_for('static', filename='images/london.png') }}" 
+              alt="Creative Thinking: Techniques and Tools for Success">
+          <div class="cert-body">
+            <h3>Creative Thinking: Techniques and Tools for Success</h3>
+            <p class="meta">Imperial College London • Oct 2024</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://coursera.org/share/e3f7fb6372c9353628b44ba45259c1f5" 
+        target="_blank" 
+        class="cert-link">
+        <div class="cert-card small" data-type="soft">
+          <img src="{{ url_for('static', filename='images/case.png') }}" 
+              alt="Inspiring Leadership through Emotional Intelligence">
+          <div class="cert-body">
+            <h3>Inspiring Leadership through Emotional Intelligence</h3>
+            <p class="meta">Case Western Reserve University • 2024</p>
+          </div>
+        </div>
+      </a>
+
+
+      <a href="https://coursera.org/share/0ba100677cf2ce54357259d2dba5737c" 
+        target="_blank" 
+        class="cert-link">
+        <div class="cert-card small" data-type="soft">
+          <img src="{{ url_for('static', filename='images/ie.png') }}" 
+              alt="Intelligence Tools for the Digital Age">
+          <div class="cert-body">
+            <h3>Intelligence Tools for the Digital Age</h3>
+            <p class="meta">IE Business School • 2024</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://www.kaggle.com/learn/certification/atenajafariparsa/feature-engineering" 
+        target="_blank" 
+        class="cert-link">
+        <div class="cert-card small" data-type="technical">
+          <img src="{{ url_for('static', filename='images/feature.png') }}" 
+              alt="Feature Engineering">
+          <div class="cert-body">
+            <h3>Feature Engineering</h3>
+            <p class="meta">Kaggle • May 2023</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://www.kaggle.com/learn/certification/atenajafariparsa/data-cleaning" 
+        target="_blank" 
+        class="cert-link">
+        <div class="cert-card small" data-type="technical">
+          <img src="{{ url_for('static', filename='images/clean.png') }}" 
+              alt="Data Cleaning">
+          <div class="cert-body">
+            <h3>Data Cleaning</h3>
+            <p class="meta">Kaggle • March 2023</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://www.kaggle.com/learn/certification/atenajafariparsa/geospatial-analysis" 
+        target="_blank" 
+        class="cert-link">
+        <div class="cert-card small" data-type="technical">
+          <img src="{{ url_for('static', filename='images/geo.png') }}" 
+              alt="Geospatial Analysis">
+          <div class="cert-body">
+            <h3>Geospatial Analysis</h3>
+            <p class="meta">Kaggle • March 2023</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://www.kaggle.com/learn/certification/atenajafariparsa/data-visualization" 
+        target="_blank" 
+        class="cert-link">
+        <div class="cert-card small" data-type="technical">
+          <img src="{{ url_for('static', filename='images/vis.png') }}" 
+              alt="Data Visualization">
+          <div class="cert-body">
+            <h3>Data Visualization</h3>
+            <p class="meta">Kaggle • April 2023</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://www.kaggle.com/learn/certification/atenajafariparsa/pandas" 
+        target="_blank" 
+        class="cert-link">
+        <div class="cert-card small" data-type="technical">
+          <img src="{{ url_for('static', filename='images/pandas.png') }}" 
+              alt="Pandas">
+          <div class="cert-body">
+            <h3>Pandas</h3>
+            <p class="meta">Kaggle • March 2023</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="{{ url_for('static', filename='files/Upper Advanced English Certificate.pdf') }}" 
+        target="_blank" 
+        class="cert-link">
+        <div class="cert-card small" data-type="soft">
+            <img src="{{ url_for('static', filename='files/Upper Advanced English Certificate.pdf') }}" 
+                alt="Swiss Language Academy (English)">
+            <div class="cert-body">
+            <h3>Swiss Language Academy (Upper Advanced English)</h3>
+            <p class="meta">Swiss Education Academy • June 2019</p>
+            <p class="desc">SEA is a Swiss summer camp, which combines 15 hours
+                of English class per week, sports activities and cultural excursions.</p>
+           </div>
+          </div>
+        </a>
+
+        <a href="{{ url_for('static', filename='files/Leadership Live!.pdf') }}" 
+        target="_blank" 
+        class="cert-link">
+        <div class="cert-card small" data-type="soft">
+            <img src="{{ url_for('static', filename='files/Leadership Live!.pdf') }}" 
+                alt="Leadership Live!">
+            <div class="cert-body">
+            <h3>Leadership Live!<h3>
+            <p class="meta">Swiss Education Academy • June 2019</p>
+            <p class="desc">leading and teamwork
+                experiences with theory and personal assessment. Topics:
+                you & the others, communication skills, collaboration,
+                motivation & collective goals.</p>
+           </div>
+          </div>
+        </a>
+
+     
+
+
+
+        <!-- add as many cards as you need; keep data-type="technical" or "soft" -->
+      </div>
+    </section>
+
+    <section class="cta-row" style="margin-top: 48px; justify-content: center;">
+      <a class="btn secondary" href="{{ url_for('home') }}">← Back to Home</a>
+    </section>
+  </main>
+
+  <script>
+    // Filtering & search (vanilla JS)
+    (function(){
+      const buttons = document.querySelectorAll('.filter-btn');
+      const cards = Array.from(document.querySelectorAll('.cert-link'));
+      const search = document.getElementById('searchCert');
+
+      function setActiveBtn(btn){
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      }
+
+      function filterGrid(filter){
+        cards.forEach(card => {
+          const type = card.querySelector('.cert-card').dataset.type || 'technical';
+          const matchesFilter = (filter === 'all') || (type === filter);
+          const matchesSearch = !search.value.trim() || card.innerText.toLowerCase().includes(search.value.trim().toLowerCase());
+          card.style.display = (matchesFilter && matchesSearch) ? '' : 'none';
+        });
+      }
+
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          setActiveBtn(btn);
+          filterGrid(btn.dataset.filter);
+        });
+      });
+
+      search.addEventListener('input', () => {
+        const active = document.querySelector('.filter-btn.active').dataset.filter;
+        filterGrid(active);
+      });
+
+      // initial
+      filterGrid('all');
+    })();
+  </script>
+</body>
+</html>

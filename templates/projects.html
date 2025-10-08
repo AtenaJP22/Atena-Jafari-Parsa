@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects | Atena Jafari Parsa</title>
+
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <main class="page">
+
+    <!-- Hero/Header -->
+    <header class="hero-head">
+      <h1>My Projects</h1>
+      <p style="max-width: 700px; margin: 12px auto 0; font-size: 18px; color: #ccc;">
+        A showcase of selected AI, software engineering, and data science projects I've worked on.  
+        Each one reflects creativity, technical depth, and real-world application.
+      </p>
+    </header>
+
+    <!-- Project Grid Section -->
+    <section class="hero-content" id="work">
+      <div class="projects-grid">
+      <div>
+        <input id="searchCert" type="search" placeholder="Search projects..." aria-label="Search projects" style="margin-left:auto; max-width:260px;">
+      </div>
+
+        <!-- Example Project Card -->
+        <div class="project-card" id="cellenta">
+          <img src="{{ url_for('static', filename='images/Cellenta.png') }}" alt="Cellenta iOS project preview">
+          <div class="project-info">
+            <h2>Cellenta iOS</h2>
+            <p>An online charging system iOS app built with SwiftUI during my internship at <a href="https://i2i-systems.com">i2i Systems</a>. It integrates authentication, package management, and billing with a backend API. Equipped with a seamless live chat bot and AI-powered smart, personalized package recommendation system using Google Gemini's API.</p>
+            <a class="btn primary" href="https://github.com/Aliduman02/Cellenta/tree/ios" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+                <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
+                View Project
+            </a>
+            <a class="btn primary" href="https://youtube.com/shorts/3MUf2KHydI0?si=iWsA8PXM4ST4Kaii" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+                <img src="{{ url_for('static', filename='images/YouTube.png') }}" alt="YouTube" style="width:25px; height:25px;">
+                Watch Project Demo
+              </a>              
+          </div>
+        </div>
+
+        <div class="project-card" id="awarecitizen">
+          <img src="{{ url_for('static', filename='images/awarecitizendark.jpg') }}" alt="Aware Citizen preview">
+          <div class="project-info">
+            <h2>Aware Citizen</h2>
+            <p>An AI-Based Political Economy Analyst web app built with Streamlit and empowered by Open AI's API that finds the political parties of the selected country with Beautiful Soup from Wikipedia, and uses Open AI's Turbo model to analyze the effects of every party on citizens' daily lives if selected. It assigns a score from 0 (very bad) to 20 (very good) to each party and visualizes a comparative result in the end.
+            </p>
+            <a class="btn primary" href="https://github.com/AtenaJP22/Aware-Citizen" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+                <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
+                View Project
+            </a>
+            <a class="btn primary" href="{{ url_for('static', filename='files/Aware_Citizen_Research_Paper_.pdf') }}" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+                <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="Research Paper" style="width:28px; height:28px;">
+                Research Paper
+            </a>
+            <a class="btn primary" href="{{ url_for('static', filename='files/Aware_Citizen.pdf') }}" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+                <img src="{{ url_for('static', filename='images/powerpoint.png') }}" alt="Project Presentation" style="width:30px; height:30px;">
+                Project Presentation
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card" id="pima">
+          <img src="{{ url_for('static', filename='images/Pima.png') }}" alt="Pima Diabetes ML project preview">
+          <div class="project-info">
+            <h2>Pima Diabetes Prediction</h2>
+            <p>Machine learning pipeline using <a href="https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database">Pima Indians Diabetes Dataset on Kaggle</a> for diabetes risk prediction using MLflow to track experiments, reproducibility, and results. A predictive ML model (classification task for diabetes) was implemented and its end-to-end lifecycle was managed, consisting of training, hyperparameter tuning, deployment, performance monitoring, and model versioning. 5 different models were trained and tested: Random forest, Support Vector Machine (SVM), KNeighbors Classifier, Decision Tree Classifier and Logistic Regression. Hyperparameters of the model reaching the highest accuracy was tuned for optimization.</p>
+        </p>
+        <a class="btn primary" href="https://github.com/AtenaJP22/MLOps-Term-Project" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+            <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
+            View Project
+        </a>
+        <a class="btn primary" href="{{ url_for('static', filename='files/MLOps_Term_Project_Pima_Diabetes_Prediction_System_.pdf') }}" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+            <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="Project Report" style="width:28px; height:28px;">
+            Project Report
+        </a>
+        <a class="btn primary" href="{{ url_for('static', filename='files/MLOpsTermproject.pdf') }}" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+            <img src="{{ url_for('static', filename='images/powerpoint.png') }}" alt="Project Presentation" style="width:30px; height:30px;">
+            Project Presentation
+        </a>
+          </div>
+        </div>
+
+        <div class="project-card" id="baueval">
+            <img src="{{ url_for('static', filename='images/bau.png') }}" alt="BAU-EVAL">
+            <div class="project-info">
+              <h2>BAU-EVAL</h2>
+              <p>AI-based Quiz and Exam Generator & Evaluator developed for Bahçeşehir University as my Senior Capstone Project empowering instructors with: LLM-Generated Exam & Quiz Questions, Automated Grading with Instructor Approval, Personalized Smart Feedback for Students, Seamless Student and Grade Management.</p>
+              <a class="btn primary" href="{{ url_for('static', filename='files/CapstoneReportTemplate.docx.pdf') }}" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+                <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="Project Report" style="width:28px; height:28px;">
+                Project Report
+            </a>
+            <a class="btn primary" href="{{ url_for('static', filename='files/CapstoneProjectPresentation.pdf') }}" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+                <img src="{{ url_for('static', filename='images/powerpoint.png') }}" alt="Project Presentation" style="width:30px; height:30px;">
+                Project Presentation
+            </a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="{{ url_for('static', filename='images/tts2.jpg') }}" alt="Re [Style TTS2]">
+            <div class="project-info">
+              <h2>Re [Style TTS2]</h2>
+              <p>A reproduction study of Style TTS2: Towards Human-Level Text-to-Speech through Style Diffusion and Adversarial Training with Large Speech Language Models which utilizes deep learning and artificial neural networks.</p>
+              <a class="btn primary" href="https://github.com/yl4579/StyleTTS2" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+                <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
+                View Git Repository
+            </a>
+            <a class="btn primary" href="{{ url_for('static', filename='files/NeurIPS-2023-styletts-2-towards-human-level-text-to-speech-through-style-diffusion-and-adversarial-training-with-large-speech-language-models-Paper-Conference.pdf') }}" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+              <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="Original Paper" style="width:28px; height:28px;">
+              Original Paper
+          </a>
+            </div>
+        </div>
+
+        <div class="project-card" id="stroke">
+            <img src="{{ url_for('static', filename='images/stroke.png') }}" alt="Stroke Prediction with Multiple Linear Regression">
+            <div class="project-info">
+              <h2>Stroke Prediction with Multiple Linear Regression</h2>
+              <p>Stroke Prediction with Multiple Linear Regression based on the kaggle competition <a href="https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset">Stroke Prediction Dataset Assignment</a> using machine learning</p>
+              <a class="btn primary" href="https://github.com/AtenaJP22/StrokePrediction" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+                <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
+                View Project
+            </a>
+            <a class="btn primary" href="{{ url_for('static', filename='files/AIN2002_Project_Report.pdf') }}" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+              <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="Project Report" style="width:28px; height:28px;">
+              Project Report
+          </a>
+            </div>
+        </div>
+
+        <div class="project-card" id="titanic">
+          <img src="{{ url_for('static', filename='images/titanic.png') }}" alt="Machine Learning and The Titanic Disaster">
+          <div class="project-info">
+            <h2>Machine Learning and The Titanic Disaster</h2>
+            <p>a machine learning model to predict whether a passenger survived or not during the tragic event of the Titanic disaster. Based on <a href="https://www.kaggle.com/c/titanic">Titanic - Machine Learning from Disaster</a> competition on Kaggle.</p>
+            <a class="btn primary" href="https://github.com/AtenaJP22/TitanicKaggleCompetition" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+              <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
+              View Project
+          </a>
+          <a class="btn primary" href="{{ url_for('static', filename='files/Titanic_Report.pdf') }}" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+            <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="Project Report" style="width:28px; height:28px;">
+            Project Report
+        </a>
+          </div>
+      </div>
+
+
+      <div class="project-card">
+        <img src="{{ url_for('static', filename='images/Ensemble.png') }}" alt="Ensemble Learning">
+        <div class="project-info">
+          <h2>Ensemble Learning</h2>
+          <p>Comparing the accuracy in an example problem by classifying by soft voting, hard voting, using bagging/pasting, Out of Bag Evaluations, Random Forests and my own novel ensemble model. Utilized soft voting classifiers On SVM (Soft Vector Machine), KNeighbor, Random Forest and the different combinations of them.</p>
+          <a class="btn primary" href="https://github.com/AtenaJP22/EnsembleLearning" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+            <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
+            View Project
+        </a>
+        <a class="btn primary" href="{{ url_for('static', filename='files/Ensemble_Report.pdf') }}" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+          <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="Project Report" style="width:28px; height:28px;">
+          Project Report
+      </a>
+        </div>
+    </div>
+
+
+    <div class="project-card" id="r">
+      <img src="{{ url_for('static', filename='images/sales.jpg') }}" alt="Advertising Effects on Sales with R">
+      <div class="project-info">
+        <h2>Advertising Effects on Sales with R</h2>
+        <p>This data science project analyzes the impact of three advertising methods—Television (TV), Radio, and Newspaper—on sales performance. The dataset includes 200 observations of advertising budgets and corresponding sales figures, measured in thousands of dollars and units respectively. The goal is to determine which advertising methods significantly influence sales and to model these relationships using statistical techniques.</p>
+        <a class="btn primary" href="https://github.com/AtenaJP22/Advertising-Effects-on-Sales-R" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+          <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
+          View Project
+      </a>
+      <a class="btn primary" href="{{ url_for('static', filename='files/Project_Report_Advertising.pdf') }}" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+        <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="Project Report" style="width:28px; height:28px;">
+        Project Report
+    </a>
+    <a class="btn primary" href="{{ url_for('static', filename='files/Advertising_Presentation.pdf') }}" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+      <img src="{{ url_for('static', filename='images/powerpoint.png') }}" alt="Project Presentation" style="width:30px; height:30px;">
+      Project Presentation
+     </a>
+      </div>
+  </div>
+
+
+  <div class="project-card">
+    <img src="{{ url_for('static', filename='images/insurance.jpg') }}" alt="Insurance Premium Calculator">
+    <div class="project-info">
+      <h2>Insurance Premium Calculator</h2>
+      <p>An OOP python app to create a simple system for an insurance company with 3 types of insurance policies; health policy, auto policy, and life policy. This project aims to create a simple system for an insurance company ensuring that the information of the customers are stored privately, and each policy is calculated according to different criteria of the customers’ information.</p>
+      <a class="btn primary" href="https://github.com/AtenaJP22/Insurance-Premium-Calculator" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+        <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
+        View Project
+    </a>
+    <a class="btn primary" href="{{ url_for('static', filename='files/Insurance-Premium-Calculator-documentation.pdf') }}" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+      <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="Project Report" style="width:28px; height:28px;">
+      Project Report
+  </a>
+    </div>
+</div>
+
+<div class="project-card" id="lib">
+  <img src="{{ url_for('static', filename='images/library.jpg') }}" alt="Library Web Application">
+  <div class="project-info">
+    <h2>Library Web Application</h2>
+    <p>An abstract library web application developed with SpringBoot (SpringToolSuite4) using an h2-database that represents functionalities from the users and the admin as well as performing CRUD operations on the books.</p>
+    <a class="btn primary" href="https://github.com/AtenaJP22/LibraryWebApp-Demo" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+      <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
+      View Project
+  </a>
+  <a class="btn primary" href="{{ url_for('static', filename='files/LibraryWebSystem_Documentation.pdf') }}" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+    <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="Project Report" style="width:28px; height:28px;">
+    Project Report
+</a>
+  <a class="btn primary" href="{{ url_for('static', filename='files/LibraryWebSystem_Presentation.pdf') }}" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+    <img src="{{ url_for('static', filename='images/powerpoint.png') }}" alt="Project Presentation" style="width:30px; height:30px;">
+    Project Presentation
+  </a>
+    </div>
+</div>
+
+
+<div class="project-card">
+  <img src="{{ url_for('static', filename='images/hazelcast.png') }}" alt="Hazelcast Demo Sales Project">
+  <div class="project-info">
+    <h2>Hazelcast Demo Sales Project</h2>
+    <p>A Java-based demo application that simulates distributed order processing using Hazelcast. Developed during my internship at <a href="https://i2i-systems.com">i2i Systems</a>, the project demonstrates how to set up a single-node Hazelcast cluster, use IMap for in-memory data storage, and perform basic get/put operations. It also serves as an introductory example for understanding distributed caching and partitioning in real-time systems.</p>
+    <a class="btn primary" href="https://github.com/AtenaJP22/Hazelcast-Sales-Demo" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+      <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
+      View Project
+  </a>
+<a class="btn primary" href="{{ url_for('static', filename='files/Hazelcast-3.pdf') }}" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+  <img src="{{ url_for('static', filename='images/powerpoint.png') }}" alt="Project Presentation" style="width:30px; height:30px;">
+  Project Presentation
+ </a>
+  </div>
+</div>
+
+
+<div class="project-card">
+  <img src="{{ url_for('static', filename='images/book.jpg') }}" alt="Book Comet Web Application">
+  <div class="project-info">
+    <h2>Book Comet Web Application</h2>
+    <p>Developed a library web application using Flask that allows users to manage a bookstore by adding, updating, and deleting books and integrated Azure Cosmos DB to handle backend data storage, ensuring scalable and efficient management of book information. Deployed and tested the application locally, providing clear instructions for setting up the environment and running the app.</p>
+    <a class="btn primary" href="https://github.com/AtenaJP22/BookCometApp" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+      <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
+      View Project
+  </a>
+  <a class="btn primary" href="{{ url_for('static', filename='files/BookCometWebApp_Report.pdf') }}" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+    <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="Project Report" style="width:28px; height:28px;">
+    Project Report
+</a>
+  </div>
+</div>
+
+
+
+<div class="project-card">
+  <img src="{{ url_for('static', filename='images/tale.jpg') }}" alt="The Unsaid Tales">
+  <div class="project-info">
+    <h2>The Unsaid Tales</h2>
+    <p>An interactive console-based story-telling program written in Java. This project allows users to explore a curated collection of genres and stories. The program offers a menu-driven interface, providing options to either select a story from a specific genre or play a randomly selected story. With a visually engaging display and dynamic interaction, it delivers an immersive storytelling experience.</p>
+    <a class="btn primary" href="https://github.com/AtenaJP22/The-Unsaid-Tales" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+      <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
+      View Project
+  </a>
+    </div>
+</div>
+
+
+      </div>
+    </section>
+
+    <!-- Back to Home -->
+    <section class="cta-row" style="margin-top: 60px; justify-content: center;">
+        <a class="btn secondary" href="{{ url_for('home') }}">← Back to Home</a>
+    </section>
+
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const searchInput = document.getElementById('searchCert'); // your search input
+      const grid = document.querySelector('.projects-grid');
+      const cards = Array.from(document.querySelectorAll('.project-card'));
+    
+      // create a "no results" node if not present
+      let noResults = document.querySelector('.no-results');
+      if (!noResults) {
+        noResults = document.createElement('div');
+        noResults.className = 'no-results';
+        noResults.textContent = 'No projects found.';
+        grid.insertAdjacentElement('afterend', noResults);
+      }
+    
+      function filterProjects(query) {
+        const q = (query || '').trim().toLowerCase();
+        let visibleCount = 0;
+    
+        cards.forEach(card => {
+          const text = card.innerText.toLowerCase();
+          const matches = !q || text.includes(q);
+          card.style.display = matches ? '' : 'none';
+          if (matches) visibleCount++;
+        });
+    
+        noResults.style.display = visibleCount ? 'none' : '';
+        return visibleCount;
+      }
+    
+      function scrollToFirstMatch() {
+        const first = cards.find(c => c.style.display !== 'none');
+        if (first) {
+          // account for fixed headers with scroll-margin-top in CSS (see below)
+          first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          first.classList.add('highlight');
+          setTimeout(() => first.classList.remove('highlight'), 1500);
+        }
+      }
+    
+      // Read query param from URL (supports ?query= or ?q=)
+      const params = new URLSearchParams(window.location.search);
+      const qFromURL = params.get('query') || params.get('q') || '';
+    
+      if (qFromURL) {
+        searchInput.value = qFromURL;
+        const found = filterProjects(qFromURL);
+        if (found) setTimeout(scrollToFirstMatch, 250); // allow layout to settle
+      } else {
+        filterProjects(''); // show all initially
+      }
+    
+      // live search while typing
+      searchInput.addEventListener('input', (e) => {
+        filterProjects(e.target.value);
+      });
+    
+      // on Enter, run search and scroll to first match
+      searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          const count = filterProjects(searchInput.value);
+          if (count) scrollToFirstMatch();
+        }
+      });
+    });
+    </script>
+</body>
+</html>
+
+
+
