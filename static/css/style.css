@@ -167,14 +167,15 @@ main.page, .page {
 }
 
 /* main layout */
+/* Replace the previous .hero-content rules with this */
 .hero-content{
-  display: grid;
-  grid-template-columns: 360px 1fr;
-  gap: 36px;
-  align-items: start;
+  display: flex;
+  flex-direction: column; /* stack left card and intro vertically */
+  gap: 24px;
+  align-items: center;    /* center the left card and intro horizontally */
   padding-top: 6px;
   position: relative;
-  z-index: 2; /* ensure this column sits above decorative layers */
+  z-index: 2;
 }
 
 /* left card */
@@ -190,6 +191,7 @@ main.page, .page {
   padding-top: 8px;
   position: relative;
   z-index: 2;
+  width: 100%; 
 }
 
 /* IMPORTANT: intro specifically forced above the grid */
