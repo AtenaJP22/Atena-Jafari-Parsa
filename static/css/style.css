@@ -185,6 +185,7 @@ main.page, .page {
   height: auto;       /* keeps the aspect ratio automatically */
   border-radius: 8px; /* optional rounded corners */
   object-fit: cover;  /* keeps it neatly cropped */
+  margin-right: auto; /* pushes it left */
 }
 
 /* right column: make sure it's positioned and above grid */
@@ -699,4 +700,20 @@ img { display: block; max-width: 100%; height: auto; }
   margin: 0 auto;
   padding: 20px;
   align-items: start;
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column; /* stack vertically on smaller screens */
+    align-items: center;
+    text-align: center;
+  }
+
+  .photo-frame img {
+    width: 180px; /* slightly smaller on mobile */
+  }
+
+  .right-content {
+    max-width: 100%;
+  }
 }
