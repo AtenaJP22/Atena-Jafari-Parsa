@@ -180,10 +180,12 @@ main.page, .page {
 
 /* left card */
 .photo-frame img{
-  width: 100%;
   display: block;
   border-radius: 20px;
   object-fit: cover;
+  width: 120px;  /* adjust this value */
+  height: auto;  /* keeps aspect ratio */
+  border-radius: 50%; /* keeps it circular */
 }
 
 /* right column: make sure it's positioned and above grid */
