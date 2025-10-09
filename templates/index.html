@@ -203,23 +203,32 @@
             <p>Full-Stack Projects + <a href="{{ url_for('projects') }}?query=Cellenta">Cellenta</a>, AI-Based Cloud-Native OCS + Presentation on <a href="{{ url_for('projects') }}?query=Hazelcast">Hazelcast</a></p>
       </section>
 
-      <!-- Contact Section -->
-    <section id="contact">
-      <h2>Contact Me </h2>
-      <p>I'd love to hear from you! Send me a message or reach out via social media.</p>
-
-      <form action="https://formspree.io/f/mwppdnbb" method="POST" class="contact-form">
+      <!-- Simple Contact Form -->
+      <form class="contact-form" onsubmit="sendEmail(); return false;">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" placeholder="Your Name" required>
-      
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder="Your Email" required>
-      
+
         <label for="message">Message:</label>
         <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
-      
+
         <button type="submit" class="btn primary">Send Message</button>
       </form>
+
+      <script>
+      function sendEmail() {
+        // Get values from inputs
+        const name = document.getElementById('name').value;
+        const message = document.getElementById('message').value;
+
+        // Construct mailto link
+        const email = "atena.jafariparsa@gmail.com"; // your email
+        const subject = encodeURIComponent("Hello Atena");
+        const body = encodeURIComponent(`${message}\n\nFrom: ${name}`);
+
+        // Open user's default email client
+        window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+      }
+      </script>
 
       <!-- Social Links -->
       <div class="social-links">
