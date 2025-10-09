@@ -693,13 +693,12 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 .about-section {
-  display: grid;
-  grid-template-columns: 1fr 2fr;   /* left: pic, right: text */
-  gap: 20px;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 20px;
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  gap: 50px; /* controls distance between the two publications */
+  align-items: left
+  text-align: left;
+  font-size: 20px;
 }
 
 @media (max-width: 768px) {
