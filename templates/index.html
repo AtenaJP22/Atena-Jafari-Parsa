@@ -186,12 +186,6 @@
         <h2>Education</h2>
         <div class="info-cards">
           <div class="info-card">
-            <h3>Highschool Diploma - Empirical Sciences</h3>
-            <p>Farzanegan (Tizhoushan) Highschool by Sampad, 2015 – 2021</p>
-            <p><b>GPA:</b> </b>3.9/4.0</p>
-          </div>
-        <div class="info-cards">
-          <div class="info-card">
             <h3>Bachelor of Science in Artificial Intelligence Engineering</h3>
             <p><a href="https://bau.edu.tr">Bahcesehir University</a>, 2021 – 2025</p>
             <p><b>Final Two-Year GPA: </b>3.60/4.00</p>
@@ -205,8 +199,8 @@
         <div class="info-cards">
           <div class="info-card">
             <h3>Software Intern</h3>
-            <p><a href="https://i2i-systems.com">i2i Systems</a>, June 2024 – July 2025</p>
-            <p>Full-Stack Projects + <a href="{{ url_for('projects') }}?query=Cellenta">Cellenta</a>, AI-Based Cloud-Native OCS + presentation on <a href="{{ url_for('projects') }}?query=Hazelcast">Hazelcast</a></p>
+            <p><a href="https://i2i-systems.com">i2i Systems</a>, June 2025 – July 2025</p>
+            <p>Full-Stack Projects + <a href="{{ url_for('projects') }}?query=Cellenta">Cellenta</a>, AI-Based Cloud-Native OCS + Presentation on <a href="{{ url_for('projects') }}?query=Hazelcast">Hazelcast</a></p>
       </section>
 
       <!-- Contact Section -->
@@ -214,17 +208,16 @@
       <h2>Contact Me </h2>
       <p>I'd love to hear from you! Send me a message or reach out via social media.</p>
 
-      <!-- Contact Form -->
-      <form action="mailto:atena.jafariparsa@gmail.com?subject=Hello%20Atena!" method="POST" enctype="text/plain" class="contact-form">
+      <form action="https://formspree.io/f/mwppdnbb" method="POST" class="contact-form">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" placeholder="Your Name" required>
-
+      
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" placeholder="Your Email" required>
-
+      
         <label for="message">Message:</label>
         <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
-
+      
         <button type="submit" class="btn primary">Send Message</button>
       </form>
 
