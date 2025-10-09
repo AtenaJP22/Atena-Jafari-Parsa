@@ -184,7 +184,7 @@ main.page, .page {
   border-radius: 20px;
   object-fit: cover;
   width: 150px;  /* adjust this value */
-  height: auto;  /* keeps aspect ratio */
+  height: 200px;
 }
 
 /* right column: make sure it's positioned and above grid */
