@@ -181,10 +181,10 @@ main.page, .page {
 /* left card */
 .photo-frame img{
   display: block;
-  border-radius: 20px;
-  object-fit: cover;
-  width: 150px;  /* adjust this value */
-  height: 200px;
+  width: 250px;       /* make it bigger — adjust as you like */
+  height: auto;       /* keeps the aspect ratio automatically */
+  border-radius: 8px; /* optional rounded corners */
+  object-fit: cover;  /* keeps it neatly cropped */
 }
 
 /* right column: make sure it's positioned and above grid */
