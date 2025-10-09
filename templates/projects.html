@@ -24,7 +24,9 @@
     
 
     <!-- Project Grid Section -->
-      
+  <section style="margin-top: 18px;">  
+      <div><input id="searchCert" type="search" placeholder="Search projects..." aria-label="Search projects" style="margin-left:auto; max-width:260px;">
+      </div>
       <div class="projects-grid">
         
 
@@ -152,131 +154,131 @@
       </div>
 
 
-      <div class="project-card">
-        <img src="{{ url_for('static', filename='images/Ensemble.png') }}" alt="Ensemble Learning">
+        <div class="project-card">
+          <img src="{{ url_for('static', filename='images/Ensemble.png') }}" alt="Ensemble Learning">
+          <div class="project-info">
+            <h2>Ensemble Learning</h2>
+            <p>Comparing the accuracy in an example problem by classifying by soft voting, hard voting, using bagging/pasting, Out of Bag Evaluations, Random Forests and my own novel ensemble model. Utilized soft voting classifiers On SVM (Soft Vector Machine), KNeighbor, Random Forest and the different combinations of them.</p>
+            <a class="btn primary" href="https://github.com/AtenaJP22/EnsembleLearning" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+              <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
+              View Project
+          </a>
+          <a class="btn primary" href="{{ url_for('static', filename='files/Ensemble_Report.pdf') }}" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+            <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="Project Report" style="width:28px; height:28px;">
+            Project Report
+        </a>
+          </div>
+      </div>
+
+
+      <div class="project-card" id="r">
+        <img src="{{ url_for('static', filename='images/sales.jpg') }}" alt="Advertising Effects on Sales with R">
         <div class="project-info">
-          <h2>Ensemble Learning</h2>
-          <p>Comparing the accuracy in an example problem by classifying by soft voting, hard voting, using bagging/pasting, Out of Bag Evaluations, Random Forests and my own novel ensemble model. Utilized soft voting classifiers On SVM (Soft Vector Machine), KNeighbor, Random Forest and the different combinations of them.</p>
-          <a class="btn primary" href="https://github.com/AtenaJP22/EnsembleLearning" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+          <h2>Advertising Effects on Sales with R</h2>
+          <p>This data science project analyzes the impact of three advertising methods—Television (TV), Radio, and Newspaper—on sales performance. The dataset includes 200 observations of advertising budgets and corresponding sales figures, measured in thousands of dollars and units respectively. The goal is to determine which advertising methods significantly influence sales and to model these relationships using statistical techniques.</p>
+          <a class="btn primary" href="https://github.com/AtenaJP22/Advertising-Effects-on-Sales-R" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
             <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
             View Project
         </a>
-        <a class="btn primary" href="{{ url_for('static', filename='files/Ensemble_Report.pdf') }}" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+        <a class="btn primary" href="{{ url_for('static', filename='files/Project_Report_Advertising.pdf') }}" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
           <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="Project Report" style="width:28px; height:28px;">
           Project Report
+      </a>
+      <a class="btn primary" href="{{ url_for('static', filename='files/Advertising_Presentation.pdf') }}" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+        <img src="{{ url_for('static', filename='images/powerpoint.png') }}" alt="Project Presentation" style="width:30px; height:30px;">
+        Project Presentation
       </a>
         </div>
     </div>
 
 
-    <div class="project-card" id="r">
-      <img src="{{ url_for('static', filename='images/sales.jpg') }}" alt="Advertising Effects on Sales with R">
+    <div class="project-card">
+      <img src="{{ url_for('static', filename='images/insurance.jpg') }}" alt="Insurance Premium Calculator">
       <div class="project-info">
-        <h2>Advertising Effects on Sales with R</h2>
-        <p>This data science project analyzes the impact of three advertising methods—Television (TV), Radio, and Newspaper—on sales performance. The dataset includes 200 observations of advertising budgets and corresponding sales figures, measured in thousands of dollars and units respectively. The goal is to determine which advertising methods significantly influence sales and to model these relationships using statistical techniques.</p>
-        <a class="btn primary" href="https://github.com/AtenaJP22/Advertising-Effects-on-Sales-R" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+        <h2>Insurance Premium Calculator</h2>
+        <p>An OOP python app to create a simple system for an insurance company with 3 types of insurance policies; health policy, auto policy, and life policy. This project aims to create a simple system for an insurance company ensuring that the information of the customers are stored privately, and each policy is calculated according to different criteria of the customers’ information.</p>
+        <a class="btn primary" href="https://github.com/AtenaJP22/Insurance-Premium-Calculator" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
           <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
           View Project
       </a>
-      <a class="btn primary" href="{{ url_for('static', filename='files/Project_Report_Advertising.pdf') }}" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+      <a class="btn primary" href="{{ url_for('static', filename='files/Insurance-Premium-Calculator-documentation.pdf') }}" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
         <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="Project Report" style="width:28px; height:28px;">
         Project Report
     </a>
-    <a class="btn primary" href="{{ url_for('static', filename='files/Advertising_Presentation.pdf') }}" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
-      <img src="{{ url_for('static', filename='images/powerpoint.png') }}" alt="Project Presentation" style="width:30px; height:30px;">
-      Project Presentation
-     </a>
       </div>
-  </div>
-
-
-  <div class="project-card">
-    <img src="{{ url_for('static', filename='images/insurance.jpg') }}" alt="Insurance Premium Calculator">
-    <div class="project-info">
-      <h2>Insurance Premium Calculator</h2>
-      <p>An OOP python app to create a simple system for an insurance company with 3 types of insurance policies; health policy, auto policy, and life policy. This project aims to create a simple system for an insurance company ensuring that the information of the customers are stored privately, and each policy is calculated according to different criteria of the customers’ information.</p>
-      <a class="btn primary" href="https://github.com/AtenaJP22/Insurance-Premium-Calculator" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
-        <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
-        View Project
-    </a>
-    <a class="btn primary" href="{{ url_for('static', filename='files/Insurance-Premium-Calculator-documentation.pdf') }}" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
-      <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="Project Report" style="width:28px; height:28px;">
-      Project Report
-  </a>
-    </div>
-</div>
-
-<div class="project-card" id="lib">
-  <img src="{{ url_for('static', filename='images/library.jpg') }}" alt="Library Web Application">
-  <div class="project-info">
-    <h2>Library Web Application</h2>
-    <p>An abstract library web application developed with SpringBoot (SpringToolSuite4) using an h2-database that represents functionalities from the users and the admin as well as performing CRUD operations on the books.</p>
-    <a class="btn primary" href="https://github.com/AtenaJP22/LibraryWebApp-Demo" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
-      <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
-      View Project
-  </a>
-  <a class="btn primary" href="{{ url_for('static', filename='files/LibraryWebSystem_Documentation.pdf') }}" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
-    <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="Project Report" style="width:28px; height:28px;">
-    Project Report
-</a>
-  <a class="btn primary" href="{{ url_for('static', filename='files/LibraryWebSystem_Presentation.pdf') }}" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
-    <img src="{{ url_for('static', filename='images/powerpoint.png') }}" alt="Project Presentation" style="width:30px; height:30px;">
-    Project Presentation
-  </a>
-    </div>
-</div>
-
-
-<div class="project-card">
-  <img src="{{ url_for('static', filename='images/hazelcast.png') }}" alt="Hazelcast Demo Sales Project">
-  <div class="project-info">
-    <h2>Hazelcast Demo Sales Project</h2>
-    <p>A Java-based demo application that simulates distributed order processing using Hazelcast. Developed during my internship at <a href="https://i2i-systems.com">i2i Systems</a>, the project demonstrates how to set up a single-node Hazelcast cluster, use IMap for in-memory data storage, and perform basic get/put operations. It also serves as an introductory example for understanding distributed caching and partitioning in real-time systems.</p>
-    <a class="btn primary" href="https://github.com/AtenaJP22/Hazelcast-Sales-Demo" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
-      <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
-      View Project
-  </a>
-<a class="btn primary" href="{{ url_for('static', filename='files/Hazelcast-3.pdf') }}" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
-  <img src="{{ url_for('static', filename='images/powerpoint.png') }}" alt="Project Presentation" style="width:30px; height:30px;">
-  Project Presentation
- </a>
-  </div>
-</div>
-
-
-<div class="project-card">
-  <img src="{{ url_for('static', filename='images/book.jpg') }}" alt="Book Comet Web Application">
-  <div class="project-info">
-    <h2>Book Comet Web Application</h2>
-    <p>Developed a library web application using Flask that allows users to manage a bookstore by adding, updating, and deleting books and integrated Azure Cosmos DB to handle backend data storage, ensuring scalable and efficient management of book information. Deployed and tested the application locally, providing clear instructions for setting up the environment and running the app.</p>
-    <a class="btn primary" href="https://github.com/AtenaJP22/BookCometApp" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
-      <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
-      View Project
-  </a>
-  <a class="btn primary" href="{{ url_for('static', filename='files/BookCometWebApp_Report.pdf') }}" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
-    <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="Project Report" style="width:28px; height:28px;">
-    Project Report
-</a>
-  </div>
-</div>
-
-
-
-<div class="project-card">
-  <img src="{{ url_for('static', filename='images/tale.jpg') }}" alt="The Unsaid Tales">
-  <div class="project-info">
-    <h2>The Unsaid Tales</h2>
-    <p>An interactive console-based story-telling program written in Java. This project allows users to explore a curated collection of genres and stories. The program offers a menu-driven interface, providing options to either select a story from a specific genre or play a randomly selected story. With a visually engaging display and dynamic interaction, it delivers an immersive storytelling experience.</p>
-    <a class="btn primary" href="https://github.com/AtenaJP22/The-Unsaid-Tales" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
-      <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
-      View Project
-  </a>
-    </div>
-</div>
-
-
       </div>
-    </section>
+
+      <div class="project-card" id="lib">
+        <img src="{{ url_for('static', filename='images/library.jpg') }}" alt="Library Web Application">
+        <div class="project-info">
+          <h2>Library Web Application</h2>
+          <p>An abstract library web application developed with SpringBoot (SpringToolSuite4) using an h2-database that represents functionalities from the users and the admin as well as performing CRUD operations on the books.</p>
+          <a class="btn primary" href="https://github.com/AtenaJP22/LibraryWebApp-Demo" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+            <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
+            View Project
+        </a>
+        <a class="btn primary" href="{{ url_for('static', filename='files/LibraryWebSystem_Documentation.pdf') }}" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+          <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="Project Report" style="width:28px; height:28px;">
+          Project Report
+      </a>
+        <a class="btn primary" href="{{ url_for('static', filename='files/LibraryWebSystem_Presentation.pdf') }}" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+          <img src="{{ url_for('static', filename='images/powerpoint.png') }}" alt="Project Presentation" style="width:30px; height:30px;">
+          Project Presentation
+        </a>
+          </div>
+      </div>
+
+
+      <div class="project-card">
+        <img src="{{ url_for('static', filename='images/hazelcast.png') }}" alt="Hazelcast Demo Sales Project">
+        <div class="project-info">
+          <h2>Hazelcast Demo Sales Project</h2>
+          <p>A Java-based demo application that simulates distributed order processing using Hazelcast. Developed during my internship at <a href="https://i2i-systems.com">i2i Systems</a>, the project demonstrates how to set up a single-node Hazelcast cluster, use IMap for in-memory data storage, and perform basic get/put operations. It also serves as an introductory example for understanding distributed caching and partitioning in real-time systems.</p>
+          <a class="btn primary" href="https://github.com/AtenaJP22/Hazelcast-Sales-Demo" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+            <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
+            View Project
+        </a>
+      <a class="btn primary" href="{{ url_for('static', filename='files/Hazelcast-3.pdf') }}" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+        <img src="{{ url_for('static', filename='images/powerpoint.png') }}" alt="Project Presentation" style="width:30px; height:30px;">
+        Project Presentation
+      </a>
+        </div>
+      </div>
+
+
+      <div class="project-card">
+        <img src="{{ url_for('static', filename='images/book.jpg') }}" alt="Book Comet Web Application">
+        <div class="project-info">
+          <h2>Book Comet Web Application</h2>
+          <p>Developed a library web application using Flask that allows users to manage a bookstore by adding, updating, and deleting books and integrated Azure Cosmos DB to handle backend data storage, ensuring scalable and efficient management of book information. Deployed and tested the application locally, providing clear instructions for setting up the environment and running the app.</p>
+          <a class="btn primary" href="https://github.com/AtenaJP22/BookCometApp" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+            <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
+            View Project
+        </a>
+        <a class="btn primary" href="{{ url_for('static', filename='files/BookCometWebApp_Report.pdf') }}" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+          <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="Project Report" style="width:28px; height:28px;">
+          Project Report
+      </a>
+        </div>
+      </div>
+
+
+
+      <div class="project-card">
+        <img src="{{ url_for('static', filename='images/tale.jpg') }}" alt="The Unsaid Tales">
+        <div class="project-info">
+          <h2>The Unsaid Tales</h2>
+          <p>An interactive console-based story-telling program written in Java. This project allows users to explore a curated collection of genres and stories. The program offers a menu-driven interface, providing options to either select a story from a specific genre or play a randomly selected story. With a visually engaging display and dynamic interaction, it delivers an immersive storytelling experience.</p>
+          <a class="btn primary" href="https://github.com/AtenaJP22/The-Unsaid-Tales" target="_blank" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+            <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
+            View Project
+        </a>
+          </div>
+      </div>
+
+
+            </div>
+  </section>
 
     <!-- Back to Home -->
     <section class="cta-row" style="margin-top: 60px; justify-content: center;">
