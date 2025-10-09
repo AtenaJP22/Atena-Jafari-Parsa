@@ -185,7 +185,8 @@ main.page, .page {
   height: auto;       /* keeps the aspect ratio automatically */
   border-radius: 8px; /* optional rounded corners */
   object-fit: cover;  /* keeps it neatly cropped */
-  margin-right: auto; /* pushes it left */
+  align-self: flex-start; /* if parent is flex */
+  text-align: left; 
 }
 
 /* right column: make sure it's positioned and above grid */
