@@ -183,9 +183,8 @@ main.page, .page {
   display: block;
   border-radius: 20px;
   object-fit: cover;
-  width: 120px;  /* adjust this value */
+  width: 150px;  /* adjust this value */
   height: auto;  /* keeps aspect ratio */
-  border-radius: 50%; /* keeps it circular */
 }
 
 /* right column: make sure it's positioned and above grid */
