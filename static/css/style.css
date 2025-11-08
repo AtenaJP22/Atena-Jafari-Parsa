@@ -96,7 +96,6 @@ main.page, .page {
 }
 
 /* main layout */
-/* Replace the previous .hero-content rules with this */
 .hero-content{
   display: inline-block;
   flex-direction: column; /* stack left card and intro vertically */
@@ -111,15 +110,15 @@ main.page, .page {
 /* left card */
 .photo-frame img{
   display: block;
-  width: 250px;       /* make it bigger — adjust as you like */
-  height: auto;       /* keeps the aspect ratio automatically */
-  border-radius: 8px; /* optional rounded corners */
+  width: 250px;       
+  height: auto;       /* keeps the aspect ratio automatic */
+  border-radius: 8px; /* rounded corners */
   object-fit: cover;  /* keeps it neatly cropped */
   align-self: flex-start; /* if parent is flex */
   text-align: left; 
 }
 
-/* right column: make sure it's positioned and above grid */
+/* right column: positioned and above grid */
 .right-content {
   padding-top: 8px;
   position: relative;
@@ -196,40 +195,6 @@ main.page, .page {
 }
 .btn.secondary:hover{ transform: translateY(-4px); border-color: rgba(189,180,255,0.46); }
 
-/* ====== Vertical colored "lines" animation (decorative, non-interactive) ====== */
-.lines {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  margin: auto;
-  width: 90vw;
-  display: flex;
-  justify-content: space-between;
-  pointer-events: none;
-  z-index: -1; /* behind the main content */
-}
-
-.line {
-  position: relative;
-  width: 1px;
-  height: 100%;
-  overflow: hidden;
-}
-.line::after {
-  content: '';
-  display: block;
-  position: absolute;
-  height: 15vh;
-  width: 100%;
-  top: -50%;
-  left: 0;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #ffffff 100%);
-  animation: drop 7s 0s infinite;
-  animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
-}
 
 .projects-grid {
   display: grid;
@@ -319,14 +284,14 @@ main.page, .page {
     flex-direction: column; /* stack vertically */
     gap: 20px;              /* space between each row */
     text-align: left;       /* align text to left */
-    max-width: 400px;       /* optional, keeps it from stretching too far */
+    max-width: 400px;       /* keeps it from stretching too far */
     margin: 75px auto;      /* center the block horizontally */
     font-size: 18px;
   }
   
   .social-item {
     display: flex;
-    align-items: center; /* vertically center icon and text */
+    align-items: center; /* vertically centers icon and text */
     gap: 10px;           /* space between icon and text */
   }
   
@@ -580,8 +545,8 @@ main.page, .page {
 .research-list {
   list-style-position: inside; /* bullet becomes part of the text flow */
   padding: 0;
-  margin: 12px auto;            /* center the list block horizontally */
-  max-width: 720px;            /* optional, control width */
+  margin: 12px auto;            /* centers the list block horizontally */
+  max-width: 720px;            
 }
 
 .research-list li {
@@ -622,9 +587,9 @@ main.page, .page {
 @media (max-width: 768px) {
   .about-section {
     max-width: 100%;      /* full width on mobile */
-    text-align: center;   /* optional, center text on small screens */
+    text-align: center;   /* centers text on small screens */
     align-items: center;
-    gap: 30px;            /* reduce gap on smaller screens */
+    gap: 30px;            /* reduces gap on smaller screens */
   }
 
   .photo-frame img {
