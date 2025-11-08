@@ -39,79 +39,8 @@ body::after {
   z-index: -2; /* above bg (-4) but below grid (-3) and content (>=0) */
 }
 
-/* ====== Grid background (fixed, decorative, non-interactive) ====== */
-/*.grid-container {
-  --grid: 10rem;
-  position: fixed;   /* fixed to viewport to avoid parent stacking surprises */
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  perspective: 100rem;
-  pointer-events: none; /* never block clicks */
-  z-index: -3; /* sits above background (-4), below overlay (-2) and content (0+) */
-}*/
 
-/* Each "plane" that creates the grid perspective */
-/*.grid-container .plane {
-  --dir: 1;
-  width: 300%;
-  height: 40%;        /* change this to 36% or 100% if you want different tallness */
-  min-height: 4rem;
-  position: absolute;
-  bottom: 0;
-  transform-style: preserve-3d;
-  transform-origin: bottom center;
-  transform: translateX(-50%) rotateX(75deg);
-  pointer-events: none;
-  left: 50%;
-}*/
 
-/* top mirror plane */
-/*.grid-container .plane:nth-child(2) {
-  --dir: -1;
-  top: 0;
-  bottom: auto;
-  transform-origin: top center;
-  transform: translateX(-50%) rotateX(-75deg);
-}*/
-
-/* grid and glow children */
-/*.grid-container .plane > .grid,
-.grid-container .plane > .glow {
-  transform-style: preserve-3d;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-}*/
-
-/* grid lines */
-/*.grid-container .plane > .grid::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    repeating-linear-gradient(to left, green, green 4px, transparent 4px, transparent var(--grid)),
-    repeating-linear-gradient(to bottom, green, green 4px, transparent 4px, transparent var(--grid));
-  animation: move 1s linear infinite forwards;
-}*/
-
-/* fade overlay for readability */
-/*.grid-container .plane > .grid::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 255) var(--grid), rgba(0, 0, 0, 0));
-  z-index: 1;
-  transform: translateZ(1px);
-}*/
-
-/* glow */
-/*.grid-container .plane > .glow {
-  filter: blur(1rem);
-  z-index: 1;
-  mix-blend-mode: plus-lighter;
-}*/
 
 /* vertical movement animation */
 @keyframes move {
@@ -169,13 +98,14 @@ main.page, .page {
 /* main layout */
 /* Replace the previous .hero-content rules with this */
 .hero-content{
-  display: flex;
+  display: inline-block;
   flex-direction: column; /* stack left card and intro vertically */
   gap: 24px;
   align-items: center;    /* center the left card and intro horizontally */
   padding-top: 6px;
   position: relative;
   z-index: 2;
+  padding-inline: inherit;
 }
 
 /* left card */
@@ -228,11 +158,12 @@ main.page, .page {
   max-width: 920px;
   position: relative;
   z-index: 2;
+  align-items: center;
 }
 
 .cta-row{
   margin-top: 42px;
-  display: flex;
+  display: inline-block;
   gap: 18px;
   align-items: center;
   position: relative;
@@ -299,28 +230,6 @@ main.page, .page {
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
 }
-
-/* colors and delays for lines */
-.line:nth-child(1)::after { background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #FF4500 75%, #FF4500 100%); animation-delay: 0.5s; }
-.line:nth-child(2)::after { background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #32CD32 75%, #32CD32 100%); animation-delay: 1s; }
-.line:nth-child(3)::after { background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #1E90FF 75%, #1E90FF 100%); animation-delay: 1.5s; }
-.line:nth-child(4)::after { background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #FFD700 75%, #FFD700 100%); animation-delay: 2s; }
-.line:nth-child(5)::after { background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #8A2BE2 75%, #8A2BE2 100%); animation-delay: 2.5s; }
-.line:nth-child(6)::after { background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #20B2AA 75%, #20B2AA 100%); animation-delay: 3s; }
-.line:nth-child(7)::after { background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #DC143C 75%, #DC143C 100%); animation-delay: 3.5s; }
-.line:nth-child(8)::after { background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #00FA9A 75%, #00FA9A 100%); animation-delay: 4s; }
-.line:nth-child(9)::after { background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #FF1493 75%, #FF1493 100%); animation-delay: 4.5s; }
-.line:nth-child(10)::after{ background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #00BFFF 75%, #00BFFF 100%); animation-delay: 5s; }
-
-@keyframes drop { 0% { top: -50%; } 100% { top: 110%; } }
-
-/* small helpers */
-a { color: inherit; }
-img { display: block; max-width: 100%; height: auto; }
-
-/* cursor blink */
-@keyframes blink { 0% { visibility: visible; } 50% { visibility: visible; } 51% { visibility: hidden; } 100% { visibility: hidden; } }
-
 
 .projects-grid {
   display: grid;
@@ -555,9 +464,6 @@ img { display: block; max-width: 100%; height: auto; }
   color: #e9e6ff;
 }
 
-/*h3 {
-  text-align: center;
-}*/
 
 /* Certifications styles */
 .cert-preview-grid {
@@ -689,23 +595,22 @@ img { display: block; max-width: 100%; height: auto; }
   display: flex;
   flex-direction: column;
   gap: 50px; /* controls distance between the two publications */
-  align-items: left
+  align-items: left;
   text-align: left;
   font-size: 20px;
 }
 
 
 .about-section {
-  display: flex;
+  display: inline-block;
   flex-direction: column;
   gap: 50px;              /* distance between elements */
-  align-items: flex-start; /* left-align content */
-  text-align: left;
   font-size: 20px;
   max-width: 900px;       /* narrow the section */
   margin: 0 auto;         /* center on the page */
   padding: 0 20px;        /* small padding for smaller screens */
   margin-top: 10px;
+  align-items: center;
 }
 
 @media (max-width: 1024px) {
@@ -725,4 +630,111 @@ img { display: block; max-width: 100%; height: auto; }
   .photo-frame img {
     width: 180px;         /* smaller profile picture */
   }
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  left: -250px;
+  top: 0;
+  height: 100%;
+  width: 250px;
+  background-color: #222;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  padding: 60px 20px;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar.show {
+  left: 0;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.sidebar-menu li {
+  margin: 20px 0;
+}
+
+.sidebar-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.menu-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: #222;
+  color: white;
+  border: none;
+  font-size: 22px;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 8px;
+  z-index: 1100;
+}
+
+.menu-btn:hover {
+  background: #444;
+}
+
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.skills-grid h2 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(32px, 5vw, 48px);
+  margin-bottom: 24px;
+  color: #bfbff7;
+  border-bottom: 2px solid rgba(185,180,255,0.3);
+  display: inline-block;
+  padding-bottom: 8px;
+  margin-top: 30px;
+}
+
+.skill-column {
+  flex: 1;
+  min-width: 200px;
+}
+
+.skill-item {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  padding: 5px 0;
+  transition: all 0.2s ease;
+}
+
+.skill-item:hover {
+  transform: translateX(5px);
+  color: #3498db;
+}
+
+.bold {
+  font-weight: 600;
+  color: #2c3e50;
 }

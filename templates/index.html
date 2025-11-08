@@ -11,6 +11,10 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
+
+  {% include 'sidebar.html' %}
+  <button id="menuButton" class="menu-btn">☰</button>
+
   <main class="page">
     <header class="hero-head">
         <div class="grid-container">
@@ -32,29 +36,24 @@
           <img src="{{ url_for('static', filename='images/proff.jpg') }}" alt="Atena profile">
         </div>
         <div style="text-align: center;"> <!-- optional to center all icons -->
-            <div style="display: inline-block; margin-right: 10px; margin-top: 10px;">
+            <div style="display: inline-block; margin-right: 8px; margin-top: 10px;">
               <a href="https://www.linkedin.com/in/atena-jafari-parsa/" target="_blank">
                 <img src="{{ url_for('static', filename='images/linkedin.png') }}" alt="LinkedIn" width="30">
               </a>
             </div>
-            <div style="display: inline-block; margin-left: 10px; margin-top: 10px; margin-right: 10px;">
+            <div style="display: inline-block; margin-left: 8px; margin-top: 10px; margin-right: 8px;">
               <a href="https://github.com/AtenaJP22" target="_blank">
                 <img src="{{ url_for('static', filename='images/github.png') }}" alt="Github" width="30">
               </a>
             </div>
-            <div style="display: inline-block; margin-left: 10px; margin-top: 10px; margin-right: 10px;">
+            <div style="display: inline-block; margin-left: 8px; margin-top: 10px; margin-right: 8px;">
                 <a href="mailto:atena.jafariparsa@gmail.com?subject=Hello%20Atena" target="_blank">
                   <img src="{{ url_for('static', filename='images/email.webp') }}" alt="Email" width="30">
                 </a>
             </div>
-            <div style="display: inline-block; margin-left: 10px; margin-top: 10px; margin-right: 10px;">
+            <div style="display: inline-block; margin-left: 8px; margin-top: 10px; margin-right: 8px;">
                 <a href="https://medium.com/@atena-jafari-parsa" target="_blank">
                   <img src="{{ url_for('static', filename='images/medium.png') }}" alt="Medium" width="30">
-                </a>
-            </div> 
-            <div style="display: inline-block; margin-left: 10px; margin-top: 10px; margin-right: 10px;">
-                <a href="https://x.com/atenajparsa?s=21&t=h7ILr8QEaMZlnGGFylTxAA" target="_blank">
-                  <img src="{{ url_for('static', filename='images/X_logo.jpg') }}" alt="X" width="30">
                 </a>
             </div> 
           </div>         
@@ -65,7 +64,7 @@
         <div class="intro">
           <p>Hi!👋 I'm Atena, an AI engineer 🤖, a <a href="{{ url_for('projects') }}?query=Advertising Effects on Sales with R">data scientist</a> 👩🏻‍💻, a fullstack software developer 👾. I have hands-on experience in AI-Based projects such as <a href="{{ url_for('projects') }}?query=Cellenta">Cellenta iOS</a>, <a href="{{ url_for('projects') }}?query=Aware Citizen">Aware Citizen</a>, <a href="{{ url_for('projects') }}?query=Pima">Pima Diabetes Prediction on MLflow</a> and so on. You can browse all my projects <a href="{{ url_for('projects') }}">here</a>. 
           </p>
-          <p>I'm a dedicated Artificial Intelligence Engineering graduate (BSc) with a strong academic record (<a href="#education">Final Two-Year GPA: 3.60/4.00</a>) and a focus on applying Large Language Models and MLOps to solve real-world problems. Proven experience in full-stack development of AI systems, from conceptualization and model training to deployment and <a href="{{ url_for('projects') }}?query=Pima">lifecycle management</a>.</p>
+          <p>I'm a dedicated Artificial Intelligence Engineering graduate (BSc) with a strong academic record (<a href="#education">Final Year GPA: 3.94/4.00</a>) and a focus on applying Large Language Models and MLOps to solve real-world problems. Proven experience in full-stack development of AI systems, from conceptualization and model training to deployment and <a href="{{ url_for('projects') }}?query=Pima">lifecycle management</a>.</p>
 
           <p>I'm also an astrophile 🌌, a <a href="https://www.instagram.com/piano_with_atena?igsh=MXFzMzE2dGprbjRtZw%3D%3D&utm_source=qr">pianist</a> 🎹 and a <a href="https://on.soundcloud.com/LQZRD4beL0LjlbwYky">composer</a> ♫ </p>
 
@@ -99,6 +98,7 @@
         <li>Robotics</li>
       </ul>
     </section>
+
 
     <section id="publications" class="info-section">
       <h2>Publications</h2>
@@ -190,7 +190,7 @@
           <div class="info-card">
             <h3>Bachelor of Science in Artificial Intelligence Engineering</h3>
             <p><a href="https://bau.edu.tr">Bahcesehir University</a>, 2021 – 2025</p>
-            <p><b>Final Two-Year GPA: </b>3.60/4.00</p>
+            <p><b>Final Year GPA: </b>3.94/4.00</p>
             <p>Istanbul, Turkiye</p>
           </div>
       </section>
@@ -203,6 +203,34 @@
             <h3>Software Intern</h3>
             <p><a href="https://i2i-systems.com">i2i Systems</a>, June 2025 – July 2025</p>
             <p>Full-Stack Projects + <a href="{{ url_for('projects') }}?query=Cellenta">Cellenta</a>, AI-Based Cloud-Native OCS + Presentation on <a href="{{ url_for('projects') }}?query=Hazelcast">Hazelcast</a></p>
+      </section>
+
+      <section id="skills" class="info-section">
+        <h2>Skills & Technologies</h2>
+        <h3>Programming Languages</h3>
+        <div class="skills-grid">
+              <div class="skill-item"><a href="{{ url_for('projects') }}?query=Python"><img src="{{ url_for('static', filename='images/pythonlogo.png') }}" alt="Python Programming Language Logo" width="50">Python</a></div>
+              <div class="skill-item"><img src="{{ url_for('static', filename='images/c++logo.png') }}" alt="C++ Programming Language Logo" width="60">C++</div>
+              <div class="skill-item"><a href="{{ url_for('projects') }}?query=Java"><img src="{{ url_for('static', filename='images/javalogo.png') }}" alt="Java Programming Language Logo" width="45">Java</a></div>
+              <div class="skill-item"><a href="{{ url_for('projects') }}?query=Cellenta"><img src="{{ url_for('static', filename='images/swiftlogo.png') }}" alt="Swift Programming Language Logo" width="60">Swift</a></div>
+              <div class="skill-item"><a href="{{ url_for('projects') }}?query=Advertising Effects on Sales with R"><img src="{{ url_for('static', filename='images/Rlogo.png') }}" alt="R Programming Language Logo" width="80">R</a></div>
+        </div>
+        
+        <h3 style="margin-top: 30px;">Utilized Tools</h3>
+        <div class="skills-grid">
+          <div class="skill-item"><a href="{{ url_for('projects') }}?query=Scikit Learn"><img src="{{ url_for('static', filename='images/sklearnlogo.png') }}" alt="Scikit Learn Library" width="90">Scikit Learn</a></div>
+          <div class="skill-item"><a href="{{ url_for('projects') }}?query=MLflow"><img src="{{ url_for('static', filename='images/mlflowlogo.png') }}" alt="MLflow Logo" width="155">MLflow</a></div>
+          <div class="skill-item"><a href="{{ url_for('projects') }}?query=Azure"><img src="{{ url_for('static', filename='images/azurelogo.png') }}" alt="Microsoft Azure Logo" width="57">Microsoft Azure</a></div>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-item"><img src="{{ url_for('static', filename='images/n8nlogo.png') }}" alt="n8n Logo" width="185">n8n</div>
+          <div class="skill-item"><img src="{{ url_for('static', filename='images/tensorflow.png') }}" alt="Tensorflow Logo" width="60">Tensorflow</div>
+          <div class="skill-item"><img src="{{ url_for('static', filename='images/awslogo.png') }}" alt="Amazon Web Services" width="60">aws</div>
+          <div class="skill-item"><img src="{{ url_for('static', filename='images/dockerlogo.png') }}" alt="Docker" width="60">Docker</div>
+          <div class="skill-item"><a href="{{ url_for('projects') }}?query=Hazelcast"><img src="{{ url_for('static', filename='images/hazelcastlogo.png') }}" alt="Hazelcast Logo" width="160">Hazelcast</a></div>
+          <div class="skill-item"><a href="{{ url_for('projects') }}?query=Kubernetes"><img src="{{ url_for('static', filename='images/kuberneteslogo.png') }}" alt="Kubernetes Logo" width="57">Kubernetes</a></div>
+          <div class="skill-item"><img src="{{ url_for('static', filename='images/GCPlogo.png') }}" alt="Google Cloud Platform" width="80">Google Cloud Platform</div>
+        </div>
       </section>
 
       <section id="contact" class="info-section">
@@ -272,6 +300,20 @@
         window.history.replaceState(null, null, ' ');
         window.scrollTo(0, 0);
       }
+    });
+
+
+    // Add event listeners directly (no fetch needed)
+    const sidebar = document.getElementById("sidebar");
+    const closeSidebar = document.getElementById("closeSidebar");
+    const menuButton = document.getElementById("menuButton");
+      
+    menuButton.addEventListener("click", () => {
+      sidebar.classList.add("show");
+    });
+      
+    closeSidebar.addEventListener("click", () => {
+      sidebar.classList.remove("show");
     });
   </script>
 

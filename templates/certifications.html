@@ -8,6 +8,10 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
+
+  {% include 'sidebar.html' %}
+  <button id="menuButton" class="menu-btn">☰</button>
+
   <main class="page">
     <header class="hero-head">
       <h1>Certifications & Specializations</h1>
@@ -520,6 +524,20 @@
       // initial
       filterGrid('all');
     })();
+
+    // Add event listeners directly (no fetch needed)
+    const sidebar = document.getElementById("sidebar");
+    const closeSidebar = document.getElementById("closeSidebar");
+    const menuButton = document.getElementById("menuButton");
+      
+    menuButton.addEventListener("click", () => {
+      sidebar.classList.add("show");
+    });
+      
+    closeSidebar.addEventListener("click", () => {
+      sidebar.classList.remove("show");
+    });
   </script>
+  
 </body>
 </html>
