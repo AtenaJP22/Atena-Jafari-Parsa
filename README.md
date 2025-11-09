@@ -1,6 +1,6 @@
 # Atena Jafari Parsa — Portfolio Website
 
-Welcome to my [personal portfolio website](https://atena-jafari-parsa.vercel.app) — a creative and technical showcase of my work in **Artificial Intelligence**, **Machine Learning**, and **Software Engineering**.  
+Welcome to my [personal portfolio website](https://www.atenaparsa.space) — a creative and technical showcase of my work in **Artificial Intelligence**, **Machine Learning**, and **Software Engineering**.  
 The website highlights my projects, certifications, and background through a clean, modern, and responsive design built with a cyberpunk theme and attention to detail.
 
 ---
