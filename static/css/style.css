@@ -41,13 +41,6 @@ body::after {
 
 
 
-
-/* vertical movement animation */
-@keyframes move {
-  from { transform: translateY(0px); }
-  to   { transform: translateY(calc(var(--grid) * var(--dir))); }
-}
-
 /* ====== Page wrapper and content (force above decorative layers) ====== */
 main.page, .page {
   width: 100%;
@@ -82,8 +75,13 @@ main.page, .page {
   height: .7em;
   background-color: currentColor;
   margin-left: .1em;
-  animation: blink 1s linear infinite forwards;
+  animation: blink 1.5s linear infinite forwards;
   vertical-align: baseline;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  50.1%, 100% { opacity: 0; }
 }
 
 .hero {
