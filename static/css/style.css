@@ -701,3 +701,47 @@ main.page, .page {
   font-weight: 600;
   color: #2c3e50;
 }
+
+.fake-link {
+  color: #b9b4ff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Normal link */
+a {
+  color: #b9b4ff;
+  text-decoration: underline; 
+}
+
+/* Hover effect */
+a:hover {
+  color: #7c42be; /* color when mouse is over link */
+}
+
+/* Visited link */
+a:visited {
+  color: #b9b4ff;
+}
+
+/* Active link (while clicking) */
+a:active {
+  color: #6023e5;
+}
+
+/* Style the sidebar menu list */
+.sidebar-menu {
+  list-style: none; 
+  padding: 0;
+  margin: 0;
+  font-family: 'arial', sans-serif; 
+  font-size: 16px;                   
+  font-weight: 400;                 
+  color: #6023e5;                        /* text color for non-link items */
+}
+
+
+/* Hover effect for links */
+.sidebar-menu li a:hover {
+  color: #6169ff;                     /* change color on hover */
+}
