@@ -37,11 +37,27 @@
         
 
         <!-- Example Project Card -->
+
+        <div class="project-card" id="cv-internship">
+          <img src="{{ url_for('static', filename='images/Bina.png') }}" alt="Computer Vision Internship">
+          <div class="project-info">
+            <h2>Computer Vision Defect Detection Pipeline</h2>
+            <p>
+              An end-to-end computer vision defect-detection system developed during my internship at <a href="https://binasanat.com" target="_blank" rel="noopener noreferrer">Bina Sanat Veera</a> using PyTorch. The project spanned data acquisition, labeling, and exploratory analysis, followed by training and evaluation of custom models (YOLOv8, Faster R-CNN) with error analysis, TTA, hyperparameter tuning, and dataset expansion. I built and containerized a FastAPI inference service using Docker with CUDA support, deployed it on an on-prem GPU workstation with basic monitoring, and performed edge-case evaluation, domain-shift testing, and a Streamlit-based mobile QA POC. The project concluded with A/B evaluation, post-pilot analysis, documentation, and final handover.
+            </p>
+            <a class="btn primary" href="{{ url_for('static', filename='files/AI_Training_Report.pdf') }}" target="_blank" rel="noopener noreferrer" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+              <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="AI Internship Report at Bina Sanat Veera" style="width:28px; height:28px;">
+              Internship Report
+            </a>
+          </div>
+        </div>
+
+
         <div class="project-card" id="cellenta">
           <img src="{{ url_for('static', filename='images/Cellenta.png') }}" alt="Cellenta iOS project preview">
           <div class="project-info">
             <h2>Cellenta iOS</h2>
-            <p>An online charging system iOS app built with SwiftUI during my internship at <a href="https://i2i-systems.com" target="_blank" rel="noopener noreferrer">i2i Systems</a>. It integrates authentication, package management, and billing with a backend API. Equipped with a seamless live chat bot and AI-powered smart, personalized package recommendation system using Google Gemini's API. Developed with Swift.</p>
+            <p>An online charging system iOS app built with SwiftUI during my internship at <a href="https://i2i-systems.com" target="_blank" rel="noopener noreferrer">i2i Systems</a>. It integrates authentication, package management, and billing with a backend API. Equipped with a seamless live chat bot and AI-powered smart, personalized package recommendation system using Google Gemini's API. Developed with Swift. The chatbot is LLM-based.</p>
             <a class="btn primary" href="https://github.com/Aliduman02/Cellenta/tree/ios" target="_blank" rel="noopener noreferrer" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
                 <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
                 View Project
@@ -57,7 +73,7 @@
           <img src="{{ url_for('static', filename='images/awarecitizendark.jpg') }}" alt="Aware Citizen preview">
           <div class="project-info">
             <h2>Aware Citizen</h2>
-            <p>An AI-Based Political Economy Analyst web app built with Streamlit and empowered by Open AI's API that finds the political parties of the selected country with Beautiful Soup from Wikipedia, and uses Open AI's Turbo model to analyze the effects of every party on citizens' daily lives if selected. It assigns a score from 0 (very bad) to 20 (very good) to each party and visualizes a comparative result in the end. Developed with Python and Streamlit.
+            <p>An AI-Based Political Economy Analyst web app built with Streamlit and empowered by Open AI's API that finds the political parties of the selected country with Beautiful Soup from Wikipedia, and uses Open AI's Turbo model to analyze the effects of every party on citizens' daily lives if selected. It assigns a score from 0 (very bad) to 20 (very good) to each party and visualizes a comparative result in the end. Developed with Python and Streamlit. Based on LLMs.
             </p>
             <a class="btn primary" href="https://github.com/AtenaJP22/Aware-Citizen" target="_blank" rel="noopener noreferrer" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
                 <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
@@ -164,7 +180,7 @@
           <img src="{{ url_for('static', filename='images/Ensemble.png') }}" alt="Ensemble Learning">
           <div class="project-info">
             <h2>Ensemble Learning</h2>
-            <p>Comparing the accuracy in an example problem by classifying by soft voting, hard voting, using bagging/pasting, Out of Bag Evaluations, Random Forests and my own novel ensemble model. Utilized soft voting classifiers On SVM (Soft Vector Machine), KNeighbor, Random Forest and the different combinations of them. Developed with Python and Scikit Learn.</p>
+            <p>Comparing the accuracy in an example problem by classifying by soft voting, hard voting, using bagging/pasting, Out of Bag Evaluations, Random Forests and my own novel ensemble model. Utilized soft voting classifiers On SVM (Soft Vector Machine), KNeighbor, Random Forest and the different combinations of them. Developed with Python and Scikit Learn. Based on Machine Learning.</p>
             <a class="btn primary" href="https://github.com/AtenaJP22/EnsembleLearning" target="_blank" rel="noopener noreferrer" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
               <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
               View Project
