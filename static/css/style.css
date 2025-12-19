@@ -615,7 +615,7 @@ main.page, .page {
 
 .sidebar.show {
   left: 0;
-}
+} 
 
 .sidebar-menu {
   list-style: none;
@@ -630,6 +630,7 @@ main.page, .page {
 .sidebar-menu a {
   color: white;
   text-decoration: none;
+  font-family: "Playfair Display", serif;
   font-size: 18px;
 }
 
