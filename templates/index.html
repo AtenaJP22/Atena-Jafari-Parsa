@@ -263,12 +263,16 @@
         <p>I'd love to hear from you! Send me a message or reach out via social media.</p>
       
         <!-- Simple Contact Form -->
-        <form class="contact-form" onsubmit="sendEmail(); return false;">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" placeholder="Your Name" required>
+        <form class="contact-form" action="https://formspree.io/f/mqezaakk" method="post">
       
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+          <label for="email">Email Address:</label>
+          <input id="email" name="email" type="email" placeholder="Your Email Address" required></input>
+
+          <label for="email">Message:</label>
+          <textarea name="message" placeholder="Your Message" required></textarea>
+
+          <label for="name">Name (Optional):</label>
+          <input type="text" id="name" name="name" placeholder="Your Name (Optional)"></input>
       
           <button type="submit" class="btn primary">Send Message</button>
         </form>
@@ -323,7 +327,7 @@
     window.addEventListener('load', () => {
       if (window.location.hash) {
         window.history.replaceState(null, null, ' ');
-        window.scrollTo(0, 0);
+        window.scrollTo(0, 0); 
       }
     });
 
