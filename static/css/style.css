@@ -746,3 +746,33 @@ a:active {
 .sidebar-menu li a:hover {
   color: #6169ff;                     /* change color on hover */
 }
+
+
+
+details summary {
+  margin-top: 10px;
+  display: inline-block;
+  background: linear-gradient(90deg, #8f7bff 0%, #7b95ff 100%);
+  color: #0b0420;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.9em;
+  cursor: pointer;
+  list-style: none;
+}
+
+/* Remove default marker */
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Optional: spacing for text */
+details p {
+  margin-top: 6px;
+  font-size: 0.85em;
+}
+
+details p strong {
+  font-weight: 600;
+}
