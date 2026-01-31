@@ -1,17 +1,82 @@
-  <!-- sidebar.html -->
-<nav id="sidebar" class="sidebar">
-    <button id="closeSidebar" class="close-btn">×</button>
-    <ul class="sidebar-menu">
-      <li><a href="{{ url_for("home") }}">About Me</a></li>
-      <li><a href="{{ url_for("projects") }}">Projects</a></li>
-      <li><a href="{{ url_for("static", filename="files/CV-AtenaParsa.pdf") }}" target="_blank" rel="noopener noreferrer">View My CV</a></li>
-      <li><a href="{{ url_for("home") }}#publications">Publications</a></li>
-      <li><a href="{{ url_for("certifications") }}">Certifications</a></li>
-      <li><a href="{{ url_for("home") }}#skills">Skills & Technologies</a></li>
-      <li><a href="{{ url_for("home") }}#contact">Contact Me</a></li>
-      <li>
-        <a href="{{ url_for('certifications') }}?search=English">English Proficiency</a>
-      </li>
-      
-    </ul>
+<!-- Navigation -->
+<button id="hamburger" class="hamburger">☰</button>
+
+  <nav id="nav">
+    <div class="nav-container">
+
+      <a href="{{ url_for('home') }}#" class="nav-item">
+        <i class="fas fa-person"></i>
+        <span 
+          data-en="About Me"
+          data-fa="درباره من"
+          data-tr="Hakkımda"
+        >About Me</span>
+      </a>
+
+      <a href="{{ url_for('projects') }}" class="nav-item">
+        <i class="fas fa-project"></i>
+        <span 
+          data-en="Projects"
+          data-fa="پروژه‌ها"
+          data-tr="Projeler"
+        >Projects</span>
+      </a>
+
+      <a href="{{ url_for('static', filename='files/CV-AtenaParsa.pdf') }}"
+        target="_blank" rel="noopener noreferrer"
+        class="nav-item">
+        <i class="fas fa-document"></i>
+        <span 
+          data-en="View My CV"
+          data-fa="مشاهده رزومه"
+          data-tr="Benim CV'im"
+        >View My CV</span>
+      </a>
+
+      <a href="{{ url_for('home') }}#publications" class="nav-item">
+        <i class="fas fa-paper"></i>
+        <span 
+          data-en="Publications"
+          data-fa="مقاله ها"
+          data-tr="Makaleler"
+        >Publications</span>
+      </a>
+
+      <a href="{{ url_for('certifications') }}" class="nav-item">
+        <i class="fas fa-certificate"></i>
+        <span 
+          data-en="Certifications"
+          data-fa="مدرک ها"
+          data-tr="Sertifikalar"
+        >Certifications</span>
+      </a>
+
+      <a href="{{ url_for('home') }}#skills" class="nav-item">
+        <i class="fas fa-skill"></i>
+        <span 
+          data-en="Skills & Technologies"
+          data-fa="مهارت‌ها و فناوری‌ها"
+          data-tr="Beceriler ve Teknolojiler"
+        >Skills & Technologies</span>
+      </a>
+
+      <a href="{{ url_for('home') }}#contact" class="nav-item">
+        <i class="fas fa-message"></i>
+        <span 
+          data-en="Contact Me"
+          data-fa="تماس با من"
+          data-tr="Benimle İletişime"
+        >Contact Me</span>
+      </a>
+
+      <a href="{{ url_for('certifications') }}?search=English" class="nav-item">
+        <i class="fas fa-write"></i>
+        <span 
+          data-en="English Proficiency"
+          data-fa="مهارت زبان انگلیسی"
+          data-tr="İngilizce Yeterliliği"
+        >English Proficiency</span>
+      </a>
+
+    </div>
   </nav>

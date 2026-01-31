@@ -15,23 +15,31 @@
 <body>
 
   {% include 'sidebar.html' %}
-  <button id="menuButton" class="menu-btn">☰</button>
 
   <main class="page">
 
     <!-- Hero/Header -->
     <header class="hero-head">
-      <h1>My Projects</h1>
-      <p style="max-width: 700px; margin: 12px auto 0; font-size: 18px; color: #ccc;">
+      <h1 data-en="My Projects" data-tr="Projelerim" data-fa="پروژه های من">My Projects</h1>
+      <p data-en="A showcase of selected AI, software engineering, and data science projects I've worked on. Each one reflects creativity, technical depth, and real-world application."
+      data-tr="Üzerinde çalıştığım seçilmiş yapay zeka, yazılım mühendisliği ve veri bilimi projelerinin bir vitrini. Her biri yaratıcılığı, teknik derinliği ve gerçek dünya uygulamasını yansıtır."
+      data-fa="نمایشی از مجموعه‌ای منتخب از پروژه‌های هوش مصنوعی، مهندسی نرم‌افزار و علم داده که روی آن‌ها کار کرده‌ام. هر یک بیانگر خلاقیت، عمق فنی و کاربرد در دنیای واقعی است." style="max-width: 700px; margin: 12px auto 0; font-size: 18px; color: #ccc;">
         A showcase of selected AI, software engineering, and data science projects I've worked on.  
         Each one reflects creativity, technical depth, and real-world application.
       </p>
+      <div class="language-toggle">
+        <button class="lang-btn active" onclick="switchLanguage('en', event)" style="margin-top: 20px;">English</button>
+        <button class="lang-btn" onclick="switchLanguage('tr', event)">Türkçe</button>
+        <button class="lang-btn" onclick="switchLanguage('fa', event)">فارسی</button>
+      </div>
     </header>
     
 
     <!-- Project Grid Section -->
   <section style="margin-top: 18px;">  
-      <div><input id="searchCert" type="search" placeholder="Search projects..." aria-label="Search projects" style="margin-left:auto; max-width:260px;">
+      <div><input id="searchCert" type="search" placeholder="Search projects..." data-en-placeholder="Search projects..."
+        data-tr-placeholder="Projeleri ara..."
+        data-fa-placeholder="جستجوی پروژه‌ها..." aria-label="Search projects" style="margin-left:auto; max-width:260px;">
       </div>
       <div class="projects-grid">
         
@@ -41,14 +49,45 @@
         <div class="project-card" id="cv-internship">
           <img src="{{ url_for('static', filename='images/Bina.png') }}" alt="Computer Vision Internship">
           <div class="project-info">
-            <h2>Computer Vision Defect Detection Pipeline</h2>
-            <p>
-              An end-to-end computer vision defect-detection system developed during my internship at <a href="https://binasanat.com" target="_blank" rel="noopener noreferrer">Bina Sanat Veera</a> using PyTorch. The project spanned data acquisition, labeling, and exploratory analysis, followed by training and evaluation of custom models (YOLOv8, Faster R-CNN) with error analysis, TTA, hyperparameter tuning, and dataset expansion. I built and containerized a FastAPI inference service using Docker with CUDA support, deployed it on an on-prem GPU workstation with basic monitoring, and performed edge-case evaluation, domain-shift testing, and a Streamlit-based mobile QA POC. The project concluded with A/B evaluation, post-pilot analysis, documentation, and final handover.
+            <h2
+              data-en="Computer Vision Defect Detection Pipeline"
+              data-tr="Bilgisayarlı Görü Hata Tespit Hattı"
+              data-fa="پایپ‌لاین تشخیص نقص با بینایی ماشین"
+            >
+              Computer Vision Defect Detection Pipeline
+            </h2>
+
+            <p
+              data-en="An end-to-end computer vision defect-detection system developed during my internship at <a href='https://binasanat.com' target='_blank' rel='noopener noreferrer'>Bina Sanat Veera</a> using PyTorch. The project spanned data acquisition, labeling, and exploratory analysis, followed by training and evaluation of custom models (YOLOv8, Faster R-CNN) with error analysis, TTA, hyperparameter tuning, and dataset expansion. I built and containerized a FastAPI inference service using Docker with CUDA support, deployed it on an on-prem GPU workstation with basic monitoring, and performed edge-case evaluation, domain-shift testing, and a Streamlit-based mobile QA POC. The project concluded with A/B evaluation, post-pilot analysis, documentation, and final handover."
+
+              data-tr="PyTorch kullanılarak <a href='https://binasanat.com' target='_blank' rel='noopener noreferrer'>Bina Sanat Veera</a>’daki stajım sırasında geliştirilen uçtan uca bir bilgisayarlı görü hata tespit sistemidir. Proje; veri toplama, etiketleme ve keşifsel analiz aşamalarını, ardından YOLOv8 ve Faster R-CNN tabanlı özel modellerin eğitimi ve değerlendirilmesini kapsadı. Süreçte hata analizi, test-time augmentation (TTA), hiperparametre ayarlaması ve veri kümesi genişletme çalışmaları yürütüldü. CUDA destekli Docker kullanılarak FastAPI tabanlı bir çıkarım servisi geliştirildi ve containerize edildi; servis temel izleme altyapısıyla şirket içi bir GPU iş istasyonuna dağıtıldı. Ayrıca edge-case değerlendirmeleri, domain-shift testleri ve Streamlit tabanlı mobil QA POC çalışması gerçekleştirildi. Proje, A/B değerlendirmesi, pilot sonrası analiz, dokümantasyon ve nihai teslim ile tamamlandı."
+
+              data-fa="یک سیستم تشخیص نقص مبتنی بر بینایی ماشین به‌صورت انتها‌به‌انتها که در طول دوره کارآموزی من در <a href='https://binasanat.com' target='_blank' rel='noopener noreferrer'>Bina Sanat Veera</a> و با استفاده از PyTorch توسعه داده شد. این پروژه شامل جمع‌آوری داده، برچسب‌گذاری و تحلیل اکتشافی داده‌ها و سپس آموزش و ارزیابی مدل‌های سفارشی (YOLOv8 و Faster R-CNN) همراه با تحلیل خطا، TTA، تنظیم ابرپارامترها و گسترش مجموعه‌داده بود. یک سرویس استنتاج مبتنی بر FastAPI با استفاده از Docker و پشتیبانی CUDA پیاده‌سازی و کانتینری شد و بر روی یک ایستگاه کاری GPU درون‌سازمانی همراه با مانیتورینگ پایه استقرار یافت. همچنین ارزیابی موارد خاص (edge cases)، آزمون تغییر دامنه (domain shift) و یک نمونه اولیه QA موبایلی مبتنی بر Streamlit انجام شد. پروژه با ارزیابی A/B، تحلیل پس از پایلوت، مستندسازی و تحویل نهایی به پایان رسید."
+            >
+              An end-to-end computer vision defect-detection system developed during my internship at
+              <a href="https://binasanat.com" target="_blank" rel="noopener noreferrer">Bina Sanat Veera</a>
+              using PyTorch. The project spanned data acquisition, labeling, and exploratory analysis,
+              followed by training and evaluation of custom models (YOLOv8, Faster R-CNN) with error analysis,
+              TTA, hyperparameter tuning, and dataset expansion. I built and containerized a FastAPI inference
+              service using Docker with CUDA support, deployed it on an on-prem GPU workstation with basic
+              monitoring, and performed edge-case evaluation, domain-shift testing, and a Streamlit-based
+              mobile QA POC. The project concluded with A/B evaluation, post-pilot analysis, documentation,
+              and final handover.
             </p>
-            <a class="btn primary" href="{{ url_for('static', filename='files/AI_Training_Report.pdf') }}" target="_blank" rel="noopener noreferrer" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
-              <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="AI Internship Report at Bina Sanat Veera" style="width:28px; height:28px;">
-              Internship Report
-            </a>
+
+            <a class="btn primary"
+                href="{{ url_for('static', filename='files/AI_Training_Report.pdf') }}"
+                target="_blank" rel="noopener noreferrer"
+                style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+                <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="AI Internship Report at Bina Sanat Veera" style="width:25px; height:25px;">
+                <span
+                  data-en="Internship Report"
+                  data-tr="Staj Raporu"
+                  data-fa="گزارش کارآموزی"  
+                >
+                  Internship Report
+                </span>
+              </a>
           </div>
         </div>
 
@@ -57,15 +96,48 @@
           <img src="{{ url_for('static', filename='images/Cellenta.png') }}" alt="Cellenta iOS project preview">
           <div class="project-info">
             <h2>Cellenta iOS</h2>
-            <p>An online charging system iOS app built with SwiftUI during my internship at <a href="https://i2i-systems.com" target="_blank" rel="noopener noreferrer">i2i Systems</a>. It integrates authentication, package management, and billing with a backend API. Equipped with a seamless live chat bot and AI-powered smart, personalized package recommendation system using Google Gemini's API. Developed with Swift. The chatbot is LLM-based.</p>
-            <a class="btn primary" href="https://github.com/Aliduman02/Cellenta/tree/ios" target="_blank" rel="noopener noreferrer" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+            <p
+              data-en="An online charging system iOS app built with SwiftUI during my internship at <a href='https://i2i-systems.com' target='_blank' rel='noopener noreferrer'>i2i Systems</a>. It integrates authentication, package management, and billing with a backend API. Equipped with a seamless live chatbot and an AI-powered smart, personalized package recommendation system using Google Gemini’s API. Developed with Swift. The chatbot is LLM-based."
+
+              data-tr="<a href='https://i2i-systems.com' target='_blank' rel='noopener noreferrer'>i2i Systems</a>’daki stajım sırasında SwiftUI kullanılarak geliştirilen bir Online Charging System (OCS) iOS uygulamasıdır. Kimlik doğrulama, paket yönetimi ve faturalama süreçlerini backend API ile entegre eder. Google Gemini API kullanılarak geliştirilen, akıcı bir canlı chatbot ve yapay zeka destekli, akıllı ve kişiselleştirilmiş paket öneri sistemi ile donatılmıştır. Swift ile geliştirilmiştir. Chatbot, LLM tabanlıdır."
+
+              data-fa="یک اپلیکیشن iOS برای سیستم شارژ آنلاین (OCS) که در طول دوره کارآموزی من در <a href='https://i2i-systems.com' target='_blank' rel='noopener noreferrer'>i2i Systems</a> با استفاده از SwiftUI توسعه داده شد. این اپلیکیشن احراز هویت، مدیریت بسته‌ها و صورتحساب را از طریق یک API بک‌اند یکپارچه می‌کند. مجهز به یک چت‌بات زنده روان و یک سیستم هوشمند پیشنهاد بسته‌های شخصی‌سازی‌شده مبتنی بر هوش مصنوعی با استفاده از API گوگل Gemini است. با Swift توسعه داده شده و چت‌بات آن مبتنی بر مدل‌های زبانی بزرگ (LLM) می‌باشد."
+            >
+              An online charging system iOS app built with SwiftUI during my internship at
+              <a href="https://i2i-systems.com" target="_blank" rel="noopener noreferrer">i2i Systems</a>.
+              It integrates authentication, package management, and billing with a backend API.
+              Equipped with a seamless live chat bot and AI-powered smart, personalized package
+              recommendation system using Google Gemini's API. Developed with Swift.
+              The chatbot is LLM-based.
+            </p>
+
+              <a class="btn primary"
+                href="https://github.com/Aliduman02/Cellenta/tree/ios"
+                target="_blank" rel="noopener noreferrer"
+                style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
                 <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
-                View Project
-            </a>
-            <a class="btn primary" href="https://youtube.com/shorts/3MUf2KHydI0?si=iWsA8PXM4ST4Kaii" target="_blank" rel="noopener noreferrer" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+                <span
+                  data-en="View Project"
+                  data-tr="Projeyi Görüntüle"
+                  data-fa="مشاهده پروژه"
+                >
+                  View Project
+                </span>
+              </a>
+
+              <a class="btn primary"
+                href="https://youtube.com/shorts/3MUf2KHydI0?si=iWsA8PXM4ST4Kaii"
+                target="_blank" rel="noopener noreferrer"
+                style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
                 <img src="{{ url_for('static', filename='images/YouTube.png') }}" alt="YouTube" style="width:25px; height:25px;">
-                Watch Project Demo
-              </a>              
+                <span
+                  data-en="Watch Project Demo"
+                  data-tr="Proje Demosunu İzle"
+                  data-fa="مشاهده دموی پروژه"
+                >
+                  Watch Project Demo
+                </span>
+              </a>            
           </div>
         </div>
 
@@ -73,19 +145,46 @@
           <img src="{{ url_for('static', filename='images/awarecitizendark.jpg') }}" alt="Aware Citizen preview">
           <div class="project-info">
             <h2>Aware Citizen</h2>
-            <p>An AI-Based Political Economy Analyst web app built with Streamlit and empowered by Open AI's API that finds the political parties of the selected country with Beautiful Soup from Wikipedia, and uses Open AI's Turbo model to analyze the effects of every party on citizens' daily lives if selected. It assigns a score from 0 (very bad) to 20 (very good) to each party and visualizes a comparative result in the end. Developed with Python and Streamlit. Based on LLMs.
+            <p data-en="An AI-Based Political Economy Analyst web app built with Streamlit and empowered by Open AI's API that finds the political parties of the selected country with Beautiful Soup from Wikipedia, and uses Open AI's Turbo model to analyze the effects of every party on citizens' daily lives if selected. It assigns a score from 0 (very bad) to 20 (very good) to each party and visualizes a comparative result in the end. Developed with Python and Streamlit. Based on LLMs." data-tr="Streamlit ile geliştirilmiş ve OpenAI API’si ile desteklenen, yapay zekâ tabanlı bir Politik Ekonomi Analisti web uygulamasıdır. BeautifulSoup kullanarak Wikipedia’dan seçilen ülkenin siyasi partilerini bulur ve OpenAI’nin Turbo modeli ile her partinin vatandaşların günlük yaşamı üzerindeki olası etkilerini analiz eder. Her partiye 0 (çok kötü) ile 20 (çok iyi) arasında bir puan verir ve sonuçları karşılaştırmalı olarak görselleştirir. Python ve Streamlit ile geliştirilmiştir. Büyük Dil Modelleri (LLM) tabanlıdır.
+" data-fa="یک وب‌اپلیکیشن تحلیل‌گر اقتصاد سیاسی مبتنی بر هوش مصنوعی که با Streamlit توسعه داده شده و از API شرکت OpenAI قدرت می‌گیرد. این برنامه با استفاده از BeautifulSoup احزاب سیاسی کشور انتخاب‌شده را از ویکی‌پدیا استخراج کرده و سپس با استفاده از مدل Turbo شرکت OpenAI، تأثیرات احتمالی هر حزب بر زندگی روزمره شهروندان را تحلیل می‌کند. به هر حزب امتیازی بین ۰ (بسیار بد) تا ۲۰ (بسیار خوب) اختصاص داده می‌شود و در نهایت نتایج به‌صورت مقایسه‌ای نمایش داده می‌شوند. توسعه‌یافته با Python و Streamlit. مبتنی بر مدل‌های زبانی بزرگ (LLM).">An AI-Based Political Economy Analyst web app built with Streamlit and empowered by Open AI's API that finds the political parties of the selected country with Beautiful Soup from Wikipedia, and uses Open AI's Turbo model to analyze the effects of every party on citizens' daily lives if selected. It assigns a score from 0 (very bad) to 20 (very good) to each party and visualizes a comparative result in the end. Developed with Python and Streamlit. Based on LLMs.
             </p>
-            <a class="btn primary" href="https://github.com/AtenaJP22/Aware-Citizen" target="_blank" rel="noopener noreferrer" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
-                <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
-                View Project
+            <!-- View Project -->
+            <a class="btn primary"
+            data-en="<img src='{{ url_for('static', filename='images/github.png') }}' alt='GitHub' style='width:25px; height:25px;'> View Project"
+            data-tr="<img src='{{ url_for('static', filename='images/github.png') }}' alt='GitHub' style='width:25px; height:25px;'> Projeyi Görüntüle"
+            data-fa="<img src='{{ url_for('static', filename='images/github.png') }}' alt='GitHub' style='width:25px; height:25px;'> مشاهده پروژه"
+            href="https://github.com/AtenaJP22/Aware-Citizen"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+            <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
+            View Project
             </a>
-            <a class="btn primary" href="{{ url_for('static', filename='files/Aware_Citizen_Research_Paper_.pdf') }}" target="_blank" rel="noopener noreferrer" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
-                <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="Research Paper" style="width:28px; height:28px;">
-                Research Paper
+
+            <!-- Research Paper -->
+            <a class="btn primary"
+            data-en="<img src='{{ url_for('static', filename='images/PDF.png') }}' alt='Research Paper' style='width:28px; height:28px;'> Research Paper"
+            data-tr="<img src='{{ url_for('static', filename='images/PDF.png') }}' alt='Research Paper' style='width:28px; height:28px;'> Araştırma Makalesi"
+            data-fa="<img src='{{ url_for('static', filename='images/PDF.png') }}' alt='Research Paper' style='width:28px; height:28px;'> مقاله پژوهشی"
+            href="{{ url_for('static', filename='files/Aware_Citizen_Research_Paper_.pdf') }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+            <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="Research Paper" style="width:28px; height:28px;">
+            Research Paper
             </a>
-            <a class="btn primary" href="{{ url_for('static', filename='files/Aware_Citizen.pdf') }}" target="_blank" rel="noopener noreferrer" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
-                <img src="{{ url_for('static', filename='images/powerpoint.png') }}" alt="Project Presentation" style="width:30px; height:30px;">
-                Project Presentation
+
+            <!-- Project Presentation -->
+            <a class="btn primary"
+            data-en="<img src='{{ url_for('static', filename='images/powerpoint.png') }}' alt='Project Presentation' style='width:30px; height:30px;'> Project Presentation"
+            data-tr="<img src='{{ url_for('static', filename='images/powerpoint.png') }}' alt='Project Presentation' style='width:30px; height:30px;'> Proje Sunumu"
+            data-fa="<img src='{{ url_for('static', filename='images/powerpoint.png') }}' alt='Project Presentation' style='width:30px; height:30px;'> ارائه پروژه"
+            href="{{ url_for('static', filename='files/Aware_Citizen.pdf') }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+            <img src="{{ url_for('static', filename='images/powerpoint.png') }}" alt="Project Presentation" style="width:30px; height:30px;">
+            Project Presentation
             </a>
           </div>
         </div>
@@ -93,21 +192,66 @@
         <div class="project-card" id="pima">
           <img src="{{ url_for('static', filename='images/Pima.png') }}" alt="Pima Diabetes ML project preview">
           <div class="project-info">
-            <h2>Pima Diabetes Prediction</h2>
-            <p>Machine learning pipeline using <a href="https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database" target="_blank" rel="noopener noreferrer">Pima Indians Diabetes Dataset on Kaggle</a> for diabetes risk prediction using MLflow to track experiments, reproducibility, and results. A predictive ML model (classification task for diabetes) was implemented and its end-to-end lifecycle was managed, consisting of training, hyperparameter tuning, deployment, performance monitoring, and model versioning. 5 different models were trained and tested: Random forest, Support Vector Machine (SVM), KNeighbors Classifier, Decision Tree Classifier and Logistic Regression. Hyperparameters of the model reaching the highest accuracy was tuned for optimization. Developed with Python and utilized MLflow.</p>
-        </p>
-        <a class="btn primary" href="https://github.com/AtenaJP22/MLOps-Term-Project" target="_blank" rel="noopener noreferrer" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+            <!-- Header -->
+            <h2
+            data-en="Pima Diabetes Prediction"
+            data-tr="Pima Diyabet Tahmini"
+            data-fa="پیش‌بینی دیابت پیما">
+            Pima Diabetes Prediction
+            </h2>
+
+            <!-- Description -->
+            <p
+            data-en="Machine learning pipeline using <a href='https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database' target='_blank' rel='noopener noreferrer'>Pima Indians Diabetes Dataset on Kaggle</a> for diabetes risk prediction using MLflow to track experiments, reproducibility, and results. A predictive ML classification model was implemented and its end-to-end lifecycle was managed, including training, hyperparameter tuning, deployment, performance monitoring, and model versioning. Five different models were trained and tested: Random Forest, Support Vector Machine (SVM), KNeighbors Classifier, Decision Tree Classifier, and Logistic Regression. Hyperparameters of the highest-accuracy model were optimized. Developed with Python and MLflow."
+
+            data-tr="MLflow kullanılarak deneylerin, tekrarlanabilirliğin ve sonuçların takibi için <a href='https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database' target='_blank' rel='noopener noreferrer'>Kaggle’daki Pima Indians Diabetes Veri Seti</a> ile geliştirilen bir makine öğrenmesi hattıdır. Diyabet sınıflandırması için tahmine dayalı bir ML modeli uygulanmış ve eğitim, hiperparametre ayarlama, dağıtım, performans izleme ve model versiyonlama dahil olmak üzere uçtan uca yaşam döngüsü yönetilmiştir. Beş farklı model eğitilmiş ve test edilmiştir: Random Forest, Support Vector Machine (SVM), KNeighbors Classifier, Decision Tree Classifier ve Logistic Regression. En yüksek doğruluğa ulaşan modelin hiperparametreleri optimize edilmiştir. Python ve MLflow ile geliştirilmiştir."
+
+            data-fa="یک پایپلاین یادگیری ماشین برای پیش‌بینی ریسک دیابت با استفاده از <a href='https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database' target='_blank' rel='noopener noreferrer'>مجموعه داده دیابت خانم های هندی پیما در Kaggle</a> که از MLflow برای ردیابی آزمایش‌ها، بازتولیدپذیری و نتایج استفاده می‌کند. یک مدل طبقه‌بندی پیش‌بینی‌کننده پیاده‌سازی شده و چرخه عمر کامل آن شامل آموزش، تنظیم ابرپارامترها، استقرار، پایش عملکرد و نسخه‌بندی مدل مدیریت شده است. پنج مدل مختلف آموزش و ارزیابی شده‌اند: Random Forest، ماشین بردار پشتیبان (SVM)، KNeighbors Classifier، Decision Tree Classifier و Logistic Regression. ابرپارامترهای مدلی که با بالاترین دقت بهینه‌سازی شده‌اند. توسعه‌یافته با Python و MLflow.">
+            Machine learning pipeline using
+            <a href="https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database" target="_blank" rel="noopener noreferrer">
+              Pima Indians Diabetes Dataset on Kaggle
+            </a>
+            for diabetes risk prediction using MLflow to track experiments, reproducibility, and results. A predictive ML model (classification task for diabetes) was implemented and its end-to-end lifecycle was managed, consisting of training, hyperparameter tuning, deployment, performance monitoring, and model versioning. Five different models were trained and tested: Random forest, Support Vector Machine (SVM), KNeighbors Classifier, Decision Tree Classifier and Logistic Regression. Hyperparameters of the model reaching the highest accuracy were optimized. Developed with Python and MLflow.
+            </p>
+
+            <!-- View Project -->
+            <a class="btn primary"
+            data-en="<img src='{{ url_for('static', filename='images/github.png') }}' style='width:25px; height:25px;'> View Project"
+            data-tr="<img src='{{ url_for('static', filename='images/github.png') }}' style='width:25px; height:25px;'> Projeyi Görüntüle"
+            data-fa="<img src='{{ url_for('static', filename='images/github.png') }}' style='width:25px; height:25px;'> مشاهده پروژه"
+            href="https://github.com/AtenaJP22/MLOps-Term-Project"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
             <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
             View Project
-        </a>
-        <a class="btn primary" href="{{ url_for('static', filename='files/MLOps_Term_Project_Pima_Diabetes_Prediction_System_.pdf') }}" target="_blank" rel="noopener noreferrer" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+            </a>
+
+            <!-- Project Report -->
+            <a class="btn primary"
+            data-en="<img src='{{ url_for('static', filename='images/PDF.png') }}' style='width:28px; height:28px;'> Project Report"
+            data-tr="<img src='{{ url_for('static', filename='images/PDF.png') }}' style='width:28px; height:28px;'> Proje Raporu"
+            data-fa="<img src='{{ url_for('static', filename='images/PDF.png') }}' style='width:28px; height:28px;'> گزارش پروژه"
+            href="{{ url_for('static', filename='files/MLOps_Term_Project_Pima_Diabetes_Prediction_System_.pdf') }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
             <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="Project Report" style="width:28px; height:28px;">
             Project Report
-        </a>
-        <a class="btn primary" href="{{ url_for('static', filename='files/MLOpsTermproject.pdf') }}" target="_blank" rel="noopener noreferrer" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+            </a>
+
+            <!-- Project Presentation -->
+            <a class="btn primary"
+            data-en="<img src='{{ url_for('static', filename='images/powerpoint.png') }}' style='width:30px; height:30px;'> Project Presentation"
+            data-tr="<img src='{{ url_for('static', filename='images/powerpoint.png') }}' style='width:30px; height:30px;'> Proje Sunumu"
+            data-fa="<img src='{{ url_for('static', filename='images/powerpoint.png') }}' style='width:30px; height:30px;'> ارائه پروژه"
+            href="{{ url_for('static', filename='files/MLOpsTermproject.pdf') }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
             <img src="{{ url_for('static', filename='images/powerpoint.png') }}" alt="Project Presentation" style="width:30px; height:30px;">
             Project Presentation
-        </a>
+            </a>
           </div>
         </div>
 
@@ -115,15 +259,43 @@
             <img src="{{ url_for('static', filename='images/bau.png') }}" alt="BAU-EVAL">
             <div class="project-info">
               <h2>BAU-EVAL</h2>
-              <p>AI-based Quiz and Exam Generator & Evaluator developed for <a href="https://bau.edu.tr" target="_blank" rel="noopener noreferrer">Bahcesehir University</a> as my Senior Capstone Project empowering instructors with: LLM-Generated Exam & Quiz Questions, Automated Grading with Instructor Approval, Personalized Smart Feedback for Students, Seamless Student and Grade Management.</p>
-              <a class="btn primary" href="{{ url_for('static', filename='files/CapstoneReportTemplate.docx.pdf') }}" target="_blank" rel="noopener noreferrer" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
-                <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="Project Report" style="width:28px; height:28px;">
-                Project Report
-            </a>
-            <a class="btn primary" href="{{ url_for('static', filename='files/CapstoneProjectPresentation.pdf') }}" target="_blank" rel="noopener noreferrer" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
-                <img src="{{ url_for('static', filename='images/powerpoint.png') }}" alt="Project Presentation" style="width:30px; height:30px;">
-                Project Presentation
-            </a>
+              <!-- Description -->
+              <p
+              data-en="AI-based Quiz and Exam Generator & Evaluator developed for <a href='https://bau.edu.tr' target='_blank' rel='noopener noreferrer'>Bahcesehir University</a> as my Senior Capstone Project, empowering instructors with: LLM-generated exam and quiz questions, automated grading with instructor approval, personalized smart feedback for students, and seamless student and grade management."
+
+              data-tr="<a href='https://bau.edu.tr' target='_blank' rel='noopener noreferrer'>Bahçeşehir Üniversitesi</a> için bitirme projem kapsamında geliştirilen yapay zekâ tabanlı Sınav ve Quiz Oluşturma ve Değerlendirme sistemi. Eğitmenlere; LLM ile üretilmiş sınav ve quiz soruları, eğitmen onaylı otomatik değerlendirme, öğrencilere özel akıllı geri bildirim ve sorunsuz öğrenci ve not yönetimi imkânı sunar."
+
+              data-fa="یک سامانه تولید و ارزیابی آزمون و کوییز مبتنی بر هوش مصنوعی که به‌عنوان پایان نامه من برای <a href='https://bau.edu.tr' target='_blank' rel='noopener noreferrer'>دانشگاه باهچه‌شهیر</a> توسعه داده شده است. این سامانه اساتید را با قابلیت‌هایی مانند تولید سؤالات آزمون و کوییز با LLM، نمره‌دهی خودکار با تأیید استاد، بازخورد هوشمند و شخصی‌سازی‌شده برای دانشجویان و مدیریت یکپارچه دانشجویان و نمرات توانمند می‌سازد.">
+              AI-based Quiz and Exam Generator & Evaluator developed for
+              <a href="https://bau.edu.tr" target="_blank" rel="noopener noreferrer">Bahcesehir University</a>
+              as my Senior Capstone Project empowering instructors with: LLM-Generated Exam & Quiz Questions, Automated Grading with Instructor Approval, Personalized Smart Feedback for Students, Seamless Student and Grade Management.
+              </p>
+
+              <!-- Project Report -->
+              <a class="btn primary"
+              data-en="<img src='{{ url_for('static', filename='images/PDF.png') }}' style='width:28px; height:28px;'> Project Report"
+              data-tr="<img src='{{ url_for('static', filename='images/PDF.png') }}' style='width:28px; height:28px;'> Proje Raporu"
+              data-fa="<img src='{{ url_for('static', filename='images/PDF.png') }}' style='width:28px; height:28px;'> گزارش پروژه"
+              href="{{ url_for('static', filename='files/CapstoneReportTemplate.docx.pdf') }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+              <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="Project Report" style="width:28px; height:28px;">
+              Project Report
+              </a>
+
+              <!-- Project Presentation -->
+              <a class="btn primary"
+              data-en="<img src='{{ url_for('static', filename='images/powerpoint.png') }}' style='width:30px; height:30px;'> Project Presentation"
+              data-tr="<img src='{{ url_for('static', filename='images/powerpoint.png') }}' style='width:30px; height:30px;'> Proje Sunumu"
+              data-fa="<img src='{{ url_for('static', filename='images/powerpoint.png') }}' style='width:30px; height:30px;'> ارائه پروژه"
+              href="{{ url_for('static', filename='files/CapstoneProjectPresentation.pdf') }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+              <img src="{{ url_for('static', filename='images/powerpoint.png') }}" alt="Project Presentation" style="width:30px; height:30px;">
+              Project Presentation
+              </a>
             </div>
         </div>
 
@@ -131,47 +303,147 @@
             <img src="{{ url_for('static', filename='images/tts2.jpg') }}" alt="Re [Style TTS2]">
             <div class="project-info">
               <h2>Re [Style TTS2]</h2>
-              <p>A reproduction study of Style TTS2: Towards Human-Level Text-to-Speech through Style Diffusion and Adversarial Training with Large Speech Language Models which utilizes deep learning and artificial neural networks.</p>
-              <a class="btn primary" href="https://github.com/yl4579/StyleTTS2" target="_blank" rel="noopener noreferrer" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
-                <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
-                View Git Repository
+              <!-- Description -->
+            <p
+            data-en="A reproduction study of StyleTTS2: Towards Human-Level Text-to-Speech through Style Diffusion and Adversarial Training with Large Speech Language Models, utilizing deep learning and artificial neural networks."
+
+            data-tr="Derin öğrenme ve yapay sinir ağları kullanan, StyleTTS2: Style Diffusion ve Büyük Konuşma Dil Modelleri ile Adversarial Eğitim Yoluyla İnsan Seviyesinde Metinden Konuşmaya başlıklı çalışmanın bir yeniden üretim (reproduction) çalışmasıdır."
+
+            data-fa="یک مطالعه بازتولید (Reproduction) از StyleTTS2: دستیابی به تبدیل متن به گفتار در سطح انسانی از طریق انتشار سبک (Style Diffusion) و آموزش خصمانه با مدل‌های زبانی بزرگ گفتاری که از یادگیری عمیق و شبکه‌های عصبی مصنوعی استفاده می‌کند.">
+            A reproduction study of Style TTS2: Towards Human-Level Text-to-Speech through Style Diffusion and Adversarial Training with Large Speech Language Models which utilizes deep learning and artificial neural networks.
+            </p>
+
+            <!-- Git Repository -->
+            <a class="btn primary"
+            data-en="<img src='{{ url_for('static', filename='images/github.png') }}' style='width:25px; height:25px;'> View Git Repository"
+            data-tr="<img src='{{ url_for('static', filename='images/github.png') }}' style='width:25px; height:25px;'> Git Deposunu Görüntüle"
+            data-fa="<img src='{{ url_for('static', filename='images/github.png') }}' style='width:25px; height:25px;'> مشاهده رپو گیتهاب"
+            href="https://github.com/yl4579/StyleTTS2"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+            <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
+            View Git Repository
             </a>
-            <a class="btn primary" href="{{ url_for('static', filename='files/NeurIPS-2023-styletts-2-towards-human-level-text-to-speech-through-style-diffusion-and-adversarial-training-with-large-speech-language-models-Paper-Conference.pdf') }}" target="_blank" rel="noopener noreferrer" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
-              <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="Original Paper" style="width:28px; height:28px;">
-              Original Paper
-          </a>
+
+            <!-- Original Paper -->
+            <a class="btn primary"
+            data-en="<img src='{{ url_for('static', filename='images/PDF.png') }}' style='width:28px; height:28px;'> Original Paper"
+            data-tr="<img src='{{ url_for('static', filename='images/PDF.png') }}' style='width:28px; height:28px;'> Orijinal Makale"
+            data-fa="<img src='{{ url_for('static', filename='images/PDF.png') }}' style='width:28px; height:28px;'> مقاله اصلی"
+            href="{{ url_for('static', filename='files/NeurIPS-2023-styletts-2-towards-human-level-text-to-speech-through-style-diffusion-and-adversarial-training-with-large-speech-language-models-Paper-Conference.pdf') }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+            <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="Original Paper" style="width:28px; height:28px;">
+            Original Paper
+            </a>
             </div>
         </div>
 
         <div class="project-card" id="stroke">
             <img src="{{ url_for('static', filename='images/stroke.png') }}" alt="Stroke Prediction with Multiple Linear Regression">
             <div class="project-info">
-              <h2>Stroke Prediction with Multiple Linear Regression</h2>
-              <p>Stroke Prediction with Multiple Linear Regression based on the kaggle competition <a href="https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset" target="_blank" rel="noopener noreferrer">Stroke Prediction Dataset Assignment</a> using machine learning with Python and Scikit Learn.</p>
-              <a class="btn primary" href="https://github.com/AtenaJP22/StrokePrediction" target="_blank" rel="noopener noreferrer" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
-                <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
-                View Project
-            </a>
-            <a class="btn primary" href="{{ url_for('static', filename='files/AIN2002_Project_Report.pdf') }}" target="_blank" rel="noopener noreferrer" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+              <!-- Header -->
+              <h2
+              data-en="Stroke Prediction with Multiple Linear Regression"
+              data-tr="Multiple Linear Regresyon ile İnme Tahmini"
+              data-fa="پیش‌بینی سکته مغزی با رگرسیون خطی چندگانه">
+              Stroke Prediction with Multiple Linear Regression
+              </h2>
+
+              <!-- Description -->
+              <p
+              data-en="Stroke prediction using Multiple Linear Regression based on the Kaggle competition <a href='https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset' target='_blank' rel='noopener noreferrer'>Stroke Prediction Dataset Assignment</a>, implemented with machine learning using Python and Scikit-learn."
+
+              data-tr="Kaggle’daki <a href='https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset' target='_blank' rel='noopener noreferrer'>Stroke Prediction Dataset Assignment</a> yarışmasına dayalı olarak, Python ve Scikit-learn kullanılarak makine öğrenmesi ile geliştirilen Çoklu Doğrusal Regresyon tabanlı inme tahmin çalışmasıdır."
+
+              data-fa="یک پروژه پیش‌بینی سکته مغزی با استفاده از رگرسیون خطی چندگانه که بر اساس مسابقه <a href='https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset' target='_blank' rel='noopener noreferrer'>Stroke Prediction Dataset Assignment</a> در Kaggle و با بهره‌گیری از یادگیری ماشین با Python و Scikit-learn پیاده‌سازی شده است.">
+              Stroke Prediction with Multiple Linear Regression based on the Kaggle competition
+              <a href="https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset" target="_blank" rel="noopener noreferrer">
+                Stroke Prediction Dataset Assignment
+              </a>
+              using machine learning with Python and Scikit Learn.
+              </p>
+
+              <!-- View Project -->
+              <a class="btn primary"
+              data-en="<img src='{{ url_for('static', filename='images/github.png') }}' style='width:25px; height:25px;'> View Project"
+              data-tr="<img src='{{ url_for('static', filename='images/github.png') }}' style='width:25px; height:25px;'> Projeyi Görüntüle"
+              data-fa="<img src='{{ url_for('static', filename='images/github.png') }}' style='width:25px; height:25px;'> مشاهده پروژه"
+              href="https://github.com/AtenaJP22/StrokePrediction"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+              <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
+              View Project
+              </a>
+
+              <!-- Project Report -->
+              <a class="btn primary"
+              data-en="<img src='{{ url_for('static', filename='images/PDF.png') }}' style='width:28px; height:28px;'> Project Report"
+              data-tr="<img src='{{ url_for('static', filename='images/PDF.png') }}' style='width:28px; height:28px;'> Proje Raporu"
+              data-fa="<img src='{{ url_for('static', filename='images/PDF.png') }}' style='width:28px; height:28px;'> گزارش پروژه"
+              href="{{ url_for('static', filename='files/AIN2002_Project_Report.pdf') }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
               <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="Project Report" style="width:28px; height:28px;">
               Project Report
-          </a>
+              </a>
             </div>
         </div>
 
         <div class="project-card" id="titanic">
           <img src="{{ url_for('static', filename='images/titanic.png') }}" alt="Machine Learning and The Titanic Disaster">
           <div class="project-info">
-            <h2>Machine Learning and The Titanic Disaster</h2>
-            <p>a machine learning model to predict whether a passenger survived or not during the tragic event of the Titanic disaster. Based on <a href="https://www.kaggle.com/c/titanic" target="_blank" rel="noopener noreferrer">Titanic - Machine Learning from Disaster</a> competition on Kaggle. Developed with Python and Scikit Learn.</p>
-            <a class="btn primary" href="https://github.com/AtenaJP22/TitanicKaggleCompetition" target="_blank" rel="noopener noreferrer" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
-              <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
-              View Project
-          </a>
-          <a class="btn primary" href="{{ url_for('static', filename='files/Titanic_Report.pdf') }}" target="_blank" rel="noopener noreferrer" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+            <!-- Header -->
+            <h2
+            data-en="Machine Learning and The Titanic Disaster"
+            data-tr="Makine Öğrenmesi ve Titanic Felaketi"
+            data-fa="یادگیری ماشین و فاجعه تایتانیک">
+            Machine Learning and The Titanic Disaster
+            </h2>
+
+            <!-- Description -->
+            <p
+            data-en="A machine learning model developed to predict whether a passenger survived the tragic Titanic disaster. Based on the Kaggle competition <a href='https://www.kaggle.com/c/titanic' target='_blank' rel='noopener noreferrer'>Titanic – Machine Learning from Disaster</a>. Developed using Python and Scikit-learn."
+
+            data-tr="Titanic felaketi sırasında bir yolcunun hayatta kalıp kalmadığını tahmin etmek amacıyla geliştirilen bir makine öğrenmesi modeli. Kaggle’daki <a href='https://www.kaggle.com/c/titanic' target='_blank' rel='noopener noreferrer'>Titanic – Machine Learning from Disaster</a> yarışmasına dayanmaktadır. Python ve Scikit-learn kullanılarak geliştirilmiştir."
+
+            data-fa="یک مدل یادگیری ماشین برای پیش‌بینی زنده ماندن یا نماندن مسافران در فاجعه غم‌انگیز تایتانیک. این پروژه بر اساس مسابقه <a href='https://www.kaggle.com/c/titanic' target='_blank' rel='noopener noreferrer'>Titanic – Machine Learning from Disaster</a> در Kaggle توسعه داده شده و با Python و Scikit-learn پیاده‌سازی شده است.">
+            a machine learning model to predict whether a passenger survived or not during the tragic event of the Titanic disaster. Based on
+            <a href="https://www.kaggle.com/c/titanic" target="_blank" rel="noopener noreferrer">
+              Titanic - Machine Learning from Disaster
+            </a>
+            competition on Kaggle. Developed with Python and Scikit Learn.
+            </p>
+
+            <!-- View Project -->
+            <a class="btn primary"
+            data-en="<img src='{{ url_for('static', filename='images/github.png') }}' style='width:25px; height:25px;'> View Project"
+            data-tr="<img src='{{ url_for('static', filename='images/github.png') }}' style='width:25px; height:25px;'> Projeyi Görüntüle"
+            data-fa="<img src='{{ url_for('static', filename='images/github.png') }}' style='width:25px; height:25px;'> مشاهده پروژه"
+            href="https://github.com/AtenaJP22/TitanicKaggleCompetition"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+            <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
+            View Project
+            </a>
+
+            <!-- Project Report -->
+            <a class="btn primary"
+            data-en="<img src='{{ url_for('static', filename='images/PDF.png') }}' style='width:28px; height:28px;'> Project Report"
+            data-tr="<img src='{{ url_for('static', filename='images/PDF.png') }}' style='width:28px; height:28px;'> Proje Raporu"
+            data-fa="<img src='{{ url_for('static', filename='images/PDF.png') }}' style='width:28px; height:28px;'> گزارش پروژه"
+            href="{{ url_for('static', filename='files/Titanic_Report.pdf') }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
             <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="Project Report" style="width:28px; height:28px;">
             Project Report
-        </a>
+            </a>
           </div>
       </div>
 
@@ -179,16 +451,49 @@
         <div class="project-card">
           <img src="{{ url_for('static', filename='images/Ensemble.png') }}" alt="Ensemble Learning">
           <div class="project-info">
-            <h2>Ensemble Learning</h2>
-            <p>Comparing the accuracy in an example problem by classifying by soft voting, hard voting, using bagging/pasting, Out of Bag Evaluations, Random Forests and my own novel ensemble model. Utilized soft voting classifiers On SVM (Soft Vector Machine), KNeighbor, Random Forest and the different combinations of them. Developed with Python and Scikit Learn. Based on Machine Learning.</p>
-            <a class="btn primary" href="https://github.com/AtenaJP22/EnsembleLearning" target="_blank" rel="noopener noreferrer" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
-              <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
-              View Project
-          </a>
-          <a class="btn primary" href="{{ url_for('static', filename='files/Ensemble_Report.pdf') }}" target="_blank" rel="noopener noreferrer" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+            <!-- Header -->
+            <h2
+            data-en="Ensemble Learning"
+            data-tr="Topluluk (Ensemble) Öğrenmesi"
+            data-fa="یادگیری تجمعی (Ensemble Learning)">
+            Ensemble Learning
+            </h2>
+
+            <!-- Description -->
+            <p
+            data-en="A comparative study of classification accuracy on an example problem using soft voting, hard voting, bagging and pasting, out-of-bag evaluation, random forests, and a novel ensemble model developed by me. Soft voting classifiers were applied using Support Vector Machine (SVM), K-Nearest Neighbors, Random Forest, and various combinations of these models. Developed with Python and Scikit-learn. Based on machine learning."
+
+            data-tr="Örnek bir problem üzerinde; soft voting, hard voting, bagging ve pasting, Out-of-Bag değerlendirmeleri, Random Forest algoritmaları ve tarafımdan geliştirilen özgün bir ensemble model kullanılarak sınıflandırma doğruluklarının karşılaştırıldığı bir çalışmadır. Soft voting sınıflandırıcıları; Support Vector Machine (SVM), K-Nearest Neighbors, Random Forest ve bu modellerin farklı kombinasyonları ile uygulanmıştır. Python ve Scikit-learn kullanılarak geliştirilmiştir. Makine öğrenmesi tabanlıdır."
+
+            data-fa="یک مطالعه مقایسه‌ای برای بررسی دقت طبقه‌بندی در یک مسئله نمونه با استفاده از روش‌های رأی‌گیری نرم (Soft Voting)، رأی‌گیری سخت (Hard Voting)، Bagging و Pasting، ارزیابی Out-of-Bag، (Random Forest) و یک مدل Ensemble نوآورانه طراحی‌شده توسط من. طبقه‌بندهای Soft Voting با استفاده از SVM، K-Nearest Neighbors، Random Forest و ترکیب‌های مختلف این مدل‌ها پیاده‌سازی شده‌اند. توسعه‌یافته با Python و Scikit-learn. مبتنی بر یادگیری ماشین.">
+            Comparing the accuracy in an example problem by classifying by soft voting, hard voting, using bagging/pasting, Out of Bag Evaluations, Random Forests and my own novel ensemble model. Utilized soft voting classifiers On SVM (Soft Vector Machine), KNeighbor, Random Forest and the different combinations of them. Developed with Python and Scikit Learn. Based on Machine Learning.
+            </p>
+
+            <!-- View Project -->
+            <a class="btn primary"
+            data-en="<img src='{{ url_for('static', filename='images/github.png') }}' style='width:25px; height:25px;'> View Project"
+            data-tr="<img src='{{ url_for('static', filename='images/github.png') }}' style='width:25px; height:25px;'> Projeyi Görüntüle"
+            data-fa="<img src='{{ url_for('static', filename='images/github.png') }}' style='width:25px; height:25px;'> مشاهده پروژه"
+            href="https://github.com/AtenaJP22/EnsembleLearning"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+            <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
+            View Project
+            </a>
+
+            <!-- Project Report -->
+            <a class="btn primary"
+            data-en="<img src='{{ url_for('static', filename='images/PDF.png') }}' style='width:28px; height:28px;'> Project Report"
+            data-tr="<img src='{{ url_for('static', filename='images/PDF.png') }}' style='width:28px; height:28px;'> Proje Raporu"
+            data-fa="<img src='{{ url_for('static', filename='images/PDF.png') }}' style='width:28px; height:28px;'> گزارش پروژه"
+            href="{{ url_for('static', filename='files/Ensemble_Report.pdf') }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
             <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="Project Report" style="width:28px; height:28px;">
             Project Report
-        </a>
+            </a>
           </div>
       </div>
 
@@ -196,20 +501,62 @@
       <div class="project-card" id="r">
         <img src="{{ url_for('static', filename='images/sales.jpg') }}" alt="Advertising Effects on Sales with R">
         <div class="project-info">
-          <h2>Advertising Effects on Sales with R</h2>
-          <p>This data science project analyzes the impact of three advertising methods—Television (TV), Radio, and Newspaper—on sales performance. The dataset includes 200 observations of advertising budgets and corresponding sales figures, measured in thousands of dollars and units respectively. The goal is to determine which advertising methods significantly influence sales and to model these relationships using statistical techniques.</p>
-          <a class="btn primary" href="https://github.com/AtenaJP22/Advertising-Effects-on-Sales-R" target="_blank" rel="noopener noreferrer" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+          <!-- Header -->
+          <h2
+          data-en="Advertising Effects on Sales with R"
+          data-tr="R ile Reklamın Satışlara Etkisi"
+          data-fa="تأثیر تبلیغات بر فروش با R">
+          Advertising Effects on Sales with R
+          </h2>
+
+            <!-- Description -->
+            <p
+            data-en="This data science project analyzes the impact of three advertising channels—Television (TV), Radio, and Newspaper—on sales performance. The dataset consists of 200 observations of advertising budgets and corresponding sales figures, measured in thousands of dollars and units respectively. The objective is to identify which advertising channels significantly influence sales and to model these relationships using statistical techniques."
+
+            data-tr="Bu veri bilimi projesi, Televizyon (TV), Radyo ve Gazete olmak üzere üç reklam kanalının satış performansı üzerindeki etkisini analiz etmektedir. Veri seti, bin dolar cinsinden ölçülen reklam bütçeleri ve karşılık gelen satış adetlerini içeren 200 gözlemden oluşmaktadır. Amaç, satışları anlamlı düzeyde etkileyen reklam kanallarını belirlemek ve bu ilişkileri istatistiksel yöntemler kullanarak modellemektir."
+
+            data-fa="این پروژه علم داده به تحلیل تأثیر سه کانال تبلیغاتی شامل تلویزیون (TV)، رادیو و روزنامه بر عملکرد فروش می‌پردازد. مجموعه داده شامل ۲۰۰ مشاهده از بودجه‌های تبلیغاتی و مقادیر متناظر فروش است که به‌ترتیب بر حسب هزار دلار و تعداد واحد اندازه‌گیری شده‌اند. هدف این پروژه شناسایی کانال‌های تبلیغاتی مؤثر بر فروش و مدل‌سازی این روابط با استفاده از روش‌های آماری است.">
+            This data science project analyzes the impact of three advertising methods—Television (TV), Radio, and Newspaper—on sales performance. The dataset includes 200 observations of advertising budgets and corresponding sales figures, measured in thousands of dollars and units respectively. The goal is to determine which advertising methods significantly influence sales and to model these relationships using statistical techniques.
+            </p>
+
+            <!-- View Project -->
+            <a class="btn primary"
+            data-en="<img src='{{ url_for('static', filename='images/github.png') }}' style='width:25px; height:25px;'> View Project"
+            data-tr="<img src='{{ url_for('static', filename='images/github.png') }}' style='width:25px; height:25px;'> Projeyi Görüntüle"
+            data-fa="<img src='{{ url_for('static', filename='images/github.png') }}' style='width:25px; height:25px;'> مشاهده پروژه"
+            href="https://github.com/AtenaJP22/Advertising-Effects-on-Sales-R"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
             <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
             View Project
-        </a>
-        <a class="btn primary" href="{{ url_for('static', filename='files/Project_Report_Advertising.pdf') }}" target="_blank" rel="noopener noreferrer" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+            </a>
+
+          <!-- Project Report -->
+          <a class="btn primary"
+          data-en="<img src='{{ url_for('static', filename='images/PDF.png') }}' style='width:28px; height:28px;'> Project Report"
+          data-tr="<img src='{{ url_for('static', filename='images/PDF.png') }}' style='width:28px; height:28px;'> Proje Raporu"
+          data-fa="<img src='{{ url_for('static', filename='images/PDF.png') }}' style='width:28px; height:28px;'> گزارش پروژه"
+          href="{{ url_for('static', filename='files/Project_Report_Advertising.pdf') }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
           <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="Project Report" style="width:28px; height:28px;">
           Project Report
-      </a>
-      <a class="btn primary" href="{{ url_for('static', filename='files/Advertising_Presentation.pdf') }}" target="_blank" rel="noopener noreferrer" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
-        <img src="{{ url_for('static', filename='images/powerpoint.png') }}" alt="Project Presentation" style="width:30px; height:30px;">
-        Project Presentation
-      </a>
+          </a>
+
+          <!-- Project Presentation -->
+          <a class="btn primary"
+          data-en="<img src='{{ url_for('static', filename='images/powerpoint.png') }}' style='width:30px; height:30px;'> Project Presentation"
+          data-tr="<img src='{{ url_for('static', filename='images/powerpoint.png') }}' style='width:30px; height:30px;'> Proje Sunumu"
+          data-fa="<img src='{{ url_for('static', filename='images/powerpoint.png') }}' style='width:30px; height:30px;'> ارائه پروژه"
+          href="{{ url_for('static', filename='files/Advertising_Presentation.pdf') }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+          <img src="{{ url_for('static', filename='images/powerpoint.png') }}" alt="Project Presentation" style="width:30px; height:30px;">
+          Project Presentation
+          </a>
         </div>
     </div>
 
@@ -217,36 +564,112 @@
     <div class="project-card">
       <img src="{{ url_for('static', filename='images/insurance.jpg') }}" alt="Insurance Premium Calculator">
       <div class="project-info">
-        <h2>Insurance Premium Calculator</h2>
-        <p>An OOP python app to create a simple system for an insurance company with 3 types of insurance policies; health policy, auto policy, and life policy. This project aims to create a simple system for an insurance company ensuring that the information of the customers are stored privately, and each policy is calculated according to different criteria of the customers’ information. Developed with Python.</p>
-        <a class="btn primary" href="https://github.com/AtenaJP22/Insurance-Premium-Calculator" target="_blank" rel="noopener noreferrer" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
-          <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
-          View Project
+        <h2
+        data-en="Insurance Premium Calculator"
+        data-tr="Sigorta Prim Hesaplayıcı"
+        data-fa="محاسبه‌گر حق بیمه"
+      >
+        Insurance Premium Calculator
+      </h2>
+
+      <p
+        data-en="An OOP python app to create a simple system for an insurance company with 3 types of insurance policies; health policy, auto policy, and life policy. This project aims to create a simple system for an insurance company ensuring that the information of the customers are stored privately, and each policy is calculated according to different criteria of the customers’ information. Developed with Python."
+        data-tr="Sağlık sigortası, araç sigortası ve hayat sigortası olmak üzere üç farklı sigorta poliçesini içeren basit bir sigorta şirketi sistemi oluşturmak için geliştirilmiş, Nesne Yönelimli Programlama (OOP) temelli bir Python uygulamasıdır. Bu proje, müşteri bilgilerinin gizli bir şekilde saklanmasını ve her poliçenin müşteriye ait farklı kriterlere göre hesaplanmasını amaçlamaktadır. Python ile geliştirilmiştir."
+        data-fa="یک برنامه پایتون مبتنی بر برنامه‌نویسی شی‌گرا (OOP) برای ایجاد یک سیستم ساده برای شرکت بیمه با سه نوع بیمه‌نامه شامل بیمه درمانی، بیمه خودرو و بیمه عمر است. هدف این پروژه ایجاد سیستمی ساده برای یک شرکت بیمه است که اطلاعات مشتریان به صورت محرمانه ذخیره شود و هر بیمه‌نامه بر اساس معیارهای مختلف اطلاعات مشتری محاسبه گردد. توسعه داده شده با پایتون."
+      >
+        An OOP python app to create a simple system for an insurance company with 3 types of insurance policies; health policy, auto policy, and life policy. This project aims to create a simple system for an insurance company ensuring that the information of the customers are stored privately, and each policy is calculated according to different criteria of the customers’ information. Developed with Python.
+      </p>
+
+      <a
+        class="btn primary"
+        href="https://github.com/AtenaJP22/Insurance-Premium-Calculator"
+        target="_blank"
+        rel="noopener noreferrer"
+        style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;"
+        data-en="<img src=&quot;{{ url_for('static', filename='images/github.png') }}&quot; alt='GitHub' style='width:25px; height:25px;'>View Project"
+        data-tr="<img src=&quot;{{ url_for('static', filename='images/github.png') }}&quot; alt='GitHub' style='width:25px; height:25px;'>Projeyi Görüntüle"
+        data-fa="<img src=&quot;{{ url_for('static', filename='images/github.png') }}&quot; alt='GitHub' style='width:25px; height:25px;'>مشاهده پروژه"
+      >
+        <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
+        View Project
       </a>
-      <a class="btn primary" href="{{ url_for('static', filename='files/Insurance-Premium-Calculator-documentation.pdf') }}" target="_blank" rel="noopener noreferrer" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+
+      <a
+        class="btn primary"
+        href="{{ url_for('static', filename='files/Insurance-Premium-Calculator-documentation.pdf') }}"
+        target="_blank"
+        rel="noopener noreferrer"
+        style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;"
+        data-en="<img src=&quot;{{ url_for('static', filename='images/PDF.png') }}&quot; alt='Project Report' style='width:28px; height:28px;'>Project Report"
+        data-tr="<img src=&quot;{{ url_for('static', filename='images/PDF.png') }}&quot; alt='Project Report' style='width:28px; height:28px;'>Proje Raporu"
+        data-fa="<img src=&quot;{{ url_for('static', filename='images/PDF.png') }}&quot; alt='Project Report' style='width:28px; height:28px;'>گزارش پروژه"
+      >
         <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="Project Report" style="width:28px; height:28px;">
         Project Report
-    </a>
+      </a>
       </div>
       </div>
 
       <div class="project-card" id="lib">
         <img src="{{ url_for('static', filename='images/library.jpg') }}" alt="Library Web Application">
         <div class="project-info">
-          <h2>Library Web Application</h2>
-          <p>An abstract library web application developed with SpringBoot (SpringToolSuite4) using an h2-database that represents functionalities from the users and the admin as well as performing CRUD operations on the books. Developed with SpringBoot in Java.</p>
-          <a class="btn primary" href="https://github.com/AtenaJP22/LibraryWebApp-Demo" target="_blank" rel="noopener noreferrer" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
-            <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
-            View Project
-        </a>
-        <a class="btn primary" href="{{ url_for('static', filename='files/LibraryWebSystem_Documentation.pdf') }}" target="_blank" rel="noopener noreferrer" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
-          <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="Project Report" style="width:28px; height:28px;">
-          Project Report
-      </a>
-        <a class="btn primary" href="{{ url_for('static', filename='files/LibraryWebSystem_Presentation.pdf') }}" target="_blank" rel="noopener noreferrer" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
-          <img src="{{ url_for('static', filename='images/powerpoint.png') }}" alt="Project Presentation" style="width:30px; height:30px;">
-          Project Presentation
-        </a>
+          <h2
+            data-en="Library Web Application"
+            data-tr="Kütüphane Web Uygulaması"
+            data-fa="برنامه وب کتابخانه"
+          >
+            Library Web Application
+          </h2>
+
+            <p
+              data-en="An abstract library web application developed with SpringBoot (SpringToolSuite4) using an h2-database that represents functionalities from the users and the admin as well as performing CRUD operations on the books. Developed with SpringBoot in Java."
+              data-tr="SpringBoot (SpringToolSuite4) kullanılarak geliştirilen, H2 veritabanı ile çalışan soyut bir kütüphane web uygulamasıdır. Kullanıcı ve yönetici rollerine ait işlevleri temsil eder ve kitaplar üzerinde CRUD (Oluşturma, Okuma, Güncelleme, Silme) işlemlerini gerçekleştirir. Java ve SpringBoot ile geliştirilmiştir."
+              data-fa="یک برنامه وب کتابخانه‌ای انتزاعی است که با استفاده از SpringBoot (SpringToolSuite4) و پایگاه داده H2 توسعه داده شده است. این برنامه قابلیت‌های کاربران و مدیر سیستم را شبیه‌سازی کرده و عملیات CRUD (ایجاد، خواندن، به‌روزرسانی و حذف) را بر روی کتاب‌ها انجام می‌دهد. توسعه داده شده با Java و SpringBoot."
+            >
+              An abstract library web application developed with SpringBoot (SpringToolSuite4) using an h2-database that represents functionalities from the users and the admin as well as performing CRUD operations on the books. Developed with SpringBoot in Java.
+            </p>
+
+            <a
+              class="btn primary"
+              href="https://github.com/AtenaJP22/LibraryWebApp-Demo"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;"
+              data-en="<img src=&quot;{{ url_for('static', filename='images/github.png') }}&quot; alt='GitHub' style='width:25px; height:25px;'>View Project"
+              data-tr="<img src=&quot;{{ url_for('static', filename='images/github.png') }}&quot; alt='GitHub' style='width:25px; height:25px;'>Projeyi Görüntüle"
+              data-fa="<img src=&quot;{{ url_for('static', filename='images/github.png') }}&quot; alt='GitHub' style='width:25px; height:25px;'>مشاهده پروژه"
+            >
+              <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
+              View Project
+            </a>
+
+            <a
+              class="btn primary"
+              href="{{ url_for('static', filename='files/LibraryWebSystem_Documentation.pdf') }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;"
+              data-en="<img src=&quot;{{ url_for('static', filename='images/PDF.png') }}&quot; alt='Project Report' style='width:28px; height:28px;'>Project Report"
+              data-tr="<img src=&quot;{{ url_for('static', filename='images/PDF.png') }}&quot; alt='Project Report' style='width:28px; height:28px;'>Proje Raporu"
+              data-fa="<img src=&quot;{{ url_for('static', filename='images/PDF.png') }}&quot; alt='Project Report' style='width:28px; height:28px;'>گزارش پروژه"
+            >
+              <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="Project Report" style="width:28px; height:28px;">
+              Project Report
+            </a>
+
+            <a
+              class="btn primary"
+              href="{{ url_for('static', filename='files/LibraryWebSystem_Presentation.pdf') }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;"
+              data-en="<img src=&quot;{{ url_for('static', filename='images/powerpoint.png') }}&quot; alt='Project Presentation' style='width:30px; height:30px;'>Project Presentation"
+              data-tr="<img src=&quot;{{ url_for('static', filename='images/powerpoint.png') }}&quot; alt='Project Presentation' style='width:30px; height:30px;'>Proje Sunumu"
+              data-fa="<img src=&quot;{{ url_for('static', filename='images/powerpoint.png') }}&quot; alt='Project Presentation' style='width:30px; height:30px;'>ارائه پروژه"
+            >
+              <img src="{{ url_for('static', filename='images/powerpoint.png') }}" alt="Project Presentation" style="width:30px; height:30px;">
+              Project Presentation
+            </a>
           </div>
       </div>
 
@@ -254,16 +677,49 @@
       <div class="project-card">
         <img src="{{ url_for('static', filename='images/hazelcast.png') }}" alt="Hazelcast Demo Sales Project">
         <div class="project-info">
-          <h2>Hazelcast Demo Sales Project</h2>
-          <p>A Java-based demo application that simulates distributed order processing using Hazelcast. Developed during my internship at <a href="https://i2i-systems.com" target="_blank" rel="noopener noreferrer">i2i Systems</a>, the project demonstrates how to set up a single-node Hazelcast cluster, use IMap for in-memory data storage, and perform basic get/put operations. It also serves as an introductory example for understanding distributed caching and partitioning in real-time systems. Developed with Java.</p>
-          <a class="btn primary" href="https://github.com/AtenaJP22/Hazelcast-Sales-Demo" target="_blank" rel="noopener noreferrer" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+          <h2
+            data-en="Hazelcast Demo Sales Project"
+            data-tr="Hazelcast Demo Satış Projesi"
+            data-fa="پروژه فروش با Hazelcast"
+          >
+            Hazelcast Demo Sales Project
+          </h2>
+
+          <p
+            data-en="A Java-based demo application that simulates distributed order processing using Hazelcast. Developed during my internship at i2i Systems, the project demonstrates how to set up a single-node Hazelcast cluster, use IMap for in-memory data storage, and perform basic get/put operations. It also serves as an introductory example for understanding distributed caching and partitioning in real-time systems. Developed with Java."
+            data-tr="Hazelcast kullanarak dağıtık sipariş işleme sürecini simüle eden Java tabanlı bir demo uygulamasıdır. i2i Systems şirketindeki stajım sırasında geliştirilmiştir. Proje, tek düğümlü bir Hazelcast kümesinin kurulmasını, bellek içi veri depolama için IMap kullanımını ve temel get/put işlemlerini göstermektedir. Ayrıca gerçek zamanlı sistemlerde dağıtık önbellekleme ve bölümlendirme kavramlarını anlamak için giriş seviyesi bir örnek sunar. Java ile geliştirilmiştir."
+            data-fa="یک برنامه نمایشی مبتنی بر Java است که پردازش سفارش‌های توزیع‌شده را با استفاده از Hazelcast شبیه‌سازی می‌کند. این پروژه در طول دوره کارآموزی من در شرکت i2i Systems توسعه داده شده است و نحوه راه‌اندازی یک خوشه Hazelcast تک‌نودی، استفاده از IMap برای ذخیره‌سازی داده‌ها در حافظه و انجام عملیات پایه get/put را نشان می‌دهد. همچنین به‌عنوان یک مثال مقدماتی برای درک کشینگ توزیع‌شده و پارتیشن‌بندی در سیستم‌های بلادرنگ عمل می‌کند. توسعه داده شده با Java."
+          >
+            A Java-based demo application that simulates distributed order processing using Hazelcast. Developed during my internship at <a href="https://i2i-systems.com" target="_blank" rel="noopener noreferrer">i2i Systems</a>, the project demonstrates how to set up a single-node Hazelcast cluster, use IMap for in-memory data storage, and perform basic get/put operations. It also serves as an introductory example for understanding distributed caching and partitioning in real-time systems. Developed with Java.
+          </p>
+
+          <a
+            class="btn primary"
+            href="https://github.com/AtenaJP22/Hazelcast-Sales-Demo"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;"
+            data-en="<img src=&quot;{{ url_for('static', filename='images/github.png') }}&quot; alt='GitHub' style='width:25px; height:25px;'>View Project"
+            data-tr="<img src=&quot;{{ url_for('static', filename='images/github.png') }}&quot; alt='GitHub' style='width:25px; height:25px;'>Projeyi Görüntüle"
+            data-fa="<img src=&quot;{{ url_for('static', filename='images/github.png') }}&quot; alt='GitHub' style='width:25px; height:25px;'>مشاهده پروژه"
+          >
             <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
             View Project
-        </a>
-      <a class="btn primary" href="{{ url_for('static', filename='files/Hazelcast-3.pdf') }}" target="_blank" rel="noopener noreferrer" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
-        <img src="{{ url_for('static', filename='images/powerpoint.png') }}" alt="Project Presentation" style="width:30px; height:30px;">
-        Project Presentation
-      </a>
+          </a>
+
+          <a
+            class="btn primary"
+            href="{{ url_for('static', filename='files/Hazelcast-3.pdf') }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;"
+            data-en="<img src=&quot;{{ url_for('static', filename='images/powerpoint.png') }}&quot; alt='Project Presentation' style='width:30px; height:30px;'>Project Presentation"
+            data-tr="<img src=&quot;{{ url_for('static', filename='images/powerpoint.png') }}&quot; alt='Project Presentation' style='width:30px; height:30px;'>Proje Sunumu"
+            data-fa="<img src=&quot;{{ url_for('static', filename='images/powerpoint.png') }}&quot; alt='Project Presentation' style='width:30px; height:30px;'>ارائه پروژه"
+          >
+            <img src="{{ url_for('static', filename='images/powerpoint.png') }}" alt="Project Presentation" style="width:30px; height:30px;">
+            Project Presentation
+          </a>
         </div>
       </div>
 
@@ -271,16 +727,49 @@
       <div class="project-card">
         <img src="{{ url_for('static', filename='images/book.jpg') }}" alt="Book Comet Web Application">
         <div class="project-info">
-          <h2>Book Comet Web Application</h2>
-          <p>Developed a library web application using Flask that allows users to manage a bookstore by adding, updating, and deleting books and integrated Azure Cosmos DB to handle backend data storage, ensuring scalable and efficient management of book information. Deployed and tested the application locally, providing clear instructions for setting up the environment and running the app. Developed with Python and deployed via Azure Kubernetes.</p>
-          <a class="btn primary" href="https://github.com/AtenaJP22/BookCometApp" target="_blank" rel="noopener noreferrer" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+          <h2
+            data-en="Book Comet Web Application"
+            data-tr="Book Comet Web Uygulaması"
+            data-fa="اپلیکیشن وب Book Comet"
+          >
+            Book Comet Web Application
+          </h2>
+
+          <p
+            data-en="Developed a library web application using Flask that allows users to manage a bookstore by adding, updating, and deleting books and integrated Azure Cosmos DB to handle backend data storage, ensuring scalable and efficient management of book information. Deployed and tested the application locally, providing clear instructions for setting up the environment and running the app. Developed with Python and deployed via Azure Kubernetes."
+            data-tr="Flask kullanılarak geliştirilen bu kütüphane web uygulaması, kullanıcıların kitap ekleme, güncelleme ve silme işlemleriyle bir kitapçıyı yönetmesini sağlar. Arka uç veri depolaması için Azure Cosmos DB entegre edilerek kitap bilgilerinin ölçeklenebilir ve verimli bir şekilde yönetilmesi sağlanmıştır. Uygulama yerel ortamda dağıtılmış ve test edilmiş, ortam kurulumu ve uygulamanın çalıştırılması için açık talimatlar sunulmuştur. Python ile geliştirilmiş ve Azure Kubernetes üzerinden dağıtılmıştır."
+            data-fa="یک اپلیکیشن وب کتابخانه‌ای با استفاده از Flask توسعه داده شده است که به کاربران امکان مدیریت یک کتاب‌فروشی از طریق افزودن، به‌روزرسانی و حذف کتاب‌ها را می‌دهد. برای ذخیره‌سازی داده‌های سمت سرور، Azure Cosmos DB یکپارچه شده تا مدیریت اطلاعات کتاب‌ها به‌صورت مقیاس‌پذیر و کارآمد انجام شود. این برنامه به‌صورت لوکال مستقر و آزمایش شده و راهنمایی‌های واضحی برای راه‌اندازی محیط و اجرای برنامه ارائه شده است. توسعه داده شده با Python و مستقر شده از طریق Azure Kubernetes."
+          >
+            Developed a library web application using Flask that allows users to manage a bookstore by adding, updating, and deleting books and integrated Azure Cosmos DB to handle backend data storage, ensuring scalable and efficient management of book information. Deployed and tested the application locally, providing clear instructions for setting up the environment and running the app. Developed with Python and deployed via Azure Kubernetes.
+          </p>
+
+          <a
+            class="btn primary"
+            href="https://github.com/AtenaJP22/BookCometApp"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;"
+            data-en="<img src=&quot;{{ url_for('static', filename='images/github.png') }}&quot; alt='GitHub' style='width:25px; height:25px;'>View Project"
+            data-tr="<img src=&quot;{{ url_for('static', filename='images/github.png') }}&quot; alt='GitHub' style='width:25px; height:25px;'>Projeyi Görüntüle"
+            data-fa="<img src=&quot;{{ url_for('static', filename='images/github.png') }}&quot; alt='GitHub' style='width:25px; height:25px;'>مشاهده پروژه"
+          >
             <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
             View Project
-        </a>
-        <a class="btn primary" href="{{ url_for('static', filename='files/BookCometWebApp_Report.pdf') }}" target="_blank" rel="noopener noreferrer" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
-          <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="Project Report" style="width:28px; height:28px;">
-          Project Report
-      </a>
+          </a>
+
+          <a
+            class="btn primary"
+            href="{{ url_for('static', filename='files/BookCometWebApp_Report.pdf') }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;"
+            data-en="<img src=&quot;{{ url_for('static', filename='images/PDF.png') }}&quot; alt='Project Report' style='width:28px; height:28px;'>Project Report"
+            data-tr="<img src=&quot;{{ url_for('static', filename='images/PDF.png') }}&quot; alt='Project Report' style='width:28px; height:28px;'>Proje Raporu"
+            data-fa="<img src=&quot;{{ url_for('static', filename='images/PDF.png') }}&quot; alt='Project Report' style='width:28px; height:28px;'>گزارش پروژه"
+          >
+            <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="Project Report" style="width:28px; height:28px;">
+            Project Report
+          </a>
         </div>
       </div>
 
@@ -289,12 +778,35 @@
       <div class="project-card">
         <img src="{{ url_for('static', filename='images/tale.jpg') }}" alt="The Unsaid Tales">
         <div class="project-info">
-          <h2>The Unsaid Tales</h2>
-          <p>An interactive console-based story-telling program written in Java. This project allows users to explore a curated collection of genres and stories. The program offers a menu-driven interface, providing options to either select a story from a specific genre or play a randomly selected story. With a visually engaging display and dynamic interaction, it delivers an immersive storytelling experience. Written in Java on Ready to Program.</p>
-          <a class="btn primary" href="https://github.com/AtenaJP22/The-Unsaid-Tales" target="_blank" rel="noopener noreferrer" style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
-            <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
-            View Project
-        </a>
+          <h2
+              data-en="The Unsaid Tales"
+              data-tr="Söylenmemiş Hikâyeler"
+              data-fa="داستان‌های ناگفته"
+            >
+              The Unsaid Tales
+            </h2>
+
+            <p
+              data-en="An interactive console-based story-telling program written in Java. This project allows users to explore a curated collection of genres and stories. The program offers a menu-driven interface, providing options to either select a story from a specific genre or play a randomly selected story. With a visually engaging display and dynamic interaction, it delivers an immersive storytelling experience. Written in Java on Ready to Program."
+              data-tr="Java ile geliştirilmiş etkileşimli bir konsol tabanlı hikâye anlatım programıdır. Bu proje, kullanıcıların özenle seçilmiş türler ve hikâyeler koleksiyonunu keşfetmesini sağlar. Menü tabanlı bir arayüz sunarak belirli bir türden hikâye seçme veya rastgele bir hikâye oynatma seçenekleri sunar. Görsel olarak ilgi çekici yapısı ve dinamik etkileşimiyle sürükleyici bir hikâye anlatım deneyimi sağlar. Java kullanılarak Ready to Program ortamında geliştirilmiştir."
+              data-fa="یک برنامه تعاملی داستان‌گویی مبتنی بر کنسول است که با Java نوشته شده است. این پروژه به کاربران امکان می‌دهد مجموعه‌ای گزینش‌شده از ژانرها و داستان‌ها را کاوش کنند. برنامه دارای رابط کاربری مبتنی بر منو است و گزینه‌هایی برای انتخاب داستان از یک ژانر مشخص یا پخش یک داستان به‌صورت تصادفی ارائه می‌دهد. با نمایش بصری جذاب و تعامل پویا، تجربه‌ای فراگیر از داستان‌گویی را فراهم می‌کند. این برنامه با Java و در محیط Ready to Program نوشته شده است."
+            >
+              An interactive console-based story-telling program written in Java. This project allows users to explore a curated collection of genres and stories. The program offers a menu-driven interface, providing options to either select a story from a specific genre or play a randomly selected story. With a visually engaging display and dynamic interaction, it delivers an immersive storytelling experience. Written in Java on Ready to Program.
+            </p>
+
+            <a
+              class="btn primary"
+              href="https://github.com/AtenaJP22/The-Unsaid-Tales"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;"
+              data-en="<img src=&quot;{{ url_for('static', filename='images/github.png') }}&quot; alt='GitHub' style='width:25px; height:25px;'>View Project"
+              data-tr="<img src=&quot;{{ url_for('static', filename='images/github.png') }}&quot; alt='GitHub' style='width:25px; height:25px;'>Projeyi Görüntüle"
+              data-fa="<img src=&quot;{{ url_for('static', filename='images/github.png') }}&quot; alt='GitHub' style='width:25px; height:25px;'>مشاهده پروژه"
+            >
+              <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
+              View Project
+            </a>
           </div>
       </div>
 
@@ -375,18 +887,104 @@
       });
     });
 
-    // Add event listeners directly (no fetch needed)
-    const sidebar = document.getElementById("sidebar");
-    const closeSidebar = document.getElementById("closeSidebar");
-    const menuButton = document.getElementById("menuButton");
-      
-    menuButton.addEventListener("click", () => {
-      sidebar.classList.add("show");
+    // Toggle hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.querySelector('.nav-container');
+    const navItems = document.querySelectorAll('.nav-item');
+
+    hamburger.addEventListener('click', () => {
+      nav.classList.toggle('active');
+      hamburger.classList.toggle('active');
     });
-      
-    closeSidebar.addEventListener("click", () => {
-      sidebar.classList.remove("show");
+
+    // Close menu when clicking on a nav item (on mobile)
+    navItems.forEach(item => {
+      item.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+          nav.classList.remove('active');
+          hamburger.classList.remove('active');
+          const icon = hamburger.querySelector('i');
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      });
     });
+
+    // Close menu when clicking outside (optional)
+    document.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768 && 
+          !nav.contains(e.target) && 
+          !hamburger.contains(e.target) &&
+          nav.classList.contains('active')) {
+        nav.classList.remove('active');
+        hamburger.classList.remove('active');
+        const icon = hamburger.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+
+    // Close menu on window resize if switching to desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768 && nav.classList.contains('active')) {
+        nav.classList.remove('active');
+        hamburger.classList.remove('active');
+        const icon = hamburger.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+
+
+    // Language Switching System
+    let currentLang = "en";
+
+    function switchLanguage(lang, event) {
+      currentLang = lang;
+
+      // Direction & language
+      document.documentElement.lang = lang;
+      
+
+      // Active button state
+      document.querySelectorAll(".lang-btn").forEach(btn => {
+        btn.classList.remove("active");
+      });
+      if (event) {
+        event.target.classList.add("active");
+      }
+
+      // Replace content (HTML-safe)
+      document.querySelectorAll("[data-en]").forEach(element => {
+        const content = element.getAttribute(`data-${lang}`);
+        if (content) {
+          element.innerHTML = content;
+        }
+      });
+
+      document.querySelectorAll('[data-en-placeholder]').forEach(el => {
+        const placeholder = el.getAttribute(`data-${lang}-placeholder`);
+        if (placeholder) {
+          el.placeholder = placeholder;
+        }
+      });
+
+      // RTL for Persian, LTR otherwise
+      if (lang === "fa") {
+        document.documentElement.dir = "rtl";
+      } else {
+        document.documentElement.dir = "ltr";
+      }
+
+      document.querySelectorAll('[data-en-placeholder]').forEach(el => {
+        const placeholder = el.getAttribute(`data-${lang}-placeholder`);
+        if (placeholder) {
+          el.placeholder = placeholder;
+        }
+      });
+
+      }
+      
   </script>
 
 </body>

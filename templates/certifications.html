@@ -13,22 +13,26 @@
 <body>
 
   {% include 'sidebar.html' %}
-  <button id="menuButton" class="menu-btn">☰</button>
 
   <main class="page">
     <header class="hero-head">
-      <h1>Certifications & Specializations</h1>
-      <p style="max-width:700px; margin:12px auto 0; font-size:18px; color:#ccc;">
+      <h1 data-en="Certifications & Specializations" data-tr="Sertifikalar ve Uzmanlıklar" data-fa="مدرک ها و تخصص ها">Certifications & Specializations</h1>
+      <p data-en="Browse professional and soft-skill certificates. Use the filters to show Technical or Soft Skills certificates." data-tr="Profesyonel ve soft-skill sertifikalarını inceleyin. Teknik veya Soft Skills sertifikalarını görüntülemek için filtreleri kullanın." data-fa="مدرک های حرفه‌ای و مهارت‌های نرم را مرور کنید. برای نمایش مدرک های فنی یا مهارت‌های نرم از فیلترها استفاده کنید." style="max-width:700px; margin:12px auto 0; font-size:18px; color:#ccc;">
         Browse professional and soft-skill certificates. Use the filters to show Technical or Soft Skills certificates.
       </p>
+      <div class="language-toggle">
+        <button class="lang-btn active" onclick="switchLanguage('en', event)" style="margin-top: 20px;">English</button>
+        <button class="lang-btn" onclick="switchLanguage('tr', event)">Türkçe</button>
+        <button class="lang-btn" onclick="switchLanguage('fa', event)">فارسی</button>
+      </div>
     </header>
 
-    <section class="info-section" style="margin-top: 18px;">
+    <section class="info-section" style="margin-top: 2px;">
       <div class="filter-bar" aria-label="Certificate filters">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="technical">Professional</button>
-        <button class="filter-btn" data-filter="soft">Soft Skills</button>
-        <input id="searchCert" type="search" placeholder="Search certificates..." aria-label="Search certificates" style="margin-left:auto; max-width:260px;">
+        <button class="filter-btn active" data-en="All" data-tr="Hepsi" data-fa="همه" data-filter="all">All</button>
+        <button class="filter-btn" data-en="Professional" data-tr="Profesyonel" data-fa="حرفه ای" data-filter="technical">Professional</button>
+        <button class="filter-btn" data-en="Soft Skills" data-tr="Soft Skills" data-fa="مهارت های نرم" data-filter="soft">Soft Skills</button>
+        <input id="searchCert" type="search" placeholder="Search certificates..." data-en-placeholder="Search certificates..." data-tr-placeholder="Sertifikaları ara…" data-fa-placeholder="جستجوی مدرک ها…" aria-label="Search certificates" style="margin-left:auto; max-width:260px;">
       </div>
 
       <div class="cert-grid" id="certGrid" style="margin-top: 24px;">
@@ -40,13 +44,51 @@
           <img src="{{ url_for('static', filename='images/MLOps.png') }}" 
               alt="MLOps Certificate">
           <div class="cert-body">
-            <h3>MLOps | Machine Learning Operations</h3>
-            <p class="meta">Duke University • May 2025</p>
-            <list class="info-list"> <strong>Courses Completed: </strong><li>Python Essentials for MLOps</li>
+            <h3
+              data-en="MLOps | Machine Learning Operations"
+              data-tr="MLOps | Makine Öğrenimi Operasyonları"
+              data-fa="عملیات یادگیری ماشین | MLOps"
+            >
+              MLOps | Machine Learning Operations
+            </h3>
+
+            <p
+              class="meta"
+              data-en="Duke University • May 2025"
+              data-tr="Duke Üniversitesi • Mayıs 2025"
+              data-fa="دانشگاه دوک • مه ۲۰۲۵"
+            >
+              Duke University • May 2025
+            </p>
+
+            <ul
+              class="info-list"
+              data-en="<strong>Courses Completed:</strong>
+                <li>Python Essentials for MLOps</li>
                 <li>DevOps, DataOps, MLOps</li>
                 <li>MLOps Platforms: Amazon</li>
                 <li>SageMaker and Azure ML</li>
-                <li>MLOps Tools: MLflow and Hugging Face</li></list>
+                <li>MLOps Tools: MLflow and Hugging Face</li>"
+              data-tr="<strong>Tamamlanan Dersler:</strong>
+                <li>MLOps için Python Temelleri</li>
+                <li>DevOps, DataOps, MLOps</li>
+                <li>MLOps Platformları: Amazon</li>
+                <li>SageMaker ve Azure ML</li>
+                <li>MLOps Araçları: MLflow ve Hugging Face</li>"
+              data-fa="<strong>دوره‌های گذرانده‌شده:</strong>
+                <li>مبانی Python برای MLOps</li>
+                <li>DevOps، DataOps، MLOps</li>
+                <li>پلتفرم‌های MLOps: آمازون</li>
+                <li>SageMaker و Azure ML</li>
+                <li>ابزارهای MLOps: MLflow و Hugging Face</li>"
+            >
+              <strong>Courses Completed:</strong>
+              <li>Python Essentials for MLOps</li>
+              <li>DevOps, DataOps, MLOps</li>
+              <li>MLOps Platforms: Amazon</li>
+              <li>SageMaker and Azure ML</li>
+              <li>MLOps Tools: MLflow and Hugging Face</li>
+          </ul>
           </div>
         </div>
       </a>
@@ -59,9 +101,27 @@
           <img src="{{ url_for('static', filename='images/AIML.png') }}" 
               alt="Foundations of AI & ML">
           <div class="cert-body">
-            <h3>Foundations of AI & Machine Learning</h3>
-            <p class="meta">Microsoft • Jan 2025</p>
-            <list class="info-list"> <strong>Skills Gained: </strong><li>AI/ML</li>
+            <h3
+              data-en="Foundations of AI & Machine Learning"
+              data-tr="Yapay Zekâ ve Makine Öğreniminin Temelleri"
+              data-fa="مبانی هوش مصنوعی و یادگیری ماشین"
+            >
+              Foundations of AI & Machine Learning
+            </h3>
+
+            <p
+              class="meta"
+              data-en="Microsoft • Jan 2025"
+              data-tr="Microsoft • Ocak 2025"
+              data-fa="مایکروسافت • ژانویه ۲۰۲۵"
+            >
+              Microsoft • Jan 2025
+            </p>
+
+            <ul
+              class="info-list"
+              data-en="<strong>Skills Gained:</strong>
+                <li>AI/ML</li>
                 <li>PyTorch</li>
                 <li>Data Management</li>
                 <li>Data Pipelines</li>
@@ -70,8 +130,42 @@
                 <li>Data Processing</li>
                 <li>Data Cleansing</li>
                 <li>Scalability</li>
-                <li>Infrastructure Architecture</li>
-            </list>
+                <li>Infrastructure Architecture</li>"
+              data-tr="<strong>Kazanılan Beceriler:</strong>
+                <li>AI/ML</li>
+                <li>PyTorch</li>
+                <li>Veri Yönetimi</li>
+                <li>Veri Hatları</li>
+                <li>Veri Güvenliği</li>
+                <li>Uygulama Çatılar​ı</li>
+                <li>Veri İşleme</li>
+                <li>Veri Temizleme</li>
+                <li>Ölçeklenebilirlik</li>
+                <li>Altyapı Mimarisi</li>"
+              data-fa="<strong>مهارت‌های کسب‌شده:</strong>
+                <li>AI/ML</li>
+                <li>PyTorch</li>
+                <li>مدیریت داده</li>
+                <li>خطوط انتقال داده</li>
+                <li>امنیت داده</li>
+                <li>چارچوب‌های نرم‌افزاری</li>
+                <li>پردازش داده</li>
+                <li>پاک‌سازی داده</li>
+                <li>مقیاس‌پذیری</li>
+                <li>معماری زیرساخت</li>"
+            >
+              <strong>Skills Gained:</strong>
+              <li>AI/ML</li>
+              <li>PyTorch</li>
+              <li>Data Management</li>
+              <li>Data Pipelines</li>
+              <li>Data Security</li>
+              <li>Application Frameworks</li>
+              <li>Data Processing</li>
+              <li>Data Cleansing</li>
+              <li>Scalability</li>
+              <li>Infrastructure Architecture</li>
+          </ul>
           </div>
         </div>
       </a>
@@ -83,19 +177,51 @@
           <img src="{{ url_for('static', filename='images/DL.png') }}" 
               alt="Deep Learning">
           <div class="cert-body">
-            <h3>Deep Learning Specialization</h3>
-            <p class="meta">Deeplearning.AI • June 2024</p>
-            <list class="info-list"> <strong>Courses Completed:</strong><li>Neural Networks and Deep
-                Learning</li>
-                <li>Improving Deep Neural
-                Networks: Hyperparameter
-                Tuning, Regularization and
-                Optimization</li>
-                <li>Structuring Machine
-                Learning Projects</li>
-                <li>Convolutional Neural
-                Networks</li>
-                <li>Sequence Models</li></list>
+            <h3
+              data-en="Deep Learning Specialization"
+              data-tr="Derin Öğrenme Uzmanlığı"
+              data-fa="تخصص یادگیری عمیق"
+            >
+              Deep Learning Specialization
+            </h3>
+
+            <p
+              class="meta"
+              data-en="Deeplearning.AI • June 2024"
+              data-tr="Deeplearning.AI • Haziran 2024"
+              data-fa="Deeplearning.AI • ژوئن ۲۰۲۴"
+            >
+              Deeplearning.AI • June 2024
+            </p>
+
+            <ul
+              class="info-list"
+              data-en="<strong>Courses Completed:</strong>
+                <li>Neural Networks and Deep Learning</li>
+                <li>Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization</li>
+                <li>Structuring Machine Learning Projects</li>
+                <li>Convolutional Neural Networks</li>
+                <li>Sequence Models</li>"
+              data-tr="<strong>Tamamlanan Dersler:</strong>
+                <li>Sinir Ağları ve Derin Öğrenme</li>
+                <li>Derin Sinir Ağlarının İyileştirilmesi: Hiperparametre Ayarı, Düzenlileştirme ve Optimizasyon</li>
+                <li>Makine Öğrenimi Projelerinin Yapılandırılması</li>
+                <li>Evrişimli Sinir Ağları</li>
+                <li>Sıralı Modeller</li>"
+              data-fa="<strong>دوره‌های گذرانده‌شده:</strong>
+                <li>شبکه‌های عصبی و یادگیری عمیق</li>
+                <li>بهبود شبکه‌های عصبی عمیق: تنظیم ابرپارامترها، منظم‌سازی و بهینه‌سازی</li>
+                <li>ساختاربندی پروژه‌های یادگیری ماشین</li>
+                <li>شبکه‌های عصبی کانولوشنی</li>
+                <li>مدل‌های ترتیبی</li>"
+            >
+              <strong>Courses Completed:</strong>
+              <li>Neural Networks and Deep Learning</li>
+              <li>Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization</li>
+              <li>Structuring Machine Learning Projects</li>
+              <li>Convolutional Neural Networks</li>
+              <li>Sequence Models</li>
+          </ul>
           </div>
         </div>
       </a>
@@ -107,20 +233,75 @@
           <img src="{{ url_for('static', filename='images/cloud.png') }}" 
               alt="Introduction to Microsoft Azure Cloud Services">
           <div class="cert-body">
-            <h3>Introduction to Microsoft Azure Cloud Services</h3>
-            <p class="meta">Microsoft • Jan 2024</p>
-            <list class="info-list"> <strong>Skills Gained: </strong><li>AI/ML</li>
-                <li>Public Cloud</li>
-                <li>Cloud Services</li>
-                <li>Virtualization</li>
-                <li>Microsoft Azure</li>
-                <li>Cloud Storage</li>
-                <li>Virtual Machines</li>
-                <li>Cloud Infrastructure</li>
-                <li>Database Management Systems </li>
-                <li>Virtual Private Networks (VPN)</li>
-                <li>Cloud Computing</li>
-            </list>
+            <h3
+            data-en="Introduction to Microsoft Azure Cloud Services"
+            data-tr="Microsoft Azure Bulut Hizmetlerine Giriş"
+            data-fa="مقدمه‌ای بر خدمات ابری مایکروسافت آژور"
+          >
+            Introduction to Microsoft Azure Cloud Services
+          </h3>
+
+          <p
+            class="meta"
+            data-en="Microsoft • Jan 2024"
+            data-tr="Microsoft • Ocak 2024"
+            data-fa="مایکروسافت • ژانویه ۲۰۲۴"
+          >
+            Microsoft • Jan 2024
+          </p>
+
+          <ul
+            class="info-list"
+            data-en="<strong>Skills Gained:</strong>
+              <li>AI/ML</li>
+              <li>Public Cloud</li>
+              <li>Cloud Services</li>
+              <li>Virtualization</li>
+              <li>Microsoft Azure</li>
+              <li>Cloud Storage</li>
+              <li>Virtual Machines</li>
+              <li>Cloud Infrastructure</li>
+              <li>Database Management Systems</li>
+              <li>Virtual Private Networks (VPN)</li>
+              <li>Cloud Computing</li>"
+            data-tr="<strong>Kazanılan Beceriler:</strong>
+              <li>AI/ML</li>
+              <li>Genel Bulut</li>
+              <li>Bulut Hizmetleri</li>
+              <li>Sanallaştırma</li>
+              <li>Microsoft Azure</li>
+              <li>Bulut Depolama</li>
+              <li>Sanal Makineler</li>
+              <li>Bulut Altyapısı</li>
+              <li>Veritabanı Yönetim Sistemleri</li>
+              <li>Sanal Özel Ağlar (VPN)</li>
+              <li>Bulut Bilişim</li>"
+            data-fa="<strong>مهارت‌های کسب‌شده:</strong>
+              <li>AI/ML</li>
+              <li>ابر عمومی</li>
+              <li>خدمات ابری</li>
+              <li>مجازی‌سازی</li>
+              <li>Microsoft Azure</li>
+              <li>ذخیره‌سازی ابری</li>
+              <li>ماشین‌های مجازی</li>
+              <li>زیرساخت ابری</li>
+              <li>سیستم‌های مدیریت پایگاه داده</li>
+              <li>شبکه‌های خصوصی مجازی (VPN)</li>
+              <li>رایانش ابری</li>"
+          >
+              <strong>Skills Gained:</strong>
+              <li>AI/ML</li>
+              <li>Public Cloud</li>
+              <li>Cloud Services</li>
+              <li>Virtualization</li>
+              <li>Microsoft Azure</li>
+              <li>Cloud Storage</li>
+              <li>Virtual Machines</li>
+              <li>Cloud Infrastructure</li>
+              <li>Database Management Systems</li>
+              <li>Virtual Private Networks (VPN)</li>
+              <li>Cloud Computing</li>
+        </ul>
           </div>
         </div>
       </a>
@@ -132,18 +313,63 @@
           <img src="{{ url_for('static', filename='images/ml.png') }}" 
               alt="Machine Learning with Python">
           <div class="cert-body">
-            <h3>Machine Learning with Python</h3>
-            <p class="meta">IBM • Dec 2023</p>
-            <list class="info-list"> <strong>Skills Gained:</strong>
-                <li>Dimensionality Reduction</li>
-                <li>Scikit Learn</li>
-                <li>Predictive Modeling</li>
-                <li>Supervised Learning</li>
-                <li>Regression Analysis</li>
-                <li>Feature Engineering</li>
-                <li>Classification And Regression Tree (CART)</li>
-                <li>Statistical Analysis</li>
-            </list>
+            <h3
+            data-en="Machine Learning with Python"
+            data-tr="Python ile Makine Öğrenimi"
+            data-fa="یادگیری ماشین با پایتون"
+          >
+            Machine Learning with Python
+          </h3>
+          
+          <p
+            class="meta"
+            data-en="IBM • Dec 2023"
+            data-tr="IBM • Aralık 2023"
+            data-fa="IBM • دسامبر ۲۰۲۳"
+          >
+            IBM • Dec 2023
+          </p>
+          
+          <ul
+            class="info-list"
+            data-en="<strong>Skills Gained:</strong>
+              <li>Dimensionality Reduction</li>
+              <li>Scikit Learn</li>
+              <li>Predictive Modeling</li>
+              <li>Supervised Learning</li>
+              <li>Regression Analysis</li>
+              <li>Feature Engineering</li>
+              <li>Classification And Regression Tree (CART)</li>
+              <li>Statistical Analysis</li>"
+            data-tr="<strong>Kazanılan Beceriler:</strong>
+              <li>Boyut Azaltma</li>
+              <li>Scikit Learn</li>
+              <li>Tahmine Dayalı Modelleme</li>
+              <li>Denetimli Öğrenme</li>
+              <li>Regresyon Analizi</li>
+              <li>Özellik Mühendisliği</li>
+              <li>Sınıflandırma ve Regresyon Ağaçları (CART)</li>
+              <li>İstatistiksel Analiz</li>"
+            data-fa="<strong>مهارت‌های کسب‌شده:</strong>
+              <li>کاهش ابعاد</li>
+              <li>Scikit Learn</li>
+              <li>مدل‌سازی پیش‌بینی</li>
+              <li>یادگیری نظارت‌شده</li>
+              <li>تحلیل رگرسیون</li>
+              <li>مهندسی ویژگی</li>
+              <li>درخت‌های طبقه‌بندی و رگرسیون (CART)</li>
+              <li>تحلیل آماری</li>"
+          >
+            <strong>Skills Gained:</strong>
+            <li>Dimensionality Reduction</li>
+            <li>Scikit Learn</li>
+            <li>Predictive Modeling</li>
+            <li>Supervised Learning</li>
+            <li>Regression Analysis</li>
+            <li>Feature Engineering</li>
+            <li>Classification And Regression Tree (CART)</li>
+            <li>Statistical Analysis</li>
+          </ul>
           </div>
         </div>
       </a>
@@ -155,17 +381,59 @@
           <img src="{{ url_for('static', filename='images/amii.png') }}" 
               alt="Introduction to Applied Machine Learning">
           <div class="cert-body">
-            <h3>Introduction to Applied Machine Learning</h3>
-            <p class="meta">Amii (Alberta Machine Intelligence Institute) • Dec 2023</p>
-            <list class="info-list"> <strong>Skills Gained:</strong>
-                <li>Applied Machine Learning</li>
-                <li>Machine Learning Algorithms</li>
-                <li>Data Ethics</li>
-                <li>Performance Metric</li>
-                <li>Product Lifecycle Management</li>
-                <li>Data Quality</li>
-                <li>Business Analysis</li>
-            </list>
+            <h3
+              data-en="Introduction to Applied Machine Learning"
+              data-tr="Uygulamalı Makine Öğrenimine Giriş"
+              data-fa="مقدمه‌ای بر یادگیری ماشین کاربردی"
+            >
+              Introduction to Applied Machine Learning
+            </h3>
+
+              <p
+                class="meta"
+                data-en="Amii (Alberta Machine Intelligence Institute) • Dec 2023"
+                data-tr="Amii (Alberta Makine Zekâsı Enstitüsü) • Aralık 2023"
+                data-fa="amii (مؤسسه هوش مصنوعی آلبرتا) • دسامبر ۲۰۲۳"
+              >
+                Amii (Alberta Machine Intelligence Institute) • Dec 2023
+              </p>
+
+              <ul
+                class="info-list"
+                data-en="<strong>Skills Gained:</strong>
+                  <li>Applied Machine Learning</li>
+                  <li>Machine Learning Algorithms</li>
+                  <li>Data Ethics</li>
+                  <li>Performance Metrics</li>
+                  <li>Product Lifecycle Management</li>
+                  <li>Data Quality</li>
+                  <li>Business Analysis</li>"
+                data-tr="<strong>Kazanılan Beceriler:</strong>
+                  <li>Uygulamalı Makine Öğrenimi</li>
+                  <li>Makine Öğrenimi Algoritmaları</li>
+                  <li>Veri Etiği</li>
+                  <li>Performans Metrikleri</li>
+                  <li>Ürün Yaşam Döngüsü Yönetimi</li>
+                  <li>Veri Kalitesi</li>
+                  <li>İş Analizi</li>"
+                data-fa="<strong>مهارت‌های کسب‌شده:</strong>
+                  <li>یادگیری ماشین کاربردی</li>
+                  <li>الگوریتم‌های یادگیری ماشین</li>
+                  <li>اخلاق داده</li>
+                  <li>معیارهای عملکرد</li>
+                  <li>مدیریت چرخه عمر محصول</li>
+                  <li>کیفیت داده</li>
+                  <li>تحلیل کسب‌وکار</li>"
+              >
+              <strong>Skills Gained:</strong>
+              <li>Applied Machine Learning</li>
+              <li>Machine Learning Algorithms</li>
+              <li>Data Ethics</li>
+              <li>Performance Metrics</li>
+              <li>Product Lifecycle Management</li>
+              <li>Data Quality</li>
+              <li>Business Analysis</li>
+            </ul>
           </div>
         </div>
       </a>
@@ -178,15 +446,49 @@
           <img src="{{ url_for('static', filename='images/TestReportForm.jpg') }}" 
               alt="IELTS Test Report Form">
           <div class="cert-body">
-            <h3 id="english">IELTS Academic</h3>
-            <p class="meta">IELTS • Oct 2025</p>
-            <p class="desc">
-              With an <b>overall band score of 8.0</b>, I achieved <b>8.0 in Listening</b>, <b>8.5 in Reading</b>, <b>7.5 in Writing</b>, and <b>8.0 in Speaking</b>, demonstrating a high level of English proficiency.
-              Sensitive information on the Test Report Form has been censored, as this is a public website.
-              To verify this document via 
-              <span class="fake-link" onclick="window.open('https://ielts.org/verify','_blank')">ielts.org/verify</span>,
-              please contact me using an <b>official institutional email address</b>, and I will provide my TRF number.
-            </p>
+            <h3
+            data-en="IELTS Academic"
+            data-tr="IELTS Akademik"
+            data-fa="آیلتس آکادمیک"
+          >
+            IELTS Academic
+          </h3>
+
+          <p
+            class="meta"
+            data-en="IELTS • Oct 2025"
+            data-tr="IELTS • Ekim 2025"
+            data-fa="IELTS • اکتبر ۲۰۲۵"
+          >
+            IELTS • Oct 2025
+          </p>
+
+          <p
+            class="desc"
+            data-en="With an <b>overall band score of 8.0</b>, I achieved <b>8.0 in Listening</b>, <b>8.5 in Reading</b>, <b>7.5 in Writing</b>, and <b>8.0 in Speaking</b>, demonstrating a high level of English proficiency.
+            Sensitive information on the Test Report Form has been censored, as this is a public website.
+            To verify this document via 
+            <span class='fake-link' onclick=&quot;window.open('https://ielts.org/verify','_blank')&quot;>ielts.org/verify</span>,
+            please contact me using an <b>official institutional email address</b>, and I will provide my TRF number."
+
+            data-tr="<b>8.0 genel bant puanı</b> ile <b>Dinleme 8.0</b>, <b>Okuma 8.5</b>, <b>Yazma 7.5</b> ve <b>Konuşma 8.0</b> elde ederek ileri düzeyde İngilizce yeterliliği gösterdim.
+            Bu web sitesi herkese açık olduğu için Test Sonuç Belgesi üzerindeki hassas bilgiler gizlenmiştir.
+            Belgeyi 
+            <span class='fake-link' onclick=&quot;window.open('https://ielts.org/verify','_blank')&quot;>ielts.org/verify</span>
+            üzerinden doğrulamak için lütfen <b>resmî kurumsal bir e-posta adresi</b> ile benimle iletişime geçin; TRF numaramı paylaşacağım."
+
+            data-fa="با <b>نمره کلی ۸٫۰</b>، موفق به کسب <b>۸٫۰ در شنیداری</b>، <b>۸٫۵ در خواندن</b>، <b>۷٫۵ در نوشتن</b> و <b>۸٫۰ در گفتاری</b> شدم که نشان‌دهنده تسلط بالای من بر زبان انگلیسی است.
+            به دلیل عمومی بودن این وب‌سایت، اطلاعات حساس موجود در کارنامه آزمون پنهان شده است.
+            برای تأیید این مدرک از طریق 
+            <span class='fake-link' onclick=&quot;window.open('https://ielts.org/verify','_blank')&quot;>ielts.org/verify</span>
+            لطفاً با استفاده از <b>ایمیل رسمی سازمانی</b> با من تماس بگیرید تا شماره TRF را ارائه دهم."
+          >
+            With an <b>overall band score of 8.0</b>, I achieved <b>8.0 in Listening</b>, <b>8.5 in Reading</b>, <b>7.5 in Writing</b>, and <b>8.0 in Speaking</b>, demonstrating a high level of English proficiency.
+            Sensitive information on the Test Report Form has been censored, as this is a public website.
+            To verify this document via 
+            <span class="fake-link" onclick="window.open('https://ielts.org/verify','_blank')">ielts.org/verify</span>,
+            please contact me using an <b>official institutional email address</b>, and I will provide my TRF number.
+          </p>
           </div>
         </div>
       </a>
@@ -198,8 +500,22 @@
           <img src="{{ url_for('static', filename='images/intermediate.png') }}" 
               alt="Intermediate Machine Learning">
           <div class="cert-body">
-            <h3>Intermediate Machine Learning</h3>
-            <p class="meta">Kaggle • May 2023</p>
+            <h3
+            data-en="Intermediate Machine Learning"
+            data-tr="Orta Seviye Makine Öğrenimi"
+            data-fa="یادگیری ماشین در سطح متوسط"
+          >
+            Intermediate Machine Learning
+          </h3>
+
+          <p
+            class="meta"
+            data-en="Kaggle • May 2023"
+            data-tr="Kaggle • Mayıs 2023"
+            data-fa="Kaggle • مهٔ ۲۰۲۳"
+          >
+            Kaggle • May 2023
+          </p>
           </div>
         </div>
       </a>
@@ -212,8 +528,22 @@
           <img src="{{ url_for('static', filename='images/ethics.png') }}" 
               alt="Intro to AI Ethics">
           <div class="cert-body">
-            <h3>Intro to AI Ethics</h3>
-            <p class="meta">Kaggle • Jan 2023</p>
+            <h3
+            data-en="Intro to AI Ethics"
+            data-tr="Yapay Zekâ Etiğine Giriş"
+            data-fa="مقدمه‌ای بر اخلاق هوش مصنوعی"
+          >
+            Intro to AI Ethics
+          </h3>
+
+          <p
+            class="meta"
+            data-en="Kaggle • Jan 2023"
+            data-tr="Kaggle • Ocak 2023"
+            data-fa="Kaggle • ژانویهٔ ۲۰۲۳"
+          >
+            Kaggle • Jan 2023
+          </p>
           </div>
         </div>
       </a>
@@ -225,8 +555,22 @@
           <img src="{{ url_for('static', filename='images/pm.png') }}" 
               alt="Foundations of Project Management">
           <div class="cert-body">
-            <h3>Foundations of Project Management</h3>
-            <p class="meta">Google • Jul 2025</p>
+            <h3
+            data-en="Foundations of Project Management"
+            data-tr="Proje Yönetiminin Temelleri"
+            data-fa="مبانی مدیریت پروژه"
+          >
+            Foundations of Project Management
+          </h3>
+
+          <p
+            class="meta"
+            data-en="Google • Jul 2025"
+            data-tr="Google • Temmuz 2025"
+            data-fa="گوگل • ژوئیهٔ ۲۰۲۵"
+          >
+            Google • Jul 2025
+          </p>
           </div>
         </div>
       </a>
@@ -238,8 +582,22 @@
           <img src="{{ url_for('static', filename='images/ibm.png') }}" 
               alt="Introduction to Containers w/ Docker, Kubernetes & OpenShift">
           <div class="cert-body">
-            <h3>Introduction to Containers w/ Docker, Kubernetes & OpenShift</h3>
-            <p class="meta">IBM • 2025</p>
+            <h3
+            data-en="Introduction to Containers w/ Docker, Kubernetes & OpenShift"
+            data-tr="Docker, Kubernetes ve OpenShift ile Konteynerlere Giriş"
+            data-fa="مقدمه‌ای بر کانتینرها با Docker، Kubernetes و OpenShift"
+          >
+            Introduction to Containers w/ Docker, Kubernetes & OpenShift
+          </h3>
+
+          <p
+            class="meta"
+            data-en="IBM • 2025"
+            data-tr="IBM • 2025"
+            data-fa="IBM • ۲۰۲۵"
+          >
+            IBM • 2025
+          </p>
           </div>
         </div>
       </a>
@@ -251,8 +609,22 @@
           <img src="{{ url_for('static', filename='images/ucd.png') }}" 
               alt="Introduction to Web Development">
           <div class="cert-body">
-            <h3>Introduction to Web Development</h3>
-            <p class="meta">University of California, Davis • 2025</p>
+            <h3
+            data-en="Introduction to Web Development"
+            data-tr="Web Geliştirmeye Giriş"
+            data-fa="مقدمه‌ای بر توسعه وب"
+          >
+            Introduction to Web Development
+          </h3>
+
+          <p
+            class="meta"
+            data-en="University of California, Davis • 2025"
+            data-tr="University of California, Davis • 2025"
+            data-fa="دانشگاه کالیفرنیا، دیویس • ۲۰۲۵"
+          >
+            University of California, Davis • 2025
+          </p>
           </div>
         </div>
       </a>
@@ -264,8 +636,22 @@
           <img src="{{ url_for('static', filename='images/docker.png') }}" 
               alt="Learning Docker">
           <div class="cert-body">
-            <h3>Learning Docker</h3>
-            <p class="meta">LinkedIn • 2025</p>
+            <h3
+              data-en="Learning Docker"
+              data-tr="Docker Öğrenme"
+              data-fa="یادگیری داکر"
+            >
+              Learning Docker
+            </h3>
+
+            <p
+              class="meta"
+              data-en="LinkedIn • 2025"
+              data-tr="LinkedIn • 2025"
+              data-fa="لینکدین • ۲۰۲۵"
+            >
+              LinkedIn • 2025
+            </p>
           </div>
         </div>
       </a>
@@ -277,8 +663,22 @@
           <img src="{{ url_for('static', filename='images/it.png') }}" 
               alt="IT Entrepreneurship 24-25 Fall">
           <div class="cert-body">
-            <h3>IT Entrepreneurship</h3>
-            <p class="meta">Coursera • Nov 2024</p>
+            <h3
+              data-en="IT Entrepreneurship"
+              data-tr="IT Girişimciliği"
+              data-fa="کارآفرینی فناوری اطلاعات"
+            >
+              IT Entrepreneurship
+            </h3>
+
+            <p
+              class="meta"
+              data-en="Coursera • Nov 2024"
+              data-tr="Coursera • Kasım 2024"
+              data-fa="کورسرا • نوامبر ۲۰۲۴"
+            >
+              Coursera • Nov 2024
+            </p>
           </div>
         </div>
       </a>
@@ -290,8 +690,22 @@
           <img src="{{ url_for('static', filename='images/ei.png') }}" 
               alt="Emotional and Social Intelligence">
           <div class="cert-body">
-            <h3>Emotional and Social Intelligence</h3>
-            <p class="meta">University of California, Davis • Dec 2024</p>
+            <h3
+              data-en="Emotional and Social Intelligence"
+              data-tr="Duygusal ve Sosyal Zeka"
+              data-fa="هوش هیجانی و اجتماعی"
+            >
+              Emotional and Social Intelligence
+            </h3>
+
+            <p
+              class="meta"
+              data-en="University of California, Davis • Dec 2024"
+              data-tr="University of California, Davis • Aralık 2024"
+              data-fa="دانشگاه کالیفرنیا، دیویس • دسامبر ۲۰۲۴"
+            >
+              University of California, Davis • Dec 2024
+            </p>
           </div>
         </div>
       </a>
@@ -303,8 +717,22 @@
           <img src="{{ url_for('static', filename='images/money.png') }}" 
               alt="Financial Planning for Young Adults">
           <div class="cert-body">
-            <h3>Financial Planning for Young Adults</h3>
-            <p class="meta">University of Illinois Urbana-Champaign • Dec 2024</p>
+            <h3
+            data-en="Financial Planning for Young Adults"
+            data-tr="Genç Yetişkinler için Finansal Planlama"
+            data-fa="برنامه‌ریزی مالی برای بزرگسالان جوان"
+          >
+            Financial Planning for Young Adults
+          </h3>
+
+          <p
+            class="meta"
+            data-en="University of Illinois Urbana-Champaign • Dec 2024"
+            data-tr="University of Illinois Urbana-Champaign • Aralık 2024"
+            data-fa="دانشگاه ایلینوی اربانا-شمپین • دسامبر ۲۰۲۴"
+          >
+            University of Illinois Urbana-Champaign • Dec 2024
+          </p>
           </div>
         </div>
       </a>
@@ -316,8 +744,22 @@
           <img src="{{ url_for('static', filename='images/UCI.png') }}" 
               alt="Effective Problem-Solving and Decision-Making">
           <div class="cert-body">
-            <h3>Effective Problem-Solving and Decision-Making</h3>
-            <p class="meta">University of Illinois Urbana-Champaign • Nov 2024</p>
+            <h3
+            data-en="Effective Problem-Solving and Decision-Making"
+            data-tr="Etkili Problem Çözme ve Karar Verme"
+            data-fa="حل مسئله و تصمیم‌گیری مؤثر"
+          >
+            Effective Problem-Solving and Decision-Making
+          </h3>
+
+          <p
+            class="meta"
+            data-en="University of Illinois Urbana-Champaign • Nov 2024"
+            data-tr="University of Illinois Urbana-Champaign • Kasım 2024"
+            data-fa="دانشگاه ایلینوی اربانا-شمپین • نوامبر ۲۰۲۴"
+          >
+            University of Illinois Urbana-Champaign • Nov 2024
+          </p>
           </div>
         </div>
       </a>
@@ -329,8 +771,22 @@
           <img src="{{ url_for('static', filename='images/stress.png') }}" 
               alt="Managing Emotions in Times of Uncertainty & Stress">
           <div class="cert-body">
-            <h3>Managing Emotions in Times of Uncertainty & Stress</h3>
-            <p class="meta">Yale University • Nov 2024</p>
+            <h3
+            data-en="Managing Emotions in Times of Uncertainty & Stress"
+            data-tr="Belirsizlik ve Stres Zamanlarında Duyguları Yönetmek"
+            data-fa="مدیریت احساسات در عدم قطعیت و استرس"
+          >
+            Managing Emotions in Times of Uncertainty & Stress
+          </h3>
+
+          <p
+            class="meta"
+            data-en="Yale University • Nov 2024"
+            data-tr="Yale Üniversitesi • Kasım 2024"
+            data-fa="دانشگاه ییل • نوامبر ۲۰۲۴"
+          >
+            Yale University • Nov 2024
+          </p>
           </div>
         </div>
       </a>
@@ -342,8 +798,22 @@
           <img src="{{ url_for('static', filename='images/penn.png') }}" 
               alt="The Power of Team Culture">
           <div class="cert-body">
-            <h3>The Power of Team Culture</h3>
-            <p class="meta">University of Pennsylvania • 2024</p>
+            <h3
+            data-en="The Power of Team Culture"
+            data-tr="Takım Kültürünün Gücü"
+            data-fa="قدرت فرهنگ تیمی"
+          >
+            The Power of Team Culture
+          </h3>
+
+          <p
+            class="meta"
+            data-en="University of Pennsylvania • 2024"
+            data-tr="Pennsylvania Üniversitesi • 2024"
+            data-fa="دانشگاه پنسیلوانیا • ۲۰۲۴"
+          >
+            University of Pennsylvania • 2024
+          </p>
           </div>
         </div>
       </a>
@@ -355,8 +825,22 @@
           <img src="{{ url_for('static', filename='images/ucii.png') }}" 
               alt="Communication in the 21st Century Workplace">
           <div class="cert-body">
-            <h3>Communication in the 21st Century Workplace</h3>
-            <p class="meta">University of California, Irvine • Oct 2024</p>
+            <h3
+            data-en="Communication in the 21st Century Workplace"
+            data-tr="21. Yüzyıl İş Yerinde İletişim"
+            data-fa="ارتباطات در محیط کار قرن بیست‌ویکم"
+          >
+            Communication in the 21st Century Workplace
+          </h3>
+
+          <p
+            class="meta"
+            data-en="University of California, Irvine • Oct 2024"
+            data-tr="California Üniversitesi, Irvine • Ekim 2024"
+            data-fa="دانشگاه کالیفرنیا، ایروین • اکتبر ۲۰۲۴"
+          >
+            University of California, Irvine • Oct 2024
+          </p>
           </div>
         </div>
       </a>
@@ -368,8 +852,22 @@
           <img src="{{ url_for('static', filename='images/london.png') }}" 
               alt="Creative Thinking: Techniques and Tools for Success">
           <div class="cert-body">
-            <h3>Creative Thinking: Techniques and Tools for Success</h3>
-            <p class="meta">Imperial College London • Oct 2024</p>
+            <h3
+            data-en="Creative Thinking: Techniques and Tools for Success"
+            data-tr="Yaratıcı Düşünme: Başarı için Teknikler ve Araçlar"
+            data-fa="تفکر خلاقانه: تکنیک‌ها و ابزارهای موفقیت"
+          >
+            Creative Thinking: Techniques and Tools for Success
+          </h3>
+
+          <p
+            class="meta"
+            data-en="Imperial College London • Oct 2024"
+            data-tr="Imperial College London • Ekim 2024"
+            data-fa="کالج امپریال لندن • اکتبر ۲۰۲۴"
+          >
+            Imperial College London • Oct 2024
+          </p>
           </div>
         </div>
       </a>
@@ -381,8 +879,22 @@
           <img src="{{ url_for('static', filename='images/case.png') }}" 
               alt="Inspiring Leadership through Emotional Intelligence">
           <div class="cert-body">
-            <h3>Inspiring Leadership through Emotional Intelligence</h3>
-            <p class="meta">Case Western Reserve University • 2024</p>
+            <h3
+              data-en="Inspiring Leadership through Emotional Intelligence"
+              data-tr="Duygusal Zekâ Yoluyla İlham Veren Liderlik"
+              data-fa="مدیریت الهام‌بخش از طریق هوش هیجانی"
+            >
+              Inspiring Leadership through Emotional Intelligence
+            </h3>
+
+            <p
+              class="meta"
+              data-en="Case Western Reserve University • 2024"
+              data-tr="Case Western Reserve University • 2024"
+              data-fa="دانشگاه کیس وسترن رزرو • ۲۰۲۴"
+            >
+              Case Western Reserve University • 2024
+            </p>
           </div>
         </div>
       </a>
@@ -395,8 +907,22 @@
           <img src="{{ url_for('static', filename='images/ie.png') }}" 
               alt="Intelligence Tools for the Digital Age">
           <div class="cert-body">
-            <h3>Intelligence Tools for the Digital Age</h3>
-            <p class="meta">IE Business School • 2024</p>
+            <h3
+            data-en="Intelligence Tools for the Digital Age"
+            data-tr="Dijital Çağ için Zekâ Araçları"
+            data-fa="ابزارهای هوشمندی برای عصر دیجیتال"
+          >
+            Intelligence Tools for the Digital Age
+          </h3>
+
+          <p
+            class="meta"
+            data-en="IE Business School • 2024"
+            data-tr="IE Business School • 2024"
+            data-fa="IE Business School • ۲۰۲۴"
+          >
+            IE Business School • 2024
+          </p>
           </div>
         </div>
       </a>
@@ -408,8 +934,22 @@
           <img src="{{ url_for('static', filename='images/feature.png') }}" 
               alt="Feature Engineering">
           <div class="cert-body">
-            <h3>Feature Engineering</h3>
-            <p class="meta">Kaggle • May 2023</p>
+            <h3
+            data-en="Feature Engineering"
+            data-tr="Feature Mühendisliği"
+            data-fa="مهندسی ویژگی‌ها"
+          >
+            Feature Engineering
+          </h3>
+
+          <p
+            class="meta"
+            data-en="Kaggle • May 2023"
+            data-tr="Kaggle • Mayıs 2023"
+            data-fa="Kaggle • مهٔ ۲۰۲۳"
+          >
+            Kaggle • May 2023
+          </p>
           </div>
         </div>
       </a>
@@ -421,8 +961,22 @@
           <img src="{{ url_for('static', filename='images/clean.png') }}" 
               alt="Data Cleaning">
           <div class="cert-body">
-            <h3>Data Cleaning</h3>
-            <p class="meta">Kaggle • March 2023</p>
+            <h3
+            data-en="Data Cleaning"
+            data-tr="Veri Temizleme"
+            data-fa="پاک‌سازی داده‌ها"
+          >
+            Data Cleaning
+          </h3>
+
+          <p
+            class="meta"
+            data-en="Kaggle • March 2023"
+            data-tr="Kaggle • Mart 2023"
+            data-fa="Kaggle • مارس ۲۰۲۳"
+          >
+            Kaggle • March 2023
+          </p>
           </div>
         </div>
       </a>
@@ -434,8 +988,22 @@
           <img src="{{ url_for('static', filename='images/geo.png') }}" 
               alt="Geospatial Analysis">
           <div class="cert-body">
-            <h3>Geospatial Analysis</h3>
-            <p class="meta">Kaggle • March 2023</p>
+            <h3
+              data-en="Geospatial Analysis"
+              data-tr="Coğrafi Mekânsal Analiz"
+              data-fa="تحلیل داده‌ های جغرافیایی"
+            >
+              Geospatial Analysis
+            </h3>
+
+            <p
+              class="meta"
+              data-en="Kaggle • March 2023"
+              data-tr="Kaggle • Mart 2023"
+              data-fa="Kaggle • مارس ۲۰۲۳"
+            >
+              Kaggle • March 2023
+            </p>
           </div>
         </div>
       </a>
@@ -447,8 +1015,22 @@
           <img src="{{ url_for('static', filename='images/vis.png') }}" 
               alt="Data Visualization">
           <div class="cert-body">
-            <h3>Data Visualization</h3>
-            <p class="meta">Kaggle • April 2023</p>
+            <h3
+              data-en="Data Visualization"
+              data-tr="Veri Görselleştirme"
+              data-fa="مصورسازی داده‌ها"
+            >
+              Data Visualization
+            </h3>
+
+            <p
+              class="meta"
+              data-en="Kaggle • April 2023"
+              data-tr="Kaggle • Nisan 2023"
+              data-fa="Kaggle • آوریل ۲۰۲۳"
+            >
+              Kaggle • April 2023
+            </p>
           </div>
         </div>
       </a>
@@ -460,8 +1042,22 @@
           <img src="{{ url_for('static', filename='images/pandas.png') }}" 
               alt="Pandas">
           <div class="cert-body">
-            <h3>Pandas</h3>
-            <p class="meta">Kaggle • March 2023</p>
+            <h3
+            data-en="Pandas"
+            data-tr="Pandas"
+            data-fa="پانداس"
+          >
+            Pandas
+          </h3>
+
+          <p
+            class="meta"
+            data-en="Kaggle • March 2023"
+            data-tr="Kaggle • Mart 2023"
+            data-fa="Kaggle • مارس ۲۰۲۳"
+          >
+            Kaggle • March 2023
+          </p>
           </div>
         </div>
       </a>
@@ -473,10 +1069,32 @@
             <img src="{{ url_for('static', filename='files/UpperAdvancedEnglishCertificate.pdf') }}" 
                 alt="Swiss Language Academy (English)">
             <div class="cert-body">
-            <h3 id="english">Swiss Language Academy (Upper Advanced English)</h3>
-            <p class="meta">Swiss Education Academy • June 2019</p>
-            <p class="desc">SEA is a Swiss summer camp, which combines 15 hours
-                of English class per week, sports activities and cultural excursions.</p>
+              <h3
+              id="english"
+              data-en="Swiss Language Academy (Upper Advanced English)"
+              data-tr="Swiss Dil Akademisi (İleri Düzey İngilizce)"
+              data-fa="آکادمی زبان سوئیس (انگلیسی فوق پیشرفته)"
+            >
+              Swiss Language Academy (Upper Advanced English)
+            </h3>
+            
+            <p
+              class="meta"
+              data-en="Swiss Education Academy • June 2019"
+              data-tr="Swiss Education Academy • Haziran 2019"
+              data-fa="آکادمی تحصیلی سوییس • ژوئن ۲۰۱۹"
+            >
+              Swiss Education Academy • June 2019
+            </p>
+            
+            <p
+              class="desc"
+              data-en="SEA is a Swiss summer camp that combines 15 hours of English classes per week with sports activities and cultural excursions."
+              data-tr="SEA, haftada 15 saat İngilizce dersi ile spor aktivitelerini ve kültürel gezileri birleştiren bir İsviçre yaz kampıdır."
+              data-fa="SEA یک اردوگاه تابستانی در سوئیس است که ۱۵ ساعت کلاس زبان انگلیسی در هفته را با فعالیت‌های ورزشی و گردش‌های فرهنگی ترکیب می‌کند."
+            >
+              SEA is a Swiss summer camp that combines 15 hours of English classes per week with sports activities and cultural excursions.
+            </p>
            </div>
           </div>
         </a>
@@ -488,12 +1106,31 @@
             <img src="{{ url_for('static', filename='files/LeadershipLive!.pdf') }}" 
                 alt="Leadership Live!">
             <div class="cert-body">
-            <h3>Leadership Live!</h3>
-            <p class="meta">Swiss Education Academy • June 2019</p>
-            <p class="desc">leading and teamwork
-                experiences with theory and personal assessment. Topics:
-                you & the others, communication skills, collaboration,
-                motivation & collective goals.</p>
+              <h3
+              data-en="Leadership Live!"
+              data-tr="Leadership Live!"
+              data-fa="مدیریت(Leadership Live!)"
+            >
+              Leadership Live!
+            </h3>
+            
+            <p
+              class="meta"
+              data-en="Swiss Education Academy • June 2019"
+              data-tr="Swiss Education Academy • Haziran 2019"
+              data-fa="آکادمی تحصیلی سوییس • ژوئن ۲۰۱۹"
+            >
+              Swiss Education Academy • June 2019
+            </p>
+            
+            <p
+              class="desc"
+              data-en="Leadership and teamwork experiences combining theory with personal assessment. Topics included: self and others, communication skills, collaboration, motivation, and collective goals."
+              data-tr="Teori ile kişisel değerlendirmeyi birleştiren liderlik ve ekip çalışması deneyimleri. Konular: birey ve diğerleri, iletişim becerileri, iş birliği, motivasyon ve ortak hedefler."
+              data-fa="تجربه‌های مدیریت و کار تیمی همراه با مبانی نظری و ارزیابی فردی. موضوعات شامل: خود و دیگران، مهارت‌های ارتباطی، همکاری، انگیزه و اهداف جمعی."
+            >
+              Leadership and teamwork experiences combining theory with personal assessment. Topics included: self and others, communication skills, collaboration, motivation, and collective goals.
+            </p>
            </div>
           </div>
         </a>
@@ -552,18 +1189,103 @@
       filterGrid('all');
     })();
 
-    // Add event listeners directly (no fetch needed)
-    const sidebar = document.getElementById("sidebar");
-    const closeSidebar = document.getElementById("closeSidebar");
-    const menuButton = document.getElementById("menuButton");
-      
-    menuButton.addEventListener("click", () => {
-      sidebar.classList.add("show");
+    // Toggle hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.querySelector('.nav-container');
+    const navItems = document.querySelectorAll('.nav-item');
+
+    hamburger.addEventListener('click', () => {
+      nav.classList.toggle('active');
+      hamburger.classList.toggle('active');
     });
+
+    // Close menu when clicking on a nav item (on mobile)
+    navItems.forEach(item => {
+      item.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+          nav.classList.remove('active');
+          hamburger.classList.remove('active');
+          const icon = hamburger.querySelector('i');
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      });
+    });
+
+    // Close menu when clicking outside (optional)
+    document.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768 && 
+          !nav.contains(e.target) && 
+          !hamburger.contains(e.target) &&
+          nav.classList.contains('active')) {
+        nav.classList.remove('active');
+        hamburger.classList.remove('active');
+        const icon = hamburger.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+
+    // Close menu on window resize if switching to desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768 && nav.classList.contains('active')) {
+        nav.classList.remove('active');
+        hamburger.classList.remove('active');
+        const icon = hamburger.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+
+
+    // Language Switching System
+    let currentLang = "en";
+
+    function switchLanguage(lang, event) {
+      currentLang = lang;
+
+      // Direction & language
+      document.documentElement.lang = lang;
       
-    closeSidebar.addEventListener("click", () => {
-      sidebar.classList.remove("show");
-    }); 
+
+      // Active button state
+      document.querySelectorAll(".lang-btn").forEach(btn => {
+        btn.classList.remove("active");
+      });
+      if (event) {
+        event.target.classList.add("active");
+      }
+
+      // Replace content (HTML-safe)
+      document.querySelectorAll("[data-en]").forEach(element => {
+        const content = element.getAttribute(`data-${lang}`);
+        if (content) {
+          element.innerHTML = content;
+        }
+      });
+
+      document.querySelectorAll('[data-en-placeholder]').forEach(el => {
+        const placeholder = el.getAttribute(`data-${lang}-placeholder`);
+        if (placeholder) {
+          el.placeholder = placeholder;
+        }
+      });
+
+      // RTL for Persian, LTR otherwise
+      if (lang === "fa") {
+        document.documentElement.dir = "rtl";
+      } else {
+        document.documentElement.dir = "ltr";
+      }
+
+      document.querySelectorAll('[data-en-placeholder]').forEach(el => {
+        const placeholder = el.getAttribute(`data-${lang}-placeholder`);
+        if (placeholder) {
+          el.placeholder = placeholder;
+        }
+      });
+
+      }
 
   </script>
 
