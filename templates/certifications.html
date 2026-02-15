@@ -21,7 +21,7 @@
         Browse professional and soft-skill certificates. Use the filters to show Technical or Soft Skills certificates.
       </p>
       <div class="language-toggle">
-        <button class="lang-btn active" onclick="switchLanguage('en', event)" style="margin-top: 20px;">English</button>
+        <button class="lang-btn" onclick="switchLanguage('en', event)">English</button>
         <button class="lang-btn" onclick="switchLanguage('tr', event)">Türkçe</button>
         <button class="lang-btn" onclick="switchLanguage('fa', event)">فارسی</button>
       </div>
@@ -1237,57 +1237,58 @@
       }
     });
 
+  </script>
 
-    // Language Switching System
-    let currentLang = "en";
-
+  <script>
+    // universal language system
+    let currentLang = localStorage.getItem("selectedLanguage") || "en";
+    
+    // apply language on page load
+    window.addEventListener("DOMContentLoaded", () => {
+      applyLanguage(currentLang);
+    });
+    
     function switchLanguage(lang, event) {
       currentLang = lang;
-
-      // Direction & language
+      localStorage.setItem("selectedLanguage", lang);
+      applyLanguage(lang, event);
+    }
+    
+    function applyLanguage(lang, event=null) {
+    
+      // set html lang + direction
       document.documentElement.lang = lang;
-      
-
-      // Active button state
-      document.querySelectorAll(".lang-btn").forEach(btn => {
+      document.documentElement.dir = (lang === "fa") ? "rtl" : "ltr";
+    
+      // active button
+      document.querySelectorAll(".lang-btn").forEach(btn=>{
         btn.classList.remove("active");
       });
-      if (event) {
+    
+      if(event){
         event.target.classList.add("active");
-      }
-
-      // Replace content (HTML-safe)
-      document.querySelectorAll("[data-en]").forEach(element => {
-        const content = element.getAttribute(`data-${lang}`);
-        if (content) {
-          element.innerHTML = content;
-        }
-      });
-
-      document.querySelectorAll('[data-en-placeholder]').forEach(el => {
-        const placeholder = el.getAttribute(`data-${lang}-placeholder`);
-        if (placeholder) {
-          el.placeholder = placeholder;
-        }
-      });
-
-      // RTL for Persian, LTR otherwise
-      if (lang === "fa") {
-        document.documentElement.dir = "rtl";
       } else {
-        document.documentElement.dir = "ltr";
+        // highlight correct button on load
+        document.querySelectorAll(".lang-btn").forEach(btn=>{
+          if(btn.getAttribute("onclick").includes(`'${lang}'`)){
+            btn.classList.add("active");
+          }
+        });
       }
-
-      document.querySelectorAll('[data-en-placeholder]').forEach(el => {
-        const placeholder = el.getAttribute(`data-${lang}-placeholder`);
-        if (placeholder) {
-          el.placeholder = placeholder;
-        }
+    
+      // change text
+      document.querySelectorAll("[data-en]").forEach(el=>{
+        const content = el.getAttribute(`data-${lang}`);
+        if(content) el.innerHTML = content;
       });
-
-      }
-
-  </script>
+    
+      // change placeholders
+      document.querySelectorAll("[data-en-placeholder]").forEach(el=>{
+        const ph = el.getAttribute(`data-${lang}-placeholder`);
+        if(ph) el.placeholder = ph;
+      });
+    }
+    </script>
 
 </body>
 </html>

@@ -29,7 +29,7 @@
           </div>
       </div>
       <div class="language-toggle">
-        <button class="lang-btn active" onclick="switchLanguage('en', event)">English</button>
+        <button class="lang-btn" onclick="switchLanguage('en', event)">English</button>
         <button class="lang-btn" onclick="switchLanguage('tr', event)">Türkçe</button>
         <button class="lang-btn" onclick="switchLanguage('fa', event)">فارسی</button>
       </div>
@@ -699,8 +699,16 @@
 
   <script>
 
-    // Initialize
-    document.addEventListener('DOMContentLoaded', function() { });
+    // Initialize language on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      const savedLang = localStorage.getItem("selectedLanguage") || "en";
+
+      // find corresponding button
+      const btn = document.querySelector(`.lang-btn[onclick*="${savedLang}"]`);
+
+      // apply language
+      switchLanguage(savedLang, btn ? { target: btn } : null);
+    });
       
 
     // Toggle hamburger menu
@@ -750,50 +758,59 @@
         icon.classList.add('fa-bars');
       }
     });
-
-    // Language Switching System
-    let currentLang = "en";
-
-    function switchLanguage(lang, event) {
-      currentLang = lang;
-
-      // Direction & language
-      document.documentElement.lang = lang;
-      
-
-      // Active button state
-      document.querySelectorAll(".lang-btn").forEach(btn => {
-        btn.classList.remove("active");
-      });
-      if (event) {
-        event.target.classList.add("active");
-      }
-
-      // Replace content (HTML-safe)
-      document.querySelectorAll("[data-en]").forEach(element => {
-        const content = element.getAttribute(`data-${lang}`);
-        if (content) {
-          element.innerHTML = content;
-        }
-      });
-
-      // RTL for Persian, LTR otherwise
-      if (lang === "fa") {
-        document.documentElement.dir = "rtl";
-      } else {
-        document.documentElement.dir = "ltr";
-      }
-
-      document.querySelectorAll('[data-en-placeholder]').forEach(el => {
-        const placeholder = el.getAttribute(`data-${lang}-placeholder`);
-        if (placeholder) {
-          el.placeholder = placeholder;
-        }
-      });
-
-      }
         
   </script>
+
+  <script>
+    // universal language system
+    let currentLang = localStorage.getItem("selectedLanguage") || "en";
+    
+    // apply language on page load
+    window.addEventListener("DOMContentLoaded", () => {
+      applyLanguage(currentLang);
+    });
+    
+    function switchLanguage(lang, event) {
+      currentLang = lang;
+      localStorage.setItem("selectedLanguage", lang);
+      applyLanguage(lang, event);
+    }
+    
+    function applyLanguage(lang, event=null) {
+    
+      // set html lang + direction
+      document.documentElement.lang = lang;
+      document.documentElement.dir = (lang === "fa") ? "rtl" : "ltr";
+    
+      // active button
+      document.querySelectorAll(".lang-btn").forEach(btn=>{
+        btn.classList.remove("active");
+      });
+    
+      if(event){
+        event.target.classList.add("active");
+      } else {
+        // highlight correct button on load
+        document.querySelectorAll(".lang-btn").forEach(btn=>{
+          if(btn.getAttribute("onclick").includes(`'${lang}'`)){
+            btn.classList.add("active");
+          }
+        });
+      }
+    
+      // change text
+      document.querySelectorAll("[data-en]").forEach(el=>{
+        const content = el.getAttribute(`data-${lang}`);
+        if(content) el.innerHTML = content;
+      });
+    
+      // change placeholders
+      document.querySelectorAll("[data-en-placeholder]").forEach(el=>{
+        const ph = el.getAttribute(`data-${lang}-placeholder`);
+        if(ph) el.placeholder = ph;
+      });
+    }
+    </script>
 
   <!--SEO Script -->
   <script type="application/ld+json">
