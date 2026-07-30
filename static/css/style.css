@@ -8,7 +8,7 @@ html, body { height: 100%; }
 
 header {
   background: linear-gradient(135deg, var(--primary) 0%, #1a2530 100%);
-  color: white;
+  color: rgb(68, 68, 68);
   padding: 1rem 2rem;
   top: 0;
   z-index: 1000;
@@ -28,9 +28,9 @@ header {
 }
 
 .lang-btn {
-  background: rgba(255,255,255,0.2);
-  border: 2px solid rgba(255,255,255,0.3);
-  color: white;
+  background: rgba(86, 81, 81, 0.2);
+  border: 2px solid rgba(52, 49, 49, 0.2);
+  color: rgb(31, 40, 84);
   padding: 4px 10px;
   border-radius: 15px;
   cursor: pointer;
@@ -59,7 +59,7 @@ body {
 }
 
 /* Background image (furthest back) */
-body::before {
+/*body::before {
   content: "";
   position: fixed;
   inset: 0;
@@ -68,17 +68,25 @@ body::before {
   background-position: center center;
   filter: blur(8px) saturate(0.95) contrast(0.95);
   transform: scale(1.03);
-  z-index: -4; /* << very far back */
-}
+  z-index: -4; /* << very far back 
+}*/
 
 /* Dark overlay (above bg but still behind page content) */
-body::after {
+/*body::after {
   content: "";
   position: fixed;
   inset: 0;
   background: linear-gradient(180deg, rgba(10,6,18,0.45), rgba(10,6,18,0.65));
-  z-index: -2; /* above bg (-4) but below grid (-3) and content (>=0) */
-}
+  z-index: -2; /* above bg (-4) but below grid (-3) and content (>=0) 
+}*/
+
+/*Background Color*/
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-color: #e1e1e1;
+  z-index: -3; }/* above bg (-4) but below overlay (-2) and content (>=0) */
 
 
 /* ====== Page wrapper and content (force above decorative layers) ====== */
@@ -100,7 +108,7 @@ main.page, .page {
   font-weight: 400;
   letter-spacing: 0.5px;
   line-height: 1.03;
-  color: #fff;
+  color: #302057;
   text-shadow: 0 6px 24px rgba(0,0,0,0.6);
   margin-bottom: 10px;
   display: inline-block;
@@ -130,14 +138,34 @@ main.page, .page {
 }
 
 /* left card */
-.photo-frame img{
-  display: block;
-  width: 250px;       
-  height: auto;       /* keeps the aspect ratio automatic */
-  border-radius: 8px; /* rounded corners */
-  object-fit: cover;  /* keeps it neatly cropped */
-  align-self: flex-start; /* if parent is flex */
-  text-align: left; 
+.photo-frame {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;   /* Hides the parts outside the circle */
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center -40%; /* Crop from the center */
+  /* Move left */
+  object-position:40% center;
+  transform: scale(1.05);   /* Zoom in  */
+}
+
+/* Smaller screens only */
+@media (max-width: 768px) {
+  .photo-frame {
+    width: 180px;
+    height: 180px;
+  }
+
+  .card {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /* right column: positioned and above grid */
@@ -152,28 +180,23 @@ main.page, .page {
 .intro {
   position: relative;
   z-index: 3;
-  color: #e9e6ff;
+  color: #241879;
 }
 
 .intro p{
   font-size: 18px;
-  color: #e9e6ff;
+  color: #241879;
   margin-bottom: 16px;
   max-width: 900px;
 }
-.intro p a{
-  color: #bfbff7;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  font-weight: 600;
-}
+
 
 /* tags and CTA */
 .tags{
   margin-top: 32px;
   font-size: 18px;
   opacity: 0.95;
-  color: #f3f1ff;
+  color: #363693;
   border-top: 1px dotted rgba(255,255,255,0.05);
   padding-top: 18px;
   max-width: 920px;
@@ -195,11 +218,12 @@ main.page, .page {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 28px;
-  border-radius: 8px;
-  font-weight: 600;
+  padding: 6px 20px;
+  font-weight: 510;
+  gap: 10px;                  
+  border-radius: 7px;
   text-decoration: none;
-  min-width: 180px;
+  min-width: 100px;
   transition: transform .14s ease, box-shadow .14s ease;
   box-shadow: 0 8px 24px rgba(0,0,0,0.5);
 }
@@ -209,11 +233,13 @@ main.page, .page {
 }
 .btn.primary:hover{ transform: translateY(-4px) scale(1.01); }
 .btn.secondary{
-  background: transparent;
-  color: #b9b4ff;
+  background: linear-gradient(90deg,#0c36ce93 0%, #0b5a93 60%);
+  color: #000000;
   border: 2px solid rgba(185,180,255,0.26);
-  box-shadow: 0 0 0 rgba(0,0,0,0);
+  /*box-shadow: 0 0 0 rgba(0,0,0,0);*/
   backdrop-filter: blur(6px);
+  padding-left: 70px;
+  padding-right: 70px;
 }
 .btn.secondary:hover{ transform: translateY(-4px); border-color: rgba(189,180,255,0.46); }
 
@@ -258,7 +284,7 @@ main.page, .page {
 .project-info p {
   font-size: 16px;
   margin-bottom: 16px;
-  color: #e9e6ff;
+  color: #ffe6e7;
 }
   
   html {
@@ -294,7 +320,7 @@ main.page, .page {
     text-align: center;
     position: relative; /* important! */
     z-index: 2;         /* above the grid layers */
-    color: #fff;        /* make text readable on dark background */
+    color: #1a2b55;       
   }
 
   header.hero-head {
@@ -391,7 +417,7 @@ main.page, .page {
   font-family: "Playfair Display", serif;
   font-size: clamp(32px, 5vw, 48px);
   margin-bottom: 24px;
-  color: #bfbff7;
+  color: #7a7ac7;
   border-bottom: 2px solid rgba(185,180,255,0.3);
   display: inline-block;
   padding-bottom: 8px;
@@ -542,9 +568,9 @@ main.page, .page {
 .filter-btn {
   padding: 8px 14px;
   border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.06);
+  border: 1px solid rgba(98, 98, 98, 0.596);
   background: transparent;
-  color: #e9e6ff;
+  color: #0b04208e;
   font-weight: 600;
   cursor: pointer;
   transition: all .18s ease;
@@ -559,9 +585,9 @@ main.page, .page {
 #searchCert {
   padding: 8px 12px;
   border-radius: 8px;
-  border: 1px solid rgba(255,255,255,0.06);
-  background: rgba(255,255,255,0.02);
-  color: #fff;
+  border: 1px solid rgba(141, 130, 130, 0.286);
+  background: rgba(240, 240, 240, 0.436);
+  color: #393636;
   margin-bottom: 20px;
 }
 
@@ -634,11 +660,15 @@ main.page, .page {
   font-family: "Playfair Display", serif;
   font-size: clamp(32px, 5vw, 48px);
   margin-bottom: 24px;
-  color: #bfbff7;
+  color: #313157;
   border-bottom: 2px solid rgba(185,180,255,0.3);
   display: inline-block;
   padding-bottom: 8px;
   margin-top: 30px;
+}
+
+.skills-grid h3 {
+  color: #2c3e50;
 }
 
 .skill-column {
@@ -649,13 +679,13 @@ main.page, .page {
 .skill-item {
   margin-bottom: 15px;
   font-size: 1.1rem;
+  color:#0f88bc;
   padding: 5px 0;
   transition: all 0.2s ease;
 }
 
 .skill-item:hover {
   transform: translateX(5px);
-  color: #3498db;
 }
 
 .bold {
@@ -664,30 +694,31 @@ main.page, .page {
 }
 
 .fake-link {
-  color: #b9b4ff;
+  color: #0f88bc;
   text-decoration: underline;
   cursor: pointer;
 }
 
+/* Hover effect */
+.fake-link:hover {
+  color: #c23f99; /* color when mouse is over link */
+}
+
 /* Normal link */
 a {
-  color: #b9b4ff;
+  color: #0f88bc;
   text-decoration: underline; 
 }
 
 /* Hover effect */
 a:hover {
-  color: #7c42be; /* color when mouse is over link */
+  color: #c23f99; /* color when mouse is over link */
 }
 
-/* Visited link */
-a:visited {
-  color: #b9b4ff;
-}
 
 /* Active link (while clicking) */
 a:active {
-  color: #6023e5;
+  color: #0f88bc;
 }
 
 
@@ -753,7 +784,7 @@ details p strong {
 
 /* Navigation styles */
 nav {
-  background: #260d60;
+  background: #0a0c77;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   position: fixed;
   top: 0;
@@ -773,7 +804,7 @@ nav {
 .nav-item {
   padding: 15px 20px;
   text-decoration: none;
-  color: #9d64d2;
+  color: #a095ff;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -805,7 +836,7 @@ nav {
     right: -100%;
     width: 250px;
     height: 100vh;
-    background: #260d60;
+    background: #0a0c77;
     box-shadow: -2px 0 10px rgba(0,0,0,0.1);
     transition: right 0.3s ease-in-out;
     padding-top: 60px;
@@ -818,7 +849,7 @@ nav {
   .nav-item {
     padding: 15px 20px;
     justify-content: flex-start;
-    color: #9d64d2;
+    color: #a095ff;
   }
   
   /* Optional: Overlay background when menu is open */
