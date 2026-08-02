@@ -823,7 +823,7 @@ nav {
 
 /* Separator */
 .nav-item + .nav-item {
-  border-left: 0.5px solid rgba(218, 109, 255, 0.178);
+  border-left: 0.5px solid rgba(218, 109, 255, 0.242);
 }
 
 /* Mobile styles */
