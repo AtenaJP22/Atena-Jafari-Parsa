@@ -15,7 +15,7 @@
   <meta name="description" content="Atena J. Parsa, Artificial Intelligence Engineer specializing in Computer Vision, Large Language Models, Machine Learning, Deep Learning, AI Assistants/Chatbots, Generative AI, and Data Science.">
   
 </head>
-<body>
+<body class="dark-mode">
 
   {% include 'sidebar.html' %}
 
@@ -31,371 +31,295 @@
         <button class="lang-btn" onclick="switchLanguage('en', event)">English</button>
         <!-- <button class="lang-btn" onclick="switchLanguage('tr', event)">Türkçe</button> -->
         <button class="lang-btn" onclick="switchLanguage('fa', event)">فارسی</button>
+        <button
+          id="dark-mode-toggle"
+          class="theme-toggle"
+          type="button"
+          aria-label="Toggle dark and light mode"
+        >
+          <span class="theme-icon moon">☾</span>
+          <span class="theme-icon sun">☀</span>
+          <span class="theme-toggle-thumb"></span>
+        </button>
       </div>
     </header>
 
+    <!-- =========================
+        HERO / PROFILE
+    ========================= -->
+
     <section class="hero-content">
+
       <div class="left-card">
+
+        <!-- Profile Photo -->
         <div class="photo-frame">
-          <img src="{{ url_for('static', filename='images/ProfessionalProfile.png') }}" alt="Atena profile">
+          <img
+            src="{{ url_for('static', filename='images/IMG_2274.jpg') }}"
+            alt="Atena profile"
+          >
         </div>
-        <div style="text-align: center;"> <!-- optional to center all icons -->
-            <div style="display: inline-block; margin-right: 8px; margin-top: 10px;">
-              <a href="https://www.linkedin.com/in/atena-jafari-parsa/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='images/linkedin.png') }}" alt="LinkedIn" width="30">
-              </a>
-            </div>
-            <div style="display: inline-block; margin-left: 8px; margin-top: 10px; margin-right: 8px;">
-              <a href="https://github.com/AtenaJP22" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='images/github.png') }}" alt="Github" width="30">
-              </a>
-            </div>
-            <div style="display: inline-block; margin-left: 8px; margin-top: 10px; margin-right: 8px;">
-                <a href="mailto:atena.jafariparsa@gmail.com?subject=Hello%20Atena" target="_blank" rel="noopener noreferrer">
-                  <img src="{{ url_for('static', filename='images/email.webp') }}" alt="Email" width="30">
-                </a>
-            </div>
-            <div style="display: inline-block; margin-left: 8px; margin-top: 10px; margin-right: 8px;">
-                <a href="https://medium.com/@atena-jafari-parsa" target="_blank" rel="noopener noreferrer">
-                  <img src="{{ url_for('static', filename='images/medium.png') }}" alt="Medium" width="30">
-                </a>
-            </div> 
-          </div>         
-      </div> 
+
+        <!-- Social Links -->
+        <div style="text-align: center;">
+
+          <div style="display: inline-block; margin-right: 8px; margin-top: 10px;">
+            <a href="https://www.linkedin.com/in/atena-jafari-parsa/"
+              target="_blank"
+              rel="noopener noreferrer">
+              <img
+                src="{{ url_for('static', filename='images/linkedin.png') }}"
+                alt="LinkedIn"
+                width="30"
+              >
+            </a>
+          </div>
+
+          <div style="display: inline-block; margin-left: 8px; margin-top: 10px; margin-right: 8px;">
+            <a href="https://github.com/AtenaJP22"
+              target="_blank"
+              rel="noopener noreferrer">
+              <img
+                src="{{ url_for('static', filename='images/github.png') }}"
+                alt="Github"
+                width="30"
+              >
+            </a>
+          </div>
+
+          <div style="display: inline-block; margin-left: 8px; margin-top: 10px; margin-right: 8px;">
+            <a href="mailto:atena.jafariparsa@gmail.com?subject=Hello%20Atena"
+              target="_blank"
+              rel="noopener noreferrer">
+              <img
+                src="{{ url_for('static', filename='images/email.webp') }}"
+                alt="Email"
+                width="30"
+              >
+            </a>
+          </div>
+
+          <div style="display: inline-block; margin-left: 8px; margin-top: 10px; margin-right: 8px;">
+            <a href="https://medium.com/@atena-jafari-parsa"
+              target="_blank"
+              rel="noopener noreferrer">
+              <img
+                src="{{ url_for('static', filename='images/medium.png') }}"
+                alt="Medium"
+                width="30"
+              >
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
     </section>
+
+
+    <!-- =========================
+        ABOUT
+    ========================= -->
+
     <section class="about-section">
+
       <div>
+
         <div class="intro">
+
+          <!-- Main Introduction -->
           <p
-            data-en="Hi, I'm Atena, an <span class='fake-link' onclick='window.open(&quot;/projects?query=Computer Vision&quot;, &quot;_self&quot;)'>AI engineer</span>, a <span class='fake-link' onclick='window.open(&quot;/projects?query=Advertising Effects on Sales with R&quot;, &quot;_self&quot;)'>data scientist</span> and a fullstack software developer. I have hands-on experience in AI-focused projects such as <span class='fake-link' onclick='window.open(&quot;/projects?query=Cellenta&quot;, &quot;_self&quot;)'>Cellenta iOS</span>, a Cloud-Native AI-Powered OCS, <span class='fake-link' onclick='window.open(&quot;/projects?query=Aware Citizen&quot;, &quot;_self&quot;)'>Aware Citizen</span>, an LLM-Based Political Economy Research Tool, <span class='fake-link' onclick='window.open(&quot;/projects?query=Pima&quot;, &quot;_self&quot;)'>Pima Diabetes Prediction on MLflow</span> and an <span class='fake-link' onclick='window.open(&quot;/projects?query=Computer Vision&quot;, &quot;_self&quot;)'>end-to-end computer vision defect-detection pipeline</span> built during my industrial internship. You can browse all my projects <span class='fake-link' onclick='window.open(&quot;/projects&quot;, &quot;_self&quot;)'>here</span>."
-        
-            data-fa="سلام، من آتنا هستم، یک <span class='fake-link' onclick='window.open(&quot;/projects?query=Computer Vision&quot;, &quot;_self&quot;)'>مهندس هوش مصنوعی</span>، <span class='fake-link' onclick='window.open(&quot;/projects?query=Advertising Effects on Sales with R&quot;, &quot;_self&quot;)'>دانشمند داده</span> و توسعه‌دهنده فول‌استک. تجربه عملی در پروژه‌های مبتنی بر هوش مصنوعی دارم، از جمله <span class='fake-link' onclick='window.open(&quot;/projects?query=Cellenta&quot;, &quot;_self&quot;)'>Cellenta iOS</span>، یک سیستم شارژ آنلاین ابری مبتنی بر هوش مصنوعی، <span class='fake-link' onclick='window.open(&quot;/projects?query=Aware Citizen&quot;, &quot;_self&quot;)'>Aware Citizen</span>، ابزار پژوهشی اقتصاد سیاسی مبتنی بر مدل‌های زبانی بزرگ، <span class='fake-link' onclick='window.open(&quot;/projects?query=Pima&quot;, &quot;_self&quot;)'>پیش‌بینی دیابت Pima با MLflow</span> و یک <span class='fake-link' onclick='window.open(&quot;/projects?query=Computer Vision&quot;, &quot;_self&quot;)'>پایپ‌لاین کامل بینایی ماشین برای تشخیص نقص</span> که در دوره کارآموزی صنعتی توسعه داده شده است. می‌توانید همه پروژه‌های من را <span class='fake-link' onclick='window.open(&quot;/projects&quot;, &quot;_self&quot;)'>اینجا</span> مشاهده کنید."
-        
-            data-tr="Merhaba, ben Atena. Bir <span class='fake-link' onclick='window.open(&quot;/projects?query=Computer Vision&quot;, &quot;_self&quot;)'>yapay zeka mühendisi</span>, <span class='fake-link' onclick='window.open(&quot;/projects?query=Advertising Effects on Sales with R&quot;, &quot;_self&quot;)'>veri bilimci</span> ve full-stack yazılım geliştiricisiyim. <span class='fake-link' onclick='window.open(&quot;/projects?query=Cellenta&quot;, &quot;_self&quot;)'>Cellenta iOS</span> gibi bulut tabanlı ve yapay zeka destekli bir OCS, <span class='fake-link' onclick='window.open(&quot;/projects?query=Aware Citizen&quot;, &quot;_self&quot;)'>Aware Citizen</span> adlı LLM tabanlı bir politik ekonomi araştırma aracı, <span class='fake-link' onclick='window.open(&quot;/projects?query=Pima&quot;, &quot;_self&quot;)'>MLflow üzerinde Pima diyabet tahmini</span> ve endüstriyel stajım sırasında geliştirilen <span class='fake-link' onclick='window.open(&quot;/projects?query=Computer Vision&quot;, &quot;_self&quot;)'>uçtan uca bilgisayarlı görü hata tespit hattı</span> gibi yapay zeka odaklı projelerde uygulamalı deneyime sahibim. Tüm projelerimi <span class='fake-link' onclick='window.open(&quot;/projects&quot;, &quot;_self&quot;)'>buradan</span> inceleyebilirsiniz."
+            data-en="Hi, I'm Atena. A master's student specializing in Artificial Intelligence at <a href='https://www.yorku.ca' target='_blank' rel='noopener noreferrer'>York University</a>. I enjoy building end-to-end AI solutions, from intelligent applications and computer vision systems to machine learning pipelines.<br><br>P.S. I'm actively trying to prune my professional interests! <br><br>Some projects I've worked on include <span class='fake-link' onclick='window.open(&quot;/projects?query=Cellenta&quot;, &quot;_self&quot;)'>Cellenta iOS</span>, a cloud-native AI-powered OCS; <span class='fake-link' onclick='window.open(&quot;/projects?query=Aware Citizen&quot;, &quot;_self&quot;)'>Aware Citizen</span>, an LLM-based political economy research tool; a <span class='fake-link' onclick='window.open(&quot;/projects?query=Pima&quot;, &quot;_self&quot;)'>diabetes prediction pipeline deployed with MLflow</span>; and an <span class='fake-link' onclick='window.open(&quot;/projects?query=Computer Vision&quot;, &quot;_self&quot;)'>end-to-end computer vision defect-detection system</span> developed during my industrial internship.<br><br>You can explore all my projects <span class='fake-link' onclick='window.open(&quot;/projects&quot;, &quot;_self&quot;)'>here</span>."
+
+            data-fa="سلام، من آتنا هستم. دانشجوی کارشناسی ارشد با تخصص هوش مصنوعی در <a href='https://www.yorku.ca' target='_blank' rel='noopener noreferrer'>دانشگاه یورک</a> هستم. از ساخت راهکارهای جامع هوش مصنوعی، از اپلیکیشن‌های هوشمند و سیستم‌های بینایی ماشین گرفته تا پایپ‌لاین‌های یادگیری ماشین، لذت می‌برم.<br><br>پ.ن. فعلاً دارم سعی می‌کنم علایقم را هرس کنم! <br><br>بعضی از پروژه‌هایی که روی آن‌ها کار کرده‌ام شامل <span class='fake-link' onclick='window.open(&quot;/projects?query=Cellenta&quot;, &quot;_self&quot;)'>Cellenta iOS</span>، یک سیستم شارژ آنلاین ابری مبتنی بر هوش مصنوعی؛ <span class='fake-link' onclick='window.open(&quot;/projects?query=Aware Citizen&quot;, &quot;_self&quot;)'>Aware Citizen</span>، یک ابزار پژوهشی اقتصاد سیاسی مبتنی بر مدل‌های زبانی بزرگ؛ یک <span class='fake-link' onclick='window.open(&quot;/projects?query=Pima&quot;, &quot;_self&quot;)'>پایپ‌لاین پیش‌بینی دیابت با استفاده از MLflow</span>؛ و یک <span class='fake-link' onclick='window.open(&quot;/projects?query=Computer Vision&quot;, &quot;_self&quot;)'>سیستم جامع بینایی ماشین برای تشخیص نقص</span> است که در دوره کارآموزی صنعتی‌ام توسعه دادم.<br><br>می‌توانید همه چیزهایی را که ساخته‌ام <span class='fake-link' onclick='window.open(&quot;/projects&quot;, &quot;_self&quot;)'>اینجا</span> ببینید."
+
+            data-tr="Merhaba, ben Atena. <a href='https://www.yorku.ca' target='_blank' rel='noopener noreferrer'>York Üniversitesi</a>'nde Yapay Zeka alanında uzmanlaşan bir yüksek lisans öğrencisiyim. Akıllı uygulamalardan bilgisayarlı görü sistemlerine ve makine öğrenmesi işlem hatlarına kadar uçtan uca yapay zeka çözümleri geliştirmekten keyif alıyorum.<br><br>Not: Şimdilik ilgi alanlarımı biraz budamaya çalışıyorum! <br><br>Üzerinde çalıştığım projelerden bazıları, bulut tabanlı ve yapay zeka destekli bir OCS olan <span class='fake-link' onclick='window.open(&quot;/projects?query=Cellenta&quot;, &quot;_self&quot;)'>Cellenta iOS</span>; LLM tabanlı bir politik ekonomi araştırma aracı olan <span class='fake-link' onclick='window.open(&quot;/projects?query=Aware Citizen&quot;, &quot;_self&quot;)'>Aware Citizen</span>; <span class='fake-link' onclick='window.open(&quot;/projects?query=Pima&quot;, &quot;_self&quot;)'>MLflow ile geliştirilmiş bir diyabet tahmin işlem hattı</span>; ve endüstriyel stajım sırasında geliştirdiğim <span class='fake-link' onclick='window.open(&quot;/projects?query=Computer Vision&quot;, &quot;_self&quot;)'>uçtan uca bilgisayarlı görü tabanlı hata tespit sistemi</span>.<br><br>Geliştirdiğim tüm projelere <span class='fake-link' onclick='window.open(&quot;/projects&quot;, &quot;_self&quot;)'>buradan</span> göz atabilirsiniz."
           >
-            Hi, I'm Atena, an <a href="{{ url_for('projects') }}?query=Computer Vision">AI engineer</a>, a
-            <a href="{{ url_for('projects') }}?query=Advertising Effects on Sales with R">data scientist</a>
-            and a fullstack software developer. I have hands-on experience in AI-Focused projects such as
-            <a href="{{ url_for('projects') }}?query=Cellenta">Cellenta iOS</a>, a Cloud-Native AI-Powered OCS,
-            <a href="{{ url_for('projects') }}?query=Aware Citizen">Aware Citizen</a>, an LLM-Based Political Economy Research Tool,
-            <a href="{{ url_for('projects') }}?query=Pima">Pima Diabetes Prediction on MLflow</a> and an
-            <a href="{{ url_for('projects') }}?query=Computer Vision">end-to-end computer vision defect-detection pipeline</a>
-            built during my industrial internship. You can browse all my projects
+
+            Hi, I'm Atena. A master's student specializing in Artificial Intelligence at
+            <a href="https://www.yorku.ca"
+              target="_blank"
+              rel="noopener noreferrer">
+              York University
+            </a>.
+
+            I enjoy building end-to-end AI solutions, from intelligent applications
+            and computer vision systems to machine learning pipelines.
+
+            <br><br>
+
+            P.S. I'm actively trying to prune my professional interests!
+
+            <br><br>
+
+            Some projects I've worked on include
+            <a href="{{ url_for('projects') }}?query=Cellenta">Cellenta iOS</a>,
+            a cloud-native AI-powered OCS;
+
+            <a href="{{ url_for('projects') }}?query=Aware Citizen">Aware Citizen</a>,
+            an LLM-based political economy research tool;
+
+            a
+            <a href="{{ url_for('projects') }}?query=Pima">
+              diabetes prediction pipeline deployed with MLflow
+            </a>;
+
+            and an
+            <a href="{{ url_for('projects') }}?query=Computer Vision">
+              end-to-end computer vision defect-detection system
+            </a>
+            developed during my industrial internship.
+
+            <br><br>
+
+            You can explore all my projects
             <a href="{{ url_for('projects') }}">here</a>.
+
           </p>
-        
-        
+
+
+          <!-- Fun Fact -->
           <p
-            data-en="Fun Fact: I'm an astrophile, a <a href='https://www.instagram.com/piano_with_atena?igsh=MXFzMzE2dGprbjRtZw%3D%3D&utm_source=qr' target='_blank' rel='noopener noreferrer'>pianist</a> and a <a href='https://on.soundcloud.com/LQZRD4beL0LjlbwYky' target='_blank' rel='noopener noreferrer'>composer</a> ♫"
+            data-en="Fun fact: I'm an astrophile, <a href='https://www.instagram.com/piano_with_atena?igsh=MXFzMzE2dGprbjRtZw%3D%3D&utm_source=qr' target='_blank' rel='noopener noreferrer'>pianist</a>, and <a href='https://on.soundcloud.com/LQZRD4beL0LjlbwYky' target='_blank' rel='noopener noreferrer'>composer</a> ♫"
 
-            data-fa="نکته جالب: من عاشق نجوم هستم، <a href='https://www.instagram.com/piano_with_atena?igsh=MXFzMzE2dGprbjRtZw%3D%3D&utm_source=qr' target='_blank' rel='noopener noreferrer'>پیانیست</a> و <a href='https://on.soundcloud.com/LQZRD4beL0LjlbwYky' target='_blank' rel='noopener noreferrer'>آهنگساز</a> ♫"
+            data-fa="نکته جالب: من عاشق نجوم، <a href='https://www.instagram.com/piano_with_atena?igsh=MXFzMzE2dGprbjRtZw%3D%3D&utm_source=qr' target='_blank' rel='noopener noreferrer'>پیانیست</a> و <a href='https://on.soundcloud.com/LQZRD4beL0LjlbwYky' target='_blank' rel='noopener noreferrer'>آهنگساز</a> هستم ♫"
 
-            data-tr="Eğlenceli Bilgi: Astrofilim, bir <a href='https://www.instagram.com/piano_with_atena?igsh=MXFzMzE2dGprbjRtZw%3D%3D&utm_source=qr' target='_blank' rel='noopener noreferrer'>piyanist</a> ve bir <a href='https://on.soundcloud.com/LQZRD4beL0LjlbwYky' target='_blank' rel='noopener noreferrer'>besteciyim</a> ♫"
+            data-tr="Eğlenceli bilgi: Astrofilim, <a href='https://www.instagram.com/piano_with_atena?igsh=MXFzMzE2dGprbjRtZw%3D%3D&utm_source=qr' target='_blank' rel='noopener noreferrer'>piyanistim</a> ve <a href='https://on.soundcloud.com/LQZRD4beL0LjlbwYky' target='_blank' rel='noopener noreferrer'>besteciyim</a> ♫"
           >
-            Fun Fact: I'm an astrophile, a
-            <a href="https://www.instagram.com/piano_with_atena?igsh=MXFzMzE2dGprbjRtZw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">pianist</a>
-            and a
-            <a href="https://on.soundcloud.com/LQZRD4beL0LjlbwYky" target="_blank" rel="noopener noreferrer">composer</a> ♫
+
+            Fun fact: I'm an astrophile,
+            <a href="https://www.instagram.com/piano_with_atena?igsh=MXFzMzE2dGprbjRtZw%3D%3D&utm_source=qr"
+              target="_blank"
+              rel="noopener noreferrer">
+              pianist
+            </a>,
+            and
+            <a href="https://on.soundcloud.com/LQZRD4beL0LjlbwYky"
+              target="_blank"
+              rel="noopener noreferrer">
+              composer
+            </a> ♫
+
           </p>
+
         </div>
+
+
+        <!-- =========================
+            INTERESTS / SKILLS
+        ========================== -->
 
         <div
-        class="tags"
-        data-en="<span class='fake-link' onclick='window.open(&quot;/projects?query=LLM&quot;, &quot;_self&quot;)'>LLMs &amp; Gen AI</span> |
-                <span class='fake-link' onclick='window.open(&quot;/projects?query=Machine Learning&quot;, &quot;_self&quot;)'>Machine Learning</span> |
-                <span class='fake-link' onclick='window.open(&quot;/projects?query=Advertising&quot;, &quot;_self&quot;)'>Data Science</span> |
-                <span class='fake-link' onclick='window.open(&quot;/projects?query=Computer Vision&quot;, &quot;_self&quot;)'>Computer Vision</span> |
-                <span class='fake-link' onclick='window.open(&quot;/projects?query=Pima&quot;, &quot;_self&quot;)'>MLOps</span>"
+          class="tags"
 
-        data-fa="<span class='fake-link' onclick='window.open(&quot;/projects?query=LLM&quot;, &quot;_self&quot;)'>مدل‌های زبانی بزرگ و هوش مصنوعی مولد</span> |
-                <span class='fake-link' onclick='window.open(&quot;/projects?query=Machine Learning&quot;, &quot;_self&quot;)'>یادگیری ماشین</span> |
-                <span class='fake-link' onclick='window.open(&quot;/projects?query=Advertising&quot;, &quot;_self&quot;)'>علم داده</span> |
-                <span class='fake-link' onclick='window.open(&quot;/projects?query=Computer Vision&quot;, &quot;_self&quot;)'>بینایی کامپیوتر</span> |
-                <span class='fake-link' onclick='window.open(&quot;/projects?query=Pima&quot;, &quot;_self&quot;)'>عملیات یادگیری ماشین (MLOps)</span>"
+          data-en="<span class='fake-link' onclick='window.open(&quot;/projects?query=LLM&quot;, &quot;_self&quot;)'>LLMs &amp; Gen AI</span> |
+                  <span class='fake-link' onclick='window.open(&quot;/projects?query=Machine Learning&quot;, &quot;_self&quot;)'>Machine Learning</span> |
+                  <span class='fake-link' onclick='window.open(&quot;/projects?query=Advertising&quot;, &quot;_self&quot;)'>Data Science</span> |
+                  <span class='fake-link' onclick='window.open(&quot;/projects?query=Computer Vision&quot;, &quot;_self&quot;)'>Computer Vision</span> |
+                  <span class='fake-link' onclick='window.open(&quot;/projects?query=Pima&quot;, &quot;_self&quot;)'>MLOps</span>"
 
-        data-tr="<span class='fake-link' onclick='window.open(&quot;/projects?query=LLM&quot;, &quot;_self&quot;)'>LLM ve Üretken Yapay Zeka</span> |
-                <span class='fake-link' onclick='window.open(&quot;/projects?query=Machine Learning&quot;, &quot;_self&quot;)'>Makine Öğrenmesi</span> |
-                <span class='fake-link' onclick='window.open(&quot;/projects?query=Advertising&quot;, &quot;_self&quot;)'>Veri Bilimi</span> |
-                <span class='fake-link' onclick='window.open(&quot;/projects?query=Computer Vision&quot;, &quot;_self&quot;)'>Bilgisayarlı Görü</span> |
-                <span class='fake-link' onclick='window.open(&quot;/projects?query=Pima&quot;, &quot;_self&quot;)'>MLOps</span>"
-      >
-        <a href="{{ url_for('projects') }}?query=LLM">LLMs & Gen AI</a> |
-        <a href="{{ url_for('projects') }}?query=Machine Learning">Machine Learning</a> |
-        <a href="{{ url_for('projects') }}?query=Advertising">Data Science</a> |
-        <a href="{{ url_for('projects') }}?query=Computer Vision">Computer Vision</a> |
-        <a href="{{ url_for('projects') }}?query=Pima">MLOps</a>
-      </div>
-      <div
-      class="cta-row"
-      data-en="
-        <a class='btn-cv' href='/projects'>
-          <span class='btn-text'>Explore My Work</span>
-          <span class='btn-icon'>💻</span>
-        </a>
-        <a class='btn-cv' href='#contact'>
-          <span class='btn-text'>Get in Touch</span>
-          <span class='btn-icon'>📞</span>
-        </a>
-        <a class='btn-cv' href='/static/files/CV-AtenaParsa.pdf' target='_blank' rel='noopener noreferrer'>
-          <span class='btn-text'>View My CV</span>
-          <span class='btn-icon'>📄</span>
-        </a>
-      "
+          data-fa="<span class='fake-link' onclick='window.open(&quot;/projects?query=LLM&quot;, &quot;_self&quot;)'>مدل‌های زبانی بزرگ و هوش مصنوعی مولد</span> |
+                  <span class='fake-link' onclick='window.open(&quot;/projects?query=Machine Learning&quot;, &quot;_self&quot;)'>یادگیری ماشین</span> |
+                  <span class='fake-link' onclick='window.open(&quot;/projects?query=Advertising&quot;, &quot;_self&quot;)'>علم داده</span> |
+                  <span class='fake-link' onclick='window.open(&quot;/projects?query=Computer Vision&quot;, &quot;_self&quot;)'>بینایی کامپیوتر</span> |
+                  <span class='fake-link' onclick='window.open(&quot;/projects?query=Pima&quot;, &quot;_self&quot;)'>عملیات یادگیری ماشین (MLOps)</span>"
 
-      data-fa="
-        <a class='btn-cv' href='/projects'>
-          <span class='btn-text'>مشاهده پروژه ها</span>
-          <span class='btn-icon'>💻</span>
-        </a>
-        <a class='btn-cv' href='#contact'>
-          <span class='btn-text'>تماس با من</span>
-          <span class='btn-icon'>📞</span>
-        </a>
-        <a class='btn-cv' href='/static/files/CV-AtenaParsa.pdf' target='_blank' rel='noopener noreferrer'>
-          <span class='btn-text'>مشاهده رزومه</span>
-          <span class='btn-icon'>📄</span>
-        </a>
-      "
-
-      data-tr="
-        <span class='fake-link btn primary' onclick='window.open(&quot;/projects&quot;, &quot;_self&quot;)'>Projeler</span>
-        <span class='fake-link btn secondary' onclick='window.location.href=&quot;#contact&quot;'>Benimle İletişime</span>
-        <a class='btn-cv' href='/static/files/CV-AtenaParsa.pdf' target='_blank' rel='noopener noreferrer'>
-          <span class='btn-text'>CV’yi Görüntüle</span>
-          <span class='btn-icon'>📄</span>
-        </a>
-      "
-    >
-      <a class="btn primary" href="{{ url_for('projects') }}">Explore My Work</a>
-      <a class="btn-cv" href="{{ url_for('projects') }}">
-        <span class="btn-text">Explore My Work</span>
-        <span class="btn-icon">💻</span>
-      <a class="btn-cv" href="#contact">
-        <span class="btn-text">Get in Touch</span>
-        <span class="btn-icon">📞</span>
-      <a class="btn-cv" href="{{ url_for('static', filename='files/CV-AtenaParsa.pdf') }}"
-        target="_blank" rel="noopener noreferrer">
-        <span class="btn-text">View My CV</span>
-        <span class="btn-icon">📄</span>
-      </a>
-    </div>
-    </section>
-
-
-    <section id="publications" class="info-section">
-
-      <h2
-        data-en="Publications"
-        data-fa="مقاله ها"
-        data-tr="Makaleler"
-      >Publications</h2>
-    
-      <!-- Publication 1 -->
-      <div class="info-card">
-        <h3>
-          <strong
-            data-en="Time-Series Signal Processing of Surface Electromyography (sEMG) for Walking Speed Estimation"
-            data-fa=" پردازش سیگنال‌های سری زمانی الکترومایوگرافی سطحی (sEMG) برای تخمین سرعت راه‌رفتن"
-            data-tr="Yürüme Hızı Tahmini için Yüzey Elektromiyografi (sEMG) Zaman Serisi Sinyal İşleme"
-          >
-            Time-Series Signal Processing of Surface Electromyography (sEMG) for Walking Speed Estimation
-          </strong>
-        </h3>
-    
-        <p
-          data-en="Independent interdisciplinary research at the intersection of Artificial Intelligence and Biomedical Engineering, Bahcesehir University."
-          data-fa="پژوهش مستقل میان‌رشته‌ای در تقاطع هوش مصنوعی و مهندسی پزشکی در دانشگاه باهچه‌شهیر."
-          data-tr="Bahçeşehir Üniversitesi’nde yapay zeka ve biyomedikal mühendisliğinin kesişiminde yürütülen bağımsız disiplinlerarası araştırma."
+          data-tr="<span class='fake-link' onclick='window.open(&quot;/projects?query=LLM&quot;, &quot;_self&quot;)'>LLM ve Üretken Yapay Zeka</span> |
+                  <span class='fake-link' onclick='window.open(&quot;/projects?query=Machine Learning&quot;, &quot;_self&quot;)'>Makine Öğrenmesi</span> |
+                  <span class='fake-link' onclick='window.open(&quot;/projects?query=Advertising&quot;, &quot;_self&quot;)'>Veri Bilimi</span> |
+                  <span class='fake-link' onclick='window.open(&quot;/projects?query=Computer Vision&quot;, &quot;_self&quot;)'>Bilgisayarlı Görü</span> |
+                  <span class='fake-link' onclick='window.open(&quot;/projects?query=Pima&quot;, &quot;_self&quot;)'>MLOps</span>"
         >
-          Independent interdisciplinary research at the intersection of Artificial Intelligence and Biomedical Engineering, Bahcesehir University.
-        </p>
-    
-        <details>
-          <summary
-            data-en="In Progress ▼"
-            data-fa="در حال انجام ▼"
-            data-tr="Devam Ediyor ▼"
-          >
-            In Progress <span>▼</span>
-          </summary>
-    
-          <p
-            data-en="<strong>Started:</strong> November 2025<br>This study investigates time-series analysis and modeling of multi-channel surface electromyography signals to estimate human walking speed, combining techniques from machine learning and biomedical signal processing. Under the supervision of Prof. Bora Buyuksarac and Prof. Firat Matur."
-            data-fa="<strong>شروع:</strong> نوامبر ۲۰۲۵<br>این پژوهش به تحلیل و مدل‌سازی سری‌های زمانی سیگنال‌های چندکاناله الکترومایوگرافی سطحی برای تخمین سرعت راه‌رفتن انسان با ترکیب روش‌های یادگیری ماشین و پردازش سیگنال‌های زیست‌پزشکی می‌پردازد.  تحت نظارت پروفسور بورا بیوک‌ساراچ و پروفسور فیرات ماتور "
-            data-tr="<strong>Başlangıç:</strong> Kasım 2025<br>Bu çalışma, makine öğrenmesi ve biyomedikal sinyal işleme tekniklerini birleştirerek çok kanallı yüzey elektromiyografi sinyallerinin zaman serisi analizi ve modellenmesi yoluyla insan yürüme hızının tahminini araştırmaktadır, Prof. Bora Büyüksaraç ve Prof. Fırat Matur'un danışmanlığında."
-          >
-            <strong>Started:</strong> November 2025<br>
-            This study investigates time-series analysis and modeling of multi-channel surface electromyography signals to estimate human walking speed, combining techniques from machine learning and biomedical signal processing. Under the supervision of Prof. Bora Buyuksarac & Prof. Firat Matur.
-          </p>
-        </details>
-      </div>
-    
-      <!-- Publication 2 -->
-      <div class="info-card">
-        <h3>
-          <strong
-            data-en="Aware Citizen: A Large Language Model-Based Political Economy Analyst"
-            data-fa="شهروند آگاه: تحلیل‌گر اقتصاد سیاسی مبتنی بر مدل‌های زبانی بزرگ"
-            data-tr="Aware Citizen: Büyük Dil Modellerine Dayalı Politik Ekonomi Analisti"
-          >
-            Aware Citizen: A Large Language Model-Based Political Economy Analyst
-          </strong>
-        </h3>
-    
-        <a class="btn primary" href="https://github.com/AtenaJP22/Aware-Citizen"
-           target="_blank" rel="noopener noreferrer">
-          <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
-          <span
-            data-en="View Project"
-            data-fa="مشاهده پروژه"
-            data-tr="Projeyi Görüntüle"
-          >View Project</span>
-        </a>
-    
-        <a class="btn primary"
-           href="{{ url_for('static', filename='files/Aware_Citizen_Research_Paper_.pdf') }}"
-           target="_blank" rel="noopener noreferrer">
-          <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="PDF" style="width:28px; height:28px;">
-          <span
-            data-en="Research Paper"
-            data-fa="مقاله پژوهشی"
-            data-tr="Araştırma Makalesi"
-          >Research Paper</span>
-        </a>
-    
-        <a class="btn primary"
-           href="{{ url_for('static', filename='files/Aware_Citizen.pdf') }}"
-           target="_blank" rel="noopener noreferrer">
-          <img src="{{ url_for('static', filename='images/powerpoint.png') }}" alt="Presentation" style="width:30px; height:30px;">
-          <span
-            data-en="Project Presentation"
-            data-fa="ارائه پروژه"
-            data-tr="Proje Sunumu"
-          >Project Presentation</span>
-        </a>
-      </div>
-    
-      <!-- Publication 3 -->
-      <div class="info-card">
-        <h3>
-          <strong
-            data-en="Do AI Image Generators Infringe Copyright?"
-            data-fa="آیا مولدهای تصویر مبتنی بر هوش مصنوعی حق نشر را نقض می‌کنند؟"
-            data-tr="Yapay Zeka Görüntü Üreticileri Telif Haklarını İhlal Ediyor mu?"
-          >
-            Do AI Image Generators Infringe Copyright?
-          </strong>
-        </h3>
 
-        <p
-        data-en="Exploring the Legal and Ethical Concerns of Using Copyrighted Artworks in Machine Learning"
-            data-fa="بررسی چالش‌های حقوقی و اخلاقی استفاده از آثار دارای کپی‌رایت در یادگیری ماشین"
-            data-tr="Makine Öğreniminde Telifli Eser Kullanımının Hukuki ve Etik Boyutları">
-          Exploring the Legal and Ethical Concerns of Using Copyrighted Artworks in Machine Learning
-        </p>
-    
-        <a class="btn primary"
-           href="https://medium.com/@atena-jafari-parsa/do-ai-image-generators-infringe-copyright-2be22bd3402b"
-           target="_blank" rel="noopener noreferrer">
-          <img src="{{ url_for('static', filename='images/medium.png') }}" alt="Medium" style="width:25px; height:25px;">
-          <span
-            data-en="View Publication"
-            data-fa="مشاهده مقاله"
-            data-tr="Yayını Görüntüle"
-          >View Publication</span>
-        </a>
-    
-        <a class="btn primary"
-           href="{{ url_for('static', filename='files/CopyrightInquiryofAIImageGenerators.pdf') }}"
-           target="_blank" rel="noopener noreferrer">
-          <img src="{{ url_for('static', filename='images/powerpoint.png') }}" alt="Presentation" style="width:30px; height:30px;">
-          <span
-            data-en="Presentation"
-            data-fa="ارائه"
-            data-tr="Sunum"
-          >Presentation</span>
-        </a>
+          <a href="{{ url_for('projects') }}?query=LLM">LLMs & Gen AI</a> |
+          <a href="{{ url_for('projects') }}?query=Machine Learning">Machine Learning</a> |
+          <a href="{{ url_for('projects') }}?query=Advertising">Data Science</a> |
+          <a href="{{ url_for('projects') }}?query=Computer Vision">Computer Vision</a> |
+          <a href="{{ url_for('projects') }}?query=Pima">MLOps</a>
+
+        </div>
+
+
+        <!-- =========================
+            CALL TO ACTION
+        ========================== -->
+
+        <div
+          class="cta-row"
+
+          data-en="
+            <a class='btn-cv' href='/projects'>
+              <span class='btn-text'>Explore My Work</span>
+              <span class='btn-icon'>💻</span>
+            </a>
+
+            <a class='btn-cv' href='#contact'>
+              <span class='btn-text'>Get in Touch</span>
+              <span class='btn-icon'>📞</span>
+            </a>
+
+            <a class='btn-cv' href='/static/files/CV-AtenaParsa.pdf' target='_blank' rel='noopener noreferrer'>
+              <span class='btn-text'>View My CV</span>
+              <span class='btn-icon'>📄</span>
+            </a>
+          "
+
+          data-fa="
+            <a class='btn-cv' href='/projects'>
+              <span class='btn-text'>مشاهده پروژه ها</span>
+              <span class='btn-icon'>💻</span>
+            </a>
+
+            <a class='btn-cv' href='#contact'>
+              <span class='btn-text'>تماس با من</span>
+              <span class='btn-icon'>📞</span>
+            </a>
+
+            <a class='btn-cv' href='/static/files/CV-AtenaParsa.pdf' target='_blank' rel='noopener noreferrer'>
+              <span class='btn-text'>مشاهده رزومه</span>
+              <span class='btn-icon'>📄</span>
+            </a>
+          "
+
+          data-tr="
+            <span class='fake-link btn primary' onclick='window.open(&quot;/projects&quot;, &quot;_self&quot;)'>Projeler</span>
+
+            <span class='fake-link btn secondary' onclick='window.location.href=&quot;#contact&quot;'>Benimle İletişime</span>
+
+            <a class='btn-cv' href='/static/files/CV-AtenaParsa.pdf' target='_blank' rel='noopener noreferrer'>
+              <span class='btn-text'>CV’yi Görüntüle</span>
+              <span class='btn-icon'>📄</span>
+            </a>
+          "
+        >
+
+          <a class="btn-cv" href="{{ url_for('projects') }}">
+            <span class="btn-text">Explore My Work</span>
+            <span class="btn-icon">💻</span>
+          </a>
+
+          <a class="btn-cv" href="#contact">
+            <span class="btn-text">Get in Touch</span>
+            <span class="btn-icon">📞</span>
+          </a>
+
+          <a
+            class="btn-cv"
+            href="{{ url_for('static', filename='files/CV-AtenaParsa.pdf') }}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="btn-text">View My CV</span>
+            <span class="btn-icon">📄</span>
+          </a>
+
+        </div>
+
       </div>
-    
+
     </section>
 
-          <!-- Specializations preview (put on main page) -->
-    <section id="specializations-preview" class="info-section">
-      <h2
-        data-en="Certifications & Specializations"
-        data-fa="مدرک ها و تخصص‌ها"
-        data-tr="Sertifikalar ve Uzmanlıklar"
-    >Certifications & Specializations</h2>
-      <div class="cert-preview-grid">
-        <!-- Example card (repeat 2-3 highlighted certs) -->
-        <a href="https://www.coursera.org/account/accomplishments/specialization/VUMQFDP1V0TF?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=s12n" 
-          target="_blank" rel="noopener noreferrer"
-          class="cert-link">
-          <div class="cert-card small">
-            <img src="{{ url_for('static', filename='images/MLOps.png') }}" 
-                alt="MLOps Certificate">
-            <div class="cert-body">
-              <h3>MLOps</h3>
-              <p class="meta"
-                data-en="Duke University • May 2025"
-                data-fa="دانشگاه دوک • مه ۲۰۲۵"
-                data-tr="Duke Üniversitesi • Mayıs 2025"
-             >Duke University • May 2025</p>
-            </div>
-          </div>
-        </a>
-
-
-        <a href="https://www.coursera.org/account/accomplishments/verify/RPQX107Y59N9?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course" 
-          target="_blank" rel="noopener noreferrer"
-          class="cert-link">
-          <div class="cert-card small">
-            <img src="{{ url_for('static', filename='images/AIML.png') }}" 
-                alt="Foundations of AI & ML Certificate">
-            <div class="cert-body">
-              <h3
-                data-en="Foundations of AI & ML"
-                data-fa="مبانی هوش مصنوعی و یادگیری ماشین"
-                data-tr="Yapay Zeka ve Makine Öğrenmesi Temelleri"
-              >Foundations of AI & ML</h3>
-              <p class="meta"
-                data-en="Microsoft • Jan 2025"
-                data-fa="مایکروسافت • ژانویه ۲۰۲۵"
-                data-tr="Microsoft • Ocak 2025"
-              >Microsoft • Jan 2025</p>
-            </div>
-          </div>
-        </a>
-
-        <a href="https://www.coursera.org/account/accomplishments/specialization/EK49PHLYF27L?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=s12n" 
-          target="_blank" rel="noopener noreferrer"
-          class="cert-link">
-          <div class="cert-card small">
-            <img src="{{ url_for('static', filename='images/DL.png') }}" 
-                alt="Deep Learning Specialization">
-            <div class="cert-body">
-              <h3
-                data-en="Deep Learning Specialization"
-                data-fa="تخصص یادگیری عمیق"
-                data-tr="Derin Öğrenme Uzmanlığı"
-            >Deep Learning Specialization</h3>
-              <p class="meta"
-                data-en="DeepLearning.AI • June 2024"
-                data-fa="DeepLearning.AI • ژوئن ۲۰۲۴"
-                data-tr="DeepLearning.AI • Haziran 2024"
-             >Deeplearning.AI • June 2024</p>
-            </div>
-          </div>
-        </a>
-
-      </div>
-
-      <div style="text-align:center; margin-top: 22px;">
-        <a class="btn primary" href="{{ url_for('certifications') }}" data-en="Explore all certifications"
-        data-fa="مشاهده همه مدرک ها"
-        data-tr="Tüm sertifikaları keşfet">Explore all certifications</a>
-      </div>
-    </section>
 
       <!-- ===== Education ===== -->
     <section id="education" class="info-section">
@@ -627,6 +551,82 @@
       </div>
     </section>
 
+    <section id="specializations-preview" class="info-section">
+      <h2
+        data-en="Certifications & Specializations"
+        data-fa="مدرک ها و تخصص‌ها"
+        data-tr="Sertifikalar ve Uzmanlıklar"
+    >Certifications & Specializations</h2>
+      <div class="cert-preview-grid">
+        <!-- Example card (repeat 2-3 highlighted certs) -->
+        <a href="https://www.coursera.org/account/accomplishments/specialization/VUMQFDP1V0TF?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=s12n" 
+          target="_blank" rel="noopener noreferrer"
+          class="cert-link">
+          <div class="cert-card small">
+            <img src="{{ url_for('static', filename='images/MLOps.png') }}" 
+                alt="MLOps Certificate">
+            <div class="cert-body">
+              <h3>MLOps</h3>
+              <p class="meta"
+                data-en="Duke University • May 2025"
+                data-fa="دانشگاه دوک • مه ۲۰۲۵"
+                data-tr="Duke Üniversitesi • Mayıs 2025"
+             >Duke University • May 2025</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.coursera.org/account/accomplishments/verify/RPQX107Y59N9?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course" 
+          target="_blank" rel="noopener noreferrer"
+          class="cert-link">
+          <div class="cert-card small">
+            <img src="{{ url_for('static', filename='images/AIML.png') }}" 
+                alt="Foundations of AI & ML Certificate">
+            <div class="cert-body">
+              <h3
+                data-en="Foundations of AI & ML"
+                data-fa="مبانی هوش مصنوعی و یادگیری ماشین"
+                data-tr="Yapay Zeka ve Makine Öğrenmesi Temelleri"
+              >Foundations of AI & ML</h3>
+              <p class="meta"
+                data-en="Microsoft • Jan 2025"
+                data-fa="مایکروسافت • ژانویه ۲۰۲۵"
+                data-tr="Microsoft • Ocak 2025"
+              >Microsoft • Jan 2025</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.coursera.org/account/accomplishments/specialization/EK49PHLYF27L?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=s12n" 
+          target="_blank" rel="noopener noreferrer"
+          class="cert-link">
+          <div class="cert-card small">
+            <img src="{{ url_for('static', filename='images/DL.png') }}" 
+                alt="Deep Learning Specialization">
+            <div class="cert-body">
+              <h3
+                data-en="Deep Learning Specialization"
+                data-fa="تخصص یادگیری عمیق"
+                data-tr="Derin Öğrenme Uzmanlığı"
+            >Deep Learning Specialization</h3>
+              <p class="meta"
+                data-en="DeepLearning.AI • June 2024"
+                data-fa="DeepLearning.AI • ژوئن ۲۰۲۴"
+                data-tr="DeepLearning.AI • Haziran 2024"
+             >Deeplearning.AI • June 2024</p>
+            </div>
+          </div>
+        </a>
+
+        </div>
+
+        <div style="text-align:center; margin-top: 22px;">
+          <a class="btn primary" href="{{ url_for('certifications') }}" data-en="Explore all certifications"
+          data-fa="مشاهده همه مدرک ها"
+          data-tr="Tüm sertifikaları keşfet">Explore all certifications</a>
+        </div>
+      </section>
+
       <section id="skills" class="info-section">
         <h2 data-en="Skills & Technologies" data-tr="Yetenekler ve Teknolojiler" data-fa="مهارت‌ها و فناوری‌ها">Skills & Technologies</h2>
         <div class="info-card">
@@ -854,7 +854,30 @@
         if(ph) el.placeholder = ph;
       });
     }
-    </script>
+
+    const themeToggle = document.getElementById("dark-mode-toggle");
+
+    const savedTheme = localStorage.getItem("theme");
+
+    /* Dark mode by default */
+    if (savedTheme === "light") {
+      document.body.classList.remove("dark-mode");
+    } else {
+      document.body.classList.add("dark-mode");
+    }
+
+    themeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+
+      const isDark = document.body.classList.contains("dark-mode");
+
+      localStorage.setItem(
+        "theme",
+        isDark ? "dark" : "light"
+      );
+    });
+        
+  </script>
 
   <!--SEO Script -->
   <script type="application/ld+json">

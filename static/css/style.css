@@ -23,14 +23,14 @@ header {
   margin-top: 20px;
 }
 .language-toggle {
-  display: inline-block;
+  display: inline-flex;
   gap: 10px;
 }
 
 .lang-btn {
-  background: rgba(86, 81, 81, 0.2);
-  border: 2px solid rgba(52, 49, 49, 0.2);
-  color: rgb(31, 40, 84);
+  background: rgb(23, 138, 158, 0.754);
+  border: 2px solid rgba(91, 26, 26, 0);
+  color: rgb(177, 211, 205);
   padding: 4px 10px;
   border-radius: 15px;
   cursor: pointer;
@@ -39,8 +39,7 @@ header {
 }
 
 .lang-btn:hover, .lang-btn.active {
-  background: rgba(33, 69, 202, 0.627);
-  color: var(--primary);
+  background: rgba(57, 65, 223);
 }
 
 
@@ -149,10 +148,26 @@ main.page, .page {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center -40%; /* Crop from the center */
-  /* Move left */
-  object-position:40% center;
-  transform: scale(1.05);   /* Zoom in  */
+  object-position: center -1%; /* Move the image up */
+  transform: scale(1.20);   /* Zoom in */
+}
+
+/* Larger profile photo on desktop */
+@media (min-width: 1200px) {
+  .photo-frame {
+    width: 320px;
+    height: 320px;
+  }
+
+  .photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .left-card {
+    transform: translateY(-40px);
+  }
 }
 
 /* Smaller screens only */
@@ -875,3 +890,274 @@ nav {
 
 }
 
+/* ==========================================
+   DARK MODE
+========================================== */
+
+/* =========================
+   DARK / LIGHT MODE TOGGLE
+========================= */
+
+.theme-toggle {
+  position: relative;
+  width: 74px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 9px;
+
+  background: #17174a;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+
+  cursor: pointer;
+  overflow: hidden;
+
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease;
+}
+
+
+/* Sun + moon */
+
+.theme-icon {
+  position: relative;
+  z-index: 2;
+
+  font-size: 17px;
+  line-height: 1;
+
+  pointer-events: none;
+
+  transition:
+    color 0.35s ease,
+    opacity 0.35s ease;
+}
+
+.moon {
+  color: #ffffff;
+}
+
+.sun {
+  color: #aaa6cc;
+}
+
+
+/* Sliding circle */
+
+.theme-toggle-thumb {
+  position: absolute;
+
+  width: 28px;
+  height: 28px;
+
+  left: 4px;
+  top: 3px;
+
+  background: #6868c9;
+  border-radius: 50%;
+
+  z-index: 1;
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease;
+}
+
+
+/* =========================
+   LIGHT MODE TOGGLE
+========================= */
+
+body:not(.dark-mode) .theme-toggle {
+  background: #dcdcf5;
+  border-color: rgba(48, 32, 87, 0.25);
+}
+
+body:not(.dark-mode) .theme-toggle-thumb {
+  transform: translateX(37px);
+  background: #ffffff;
+}
+
+body:not(.dark-mode) .moon {
+  color: #77738e;
+}
+
+body:not(.dark-mode) .sun {
+  color: #e39a16;
+}
+
+
+/* =========================
+   DARK MODE TOGGLE
+========================= */
+
+body.dark-mode .theme-toggle-thumb {
+  transform: translateX(0);
+}
+
+body.dark-mode .moon {
+  color: #ffffff;
+}
+
+body.dark-mode .sun {
+  color: #8885aa;
+}
+
+
+/* Little interaction */
+
+.theme-toggle:hover .theme-toggle-thumb {
+  box-shadow: 0 0 8px rgba(180, 170, 255, 0.55);
+}
+
+.theme-toggle:active .theme-toggle-thumb {
+  width: 31px;
+}
+
+body.dark-mode::before {
+  background-color: #282862;
+}
+
+/* Main text */
+body.dark-mode {
+  color: #eeeeff;
+}
+
+/* About / intro */
+body.dark-mode .intro,
+body.dark-mode .intro p {
+  color: #d8d5ff;
+}
+
+/* Main title */
+body.dark-mode .hero-head h1 {
+  color: #c7baff;
+}
+
+/* Section headings */
+body.dark-mode .info-section h2 {
+  color: #aaa4ff;
+}
+
+body.dark-mode .skills-grid h2 {
+  color: #c7baff;
+}
+
+body.dark-mode .skills-grid h3,
+body.dark-mode .bold {
+  color: #eeeeff;
+}
+
+/* Interest tags */
+body.dark-mode .tags {
+  color: #b7b3ff;
+}
+
+/* Skills */
+body.dark-mode .skill-item {
+  color: #70cfff;
+}
+
+/* Links */
+body.dark-mode a,
+body.dark-mode .fake-link {
+  color: #70cfff;
+}
+
+body.dark-mode a:hover,
+body.dark-mode .fake-link:hover {
+  color: #ff75d8;
+}
+
+/* Education / Work cards */
+body.dark-mode .info-card {
+  background: rgba(25, 22, 48, 0.92);
+}
+
+body.dark-mode .info-card h3 {
+  color: #ffffff;
+}
+
+body.dark-mode .info-card p {
+  color: #e9e6ff;
+}
+
+/* Certifications */
+body.dark-mode .cert-card {
+  background: rgba(25, 22, 48, 0.92);
+}
+
+body.dark-mode .cert-body h3 {
+  color: #ffffff;
+}
+
+body.dark-mode .cert-body .meta {
+  color: #c5c0ff;
+}
+
+body.dark-mode .cert-body .desc {
+  color: #eeeeff;
+}
+
+/* Lists */
+body.dark-mode .info-list,
+body.dark-mode .info-list li,
+body.dark-mode .info-list strong {
+  color: #eeeeff;
+}
+
+/* Search */
+body.dark-mode #searchCert {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Filter buttons */
+body.dark-mode .filter-btn {
+  color: #d8d5ff;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Smooth transition */
+body,
+body::before,
+.intro,
+.intro p,
+.info-card,
+.cert-card,
+.tags,
+.skill-item,
+a,
+.fake-link {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.theme-toggle {
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 6px 10px;
+  transition: transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.15);
+}
+
+body.dark-mode p {
+  color: #eeeeff;
+}
+
+body.dark-mode #contact label {
+  color: #eeeeff;
+}

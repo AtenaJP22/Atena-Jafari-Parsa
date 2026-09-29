@@ -24,6 +24,16 @@
         <button class="lang-btn" onclick="switchLanguage('en', event)">English</button>
         <!-- <button class="lang-btn" onclick="switchLanguage('tr', event)">Türkçe</button> -->
         <button class="lang-btn" onclick="switchLanguage('fa', event)">فارسی</button>
+        <button
+          id="dark-mode-toggle"
+          class="theme-toggle"
+          type="button"
+          aria-label="Toggle dark and light mode"
+        >
+          <span class="theme-icon moon">☾</span>
+          <span class="theme-icon sun">☀</span>
+          <span class="theme-toggle-thumb"></span>
+        </button>
       </div>
     </header>
 
@@ -1288,6 +1298,28 @@
         if(ph) el.placeholder = ph;
       });
     }
+
+    const themeToggle = document.getElementById("dark-mode-toggle");
+
+    const savedTheme = localStorage.getItem("theme");
+    
+    /* Dark mode by default */
+    if (savedTheme === "light") {
+      document.body.classList.remove("dark-mode");
+    } else {
+      document.body.classList.add("dark-mode");
+    }
+    
+    themeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+    
+      const isDark = document.body.classList.contains("dark-mode");
+    
+      localStorage.setItem(
+        "theme",
+        isDark ? "dark" : "light"
+      );
+    });
     </script>
 
 </body>
