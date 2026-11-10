@@ -1171,3 +1171,23 @@ body.dark-mode #contact label {
   border-bottom: 12px solid transparent;
   border-left: 14px solid #ca2f50;
 }
+
+#cellenta .cellenta-preview {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 504px;
+  min-height: 548px;
+  margin-inline: auto;
+}
+
+#cellenta .cellenta-preview-link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+#cellenta .cellenta-preview-link:focus-visible {
+  outline: 3px solid #0a66c2;
+  outline-offset: -3px;
+}
