@@ -1161,3 +1161,13 @@ body.dark-mode p {
 body.dark-mode #contact label {
   color: #eeeeff;
 }
+
+.live-demo::before {
+  content: "";
+  width: 0;
+  height: 0;
+  flex-shrink: 0;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 14px solid #ca2f50;
+}

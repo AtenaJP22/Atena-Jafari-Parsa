@@ -309,48 +309,6 @@
             </div>
         </div>
 
-        <div class="project-card">
-            <img src="{{ url_for('static', filename='images/tts2.jpg') }}" alt="Re [Style TTS2]">
-            <div class="project-info">
-              <h2>Re [Style TTS2]</h2>
-              <!-- Description -->
-            <p
-            data-en="A reproduction study of StyleTTS2: Towards Human-Level Text-to-Speech through Style Diffusion and Adversarial Training with Large Speech Language Models, utilizing deep learning and artificial neural networks."
-
-            data-tr="Derin öğrenme ve yapay sinir ağları kullanan, StyleTTS2: Style Diffusion ve Büyük Konuşma Dil Modelleri ile Adversarial Eğitim Yoluyla İnsan Seviyesinde Metinden Konuşmaya başlıklı çalışmanın bir yeniden üretim (reproduction) çalışmasıdır."
-
-            data-fa="یک مطالعه بازتولید (Reproduction) از StyleTTS2: دستیابی به تبدیل متن به گفتار در سطح انسانی از طریق انتشار سبک (Style Diffusion) و آموزش خصمانه با مدل‌های زبانی بزرگ گفتاری که از یادگیری عمیق و شبکه‌های عصبی مصنوعی استفاده می‌کند.">
-            A reproduction study of Style TTS2: Towards Human-Level Text-to-Speech through Style Diffusion and Adversarial Training with Large Speech Language Models which utilizes deep learning and artificial neural networks.
-            </p>
-
-            <!-- Git Repository -->
-            <a class="btn primary"
-            data-en="<img src='{{ url_for('static', filename='images/github.png') }}' style='width:25px; height:25px;'> View Git Repository"
-            data-tr="<img src='{{ url_for('static', filename='images/github.png') }}' style='width:25px; height:25px;'> Git Deposunu Görüntüle"
-            data-fa="<img src='{{ url_for('static', filename='images/github.png') }}' style='width:25px; height:25px;'> مشاهده رپو گیتهاب"
-            href="https://github.com/yl4579/StyleTTS2"
-            target="_blank"
-            rel="noopener noreferrer"
-            style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
-            <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
-            View Git Repository
-            </a>
-
-            <!-- Original Paper -->
-            <a class="btn primary"
-            data-en="<img src='{{ url_for('static', filename='images/PDF.png') }}' style='width:28px; height:28px;'> Original Paper"
-            data-tr="<img src='{{ url_for('static', filename='images/PDF.png') }}' style='width:28px; height:28px;'> Orijinal Makale"
-            data-fa="<img src='{{ url_for('static', filename='images/PDF.png') }}' style='width:28px; height:28px;'> مقاله اصلی"
-            href="{{ url_for('static', filename='files/NeurIPS-2023-styletts-2-towards-human-level-text-to-speech-through-style-diffusion-and-adversarial-training-with-large-speech-language-models-Paper-Conference.pdf') }}"
-            target="_blank"
-            rel="noopener noreferrer"
-            style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
-            <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="Original Paper" style="width:28px; height:28px;">
-            Original Paper
-            </a>
-            </div>
-        </div>
-
         <div class="project-card" id="stroke">
             <img src="{{ url_for('static', filename='images/stroke.png') }}" alt="Stroke Prediction with Multiple Linear Regression">
             <div class="project-info">
@@ -572,6 +530,108 @@
 
 
     <div class="project-card">
+      <img
+        src="{{ url_for('static', filename='images/lyrics-finder.png') }}"
+        alt="Lyrics Finder web app"
+      >
+    
+      <div class="project-info">
+        <h2
+          data-en="Lyrics Finder"
+          data-tr="Şarkı Sözü Bulucu"
+          data-fa="جست‌وجوی متن ترانه"
+        >
+          Lyrics Finder
+        </h2>
+    
+        <p
+          data-en="A responsive web app that finds song lyrics by artist and title using the lyrics.ovh API. Built with HTML, CSS, and vanilla JavaScript and hosted on GitHub Pages."
+          data-tr="Sanatçı adı ve şarkı başlığına göre lyrics.ovh API'sini kullanarak şarkı sözlerini bulan, farklı ekran boyutlarına uyumlu bir web uygulaması. HTML, CSS ve saf JavaScript ile geliştirildi ve GitHub Pages'te yayımlandı."
+          data-fa="یک برنامه وب واکنش‌گرا که با استفاده از API سرویس lyrics.ovh، متن ترانه را بر اساس نام هنرمند و عنوان آهنگ پیدا می‌کند. این برنامه با HTML، CSS و جاوااسکریپت خالص ساخته شده و روی GitHub Pages میزبانی می‌شود."
+        >
+          A responsive web app that finds song lyrics by artist and title using the
+          lyrics.ovh API. Built with HTML, CSS, and vanilla JavaScript and hosted on
+          GitHub Pages.
+        </p>
+    
+        <a
+          class="btn primary"
+          href="https://github.com/AtenaJP22/lyrics-finder"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;"
+          data-en="<img src=&quot;{{ url_for('static', filename='images/github.png') }}&quot; alt='' style='width:25px; height:25px;'>View Project"
+          data-tr="<img src=&quot;{{ url_for('static', filename='images/github.png') }}&quot; alt='' style='width:25px; height:25px;'>Projeyi Görüntüle"
+          data-fa="<img src=&quot;{{ url_for('static', filename='images/github.png') }}&quot; alt='' style='width:25px; height:25px;'>مشاهده پروژه"
+          >
+          <img
+            src="{{ url_for('static', filename='images/github.png') }}"
+            alt=""
+            style="width:25px; height:25px;"
+          >
+          View Project
+        </a>
+
+        <a
+          class="btn primary live-demo"
+          href="https://atenajp22.github.io/lyrics-finder/"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;"
+          data-en="Live Demo"
+          data-tr="Canlı Demo"
+          data-fa="دموی آنلاین"
+        >
+          Live Demo
+        </a>
+
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="{{ url_for('static', filename='images/tts2.jpg') }}" alt="Re [Style TTS2]">
+      <div class="project-info">
+        <h2>Re [Style TTS2]</h2>
+        <!-- Description -->
+      <p
+      data-en="A reproduction study of StyleTTS2: Towards Human-Level Text-to-Speech through Style Diffusion and Adversarial Training with Large Speech Language Models, utilizing deep learning and artificial neural networks."
+
+      data-tr="Derin öğrenme ve yapay sinir ağları kullanan, StyleTTS2: Style Diffusion ve Büyük Konuşma Dil Modelleri ile Adversarial Eğitim Yoluyla İnsan Seviyesinde Metinden Konuşmaya başlıklı çalışmanın bir yeniden üretim (reproduction) çalışmasıdır."
+
+      data-fa="یک مطالعه بازتولید (Reproduction) از StyleTTS2: دستیابی به تبدیل متن به گفتار در سطح انسانی از طریق انتشار سبک (Style Diffusion) و آموزش خصمانه با مدل‌های زبانی بزرگ گفتاری که از یادگیری عمیق و شبکه‌های عصبی مصنوعی استفاده می‌کند.">
+      A reproduction study of Style TTS2: Towards Human-Level Text-to-Speech through Style Diffusion and Adversarial Training with Large Speech Language Models which utilizes deep learning and artificial neural networks.
+      </p>
+
+      <!-- Git Repository -->
+      <a class="btn primary"
+      data-en="<img src='{{ url_for('static', filename='images/github.png') }}' style='width:25px; height:25px;'> View Git Repository"
+      data-tr="<img src='{{ url_for('static', filename='images/github.png') }}' style='width:25px; height:25px;'> Git Deposunu Görüntüle"
+      data-fa="<img src='{{ url_for('static', filename='images/github.png') }}' style='width:25px; height:25px;'> مشاهده رپو گیتهاب"
+      href="https://github.com/yl4579/StyleTTS2"
+      target="_blank"
+      rel="noopener noreferrer"
+      style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+      <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
+      View Git Repository
+      </a>
+
+      <!-- Original Paper -->
+      <a class="btn primary"
+      data-en="<img src='{{ url_for('static', filename='images/PDF.png') }}' style='width:28px; height:28px;'> Original Paper"
+      data-tr="<img src='{{ url_for('static', filename='images/PDF.png') }}' style='width:28px; height:28px;'> Orijinal Makale"
+      data-fa="<img src='{{ url_for('static', filename='images/PDF.png') }}' style='width:28px; height:28px;'> مقاله اصلی"
+      href="{{ url_for('static', filename='files/NeurIPS-2023-styletts-2-towards-human-level-text-to-speech-through-style-diffusion-and-adversarial-training-with-large-speech-language-models-Paper-Conference.pdf') }}"
+      target="_blank"
+      rel="noopener noreferrer"
+      style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+      <img src="{{ url_for('static', filename='images/PDF.png') }}" alt="Original Paper" style="width:28px; height:28px;">
+      Original Paper
+      </a>
+      </div>
+    </div>
+
+
+    <div class="project-card">
       <img src="{{ url_for('static', filename='images/insurance.jpg') }}" alt="Insurance Premium Calculator">
       <div class="project-info">
         <h2
@@ -732,6 +792,7 @@
           </a>
         </div>
       </div>
+      
 
 
       <div class="project-card">
