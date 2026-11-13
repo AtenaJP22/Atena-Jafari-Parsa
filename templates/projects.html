@@ -56,6 +56,68 @@
 
         <!-- Example Project Card -->
 
+
+        <div class="project-card" id="concept-drift">
+          <img
+            src="{{ url_for('static', filename='images/concept-drift.png') }}"
+            alt="Concept Drift Detection in Data Streams">
+        
+          <div class="project-info">
+            <h2>Concept Drift Detection in Data Streams</h2>
+        
+            <p
+              data-en="An ongoing York University graduate project on detecting distribution shifts in streaming data. I led the unsupervised experiments, evaluating the Discriminative Drift Detector (D3) and the Bayesian Nonparametric Detection Method (BNDM) on the Elec2 and PowerSupply datasets using Python and River. On PowerSupply, I obtained a D3 lift-per-drift score of 0.002344, close to the published benchmark of 0.002400."
+        
+              data-tr="York Üniversitesi’nde yürüttüğümüz bu lisansüstü projede, veri akışlarındaki dağılım değişimlerini tespit etmeye yönelik yöntemleri inceliyoruz. Denetimsiz deneyleri ben yürüttüm ve Python ile River kullanarak D3 ve Bayesçi parametrik olmayan tespit yöntemi BNDM’yi Elec2 ve PowerSupply veri kümelerinde değerlendirdim. PowerSupply veri kümesinde D3 için 0.002344 lift-per-drift skoru elde ettim. Yayımlanan karşılaştırma skoru 0.002400’dü."
+        
+              data-fa="در این پروژهٔ در حال انجام در مقطع کارشناسی ارشد دانشگاه یورک، روش‌های تشخیص تغییر توزیع در جریان‌های داده را بررسی می‌کنیم. من مسئول آزمایش‌های بدون نظارت بودم و با استفاده از Python و River، روش‌های D3 و BNDM را روی مجموعه‌داده‌های Elec2 و PowerSupply ارزیابی کردم. در مجموعه‌دادهٔ PowerSupply، امتیاز lift-per-drift روش D3 برابر با 0.002344 بود که به مقدار منتشرشدهٔ 0.002400 نزدیک است.">
+              An ongoing York University graduate project on detecting distribution shifts
+              in streaming data. I led the unsupervised experiments, evaluating the
+              Discriminative Drift Detector (D3) and the Bayesian Nonparametric Detection
+              Method (BNDM) on the Elec2 and PowerSupply datasets using Python and River.
+              On PowerSupply, I obtained a D3 lift-per-drift score of 0.002344, close to
+              the published benchmark of 0.002400.
+            </p>
+        
+            <a class="btn primary"
+              data-en="View Reproduction Notebook"
+              data-tr="Yeniden Üretim Not Defterini Görüntüle"
+              data-fa="مشاهدهٔ نوت‌بوک بازتولید"
+              href="https://colab.research.google.com/drive/1sSqtkSu3Tw5A8sWDej7oDMMBQCuQCSi5"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+              View Reproduction Notebook
+            </a>
+        
+            <a class="btn primary"
+              data-en="<img src='{{ url_for('static', filename='images/github.png') }}' alt='' style='width:25px; height:25px;'> Original Benchmark Code"
+              data-tr="<img src='{{ url_for('static', filename='images/github.png') }}' alt='' style='width:25px; height:25px;'> Orijinal Karşılaştırma Kodu"
+              data-fa="<img src='{{ url_for('static', filename='images/github.png') }}' alt='' style='width:25px; height:25px;'> کد اصلی بنچمارک"
+              href="https://github.com/DFKI-NI/unsupervised-concept-drift-detection"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+              <img src="{{ url_for('static', filename='images/github.png') }}" alt=""
+                style="width:25px; height:25px;">
+              Original Benchmark Code
+            </a>
+        
+            <a class="btn primary"
+              data-en="<img src='{{ url_for('static', filename='images/PDF.png') }}' alt='' style='width:28px; height:28px;'> Benchmark Paper"
+              data-tr="<img src='{{ url_for('static', filename='images/PDF.png') }}' alt='' style='width:28px; height:28px;'> Karşılaştırma Makalesi"
+              data-fa="<img src='{{ url_for('static', filename='images/PDF.png') }}' alt='' style='width:28px; height:28px;'> مقالهٔ بنچمارک"
+              href="https://doi.org/10.1007/s41060-024-00620-y"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+              <img src="{{ url_for('static', filename='images/PDF.png') }}" alt=""
+                style="width:28px; height:28px;">
+              Benchmark Paper
+            </a>
+          </div>
+        </div>
+
         <div class="project-card" id="cv-internship">
           <img src="{{ url_for('static', filename='images/Bina.png') }}" alt="Computer Vision Internship">
           <div class="project-info">
