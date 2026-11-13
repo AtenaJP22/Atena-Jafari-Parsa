@@ -136,6 +136,59 @@
           </div>
         </div>
 
+        <div class="project-card" id="stylelens">
+          <img
+            src="{{ url_for('static', filename='images/stylelens.png') }}"
+            alt="StyleLens showing garment details and retailer search links"
+            loading="lazy"
+          >
+        
+          <div class="project-info">
+            <h2>StyleLens</h2>
+        
+            <p
+              data-en="A fashion search app that turns outfit photos into shopping searches. Google Gemini identifies garments and describes visible details such as colour, length, fit, and pattern. StyleLens turns those descriptions into search links for five retailers: Amazon Canada, eBay Canada, SHEIN, Temu, and Walmart Canada. You can also search by typing a description. Built with Python, FastAPI, and JavaScript and deployed on Vercel."
+        
+              data-tr="Kombin fotoğraflarını alışveriş aramalarına dönüştüren bir moda arama uygulaması. Google Gemini, fotoğraftaki kıyafetleri tanır ve renk, uzunluk, kalıp ve desen gibi görünür özellikleri açıklar. StyleLens, bu açıklamalardan Amazon Canada, eBay Canada, SHEIN, Temu ve Walmart Canada için arama bağlantıları oluşturur. Bir açıklama yazarak da arama yapabilirsiniz. Python, FastAPI ve JavaScript ile geliştirildi ve Vercel üzerinde yayına alındı."
+        
+              data-fa="یک اپلیکیشن جست‌وجوی پوشاک که عکس استایل را به جست‌وجوی خرید تبدیل می‌کند. گوگل Gemini لباس‌های موجود در عکس را شناسایی می‌کند و ویژگی‌های قابل مشاهده مانند رنگ، قد، فرم و طرح را توصیف می‌کند. StyleLens از این توضیحات برای ساخت لینک جست‌وجو در پنج فروشگاه Amazon Canada، eBay Canada، SHEIN، Temu و Walmart Canada استفاده می‌کند. امکان جست‌وجو با وارد کردن توضیحات متنی نیز وجود دارد. این اپلیکیشن با Python، FastAPI و JavaScript توسعه یافته و روی Vercel منتشر شده است."
+            >
+              A fashion search app that turns outfit photos into shopping searches.
+              Google Gemini identifies garments and describes visible details such as
+              colour, length, fit, and pattern. StyleLens turns those descriptions into
+              search links for five retailers: Amazon Canada, eBay Canada, SHEIN, Temu,
+              and Walmart Canada. You can also search by typing a description. Built
+              with Python, FastAPI, and JavaScript and deployed on Vercel.
+            </p>
+        
+            <a class="btn primary"
+            data-en="<img src='{{ url_for('static', filename='images/github.png') }}' alt='GitHub' style='width:25px; height:25px;'> View Project"
+            data-tr="<img src='{{ url_for('static', filename='images/github.png') }}' alt='GitHub' style='width:25px; height:25px;'> Projeyi Görüntüle"
+            data-fa="<img src='{{ url_for('static', filename='images/github.png') }}' alt='GitHub' style='width:25px; height:25px;'> مشاهده پروژه"
+            href="https://github.com/AtenaJP22/style-lens"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;">
+            <img src="{{ url_for('static', filename='images/github.png') }}" alt="GitHub" style="width:25px; height:25px;">
+            View Project
+            </a>
+
+            <a
+              class="btn primary live-demo"
+              href="https://style-lens-five.vercel.app/index.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;"
+              data-en="Try Out Demo"
+              data-tr="Canlı Demo"
+              data-fa="دموی آنلاین"
+            >
+              Try Out Demo
+            </a>
+
+          </div>
+        </div>
+
         <div class="project-card" id="awarecitizen">
           <img src="{{ url_for('static', filename='images/awarecitizendark.jpg') }}" alt="Aware Citizen preview">
           <div class="project-info">
@@ -563,11 +616,11 @@
           target="_blank"
           rel="noopener noreferrer"
           style="margin-bottom: 10px; display: inline-flex; align-items: center; gap: 8px;"
-          data-en="Live Demo"
+          data-en="Try Out Demo"
           data-tr="Canlı Demo"
           data-fa="دموی آنلاین"
         >
-          Live Demo
+          Try Out Demo
         </a>
 
       </div>
